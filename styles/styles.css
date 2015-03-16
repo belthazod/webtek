@@ -1,0 +1,59 @@
+body {
+	background-color: #f4f4f4;
+	font-family: calibri;
+	font-size: 17px;
+	padding-top: 100px;
+}
+#container {
+	width: 460px;
+	margin: auto;
+	border: 2px solid #cccccc;
+	padding: 0 15px 15px 15px;
+	border-radius: 20px;
+	background: #ffffff;
+	min-height: 400px;
+}
+li {
+	list-style: none;
+}
+label {
+	display: inline-block;
+	width: 85px;
+	padding-bottom: 25px;
+}
+input {
+	padding: 10px 10px 10px 10px;
+	border: 2px solid #cccccc;
+	border-radius: 10px;
+}
+h1 {
+	text-align: center;
+}
+a {
+	text-align: left;
+}
+#buttons {
+	text-align: right;
+	padding-right: 55px;
+}
+#firstname {
+	width: 250px;
+}
+#lastname {
+	width: 250px;
+}
+#username {
+	width: 250px;
+}
+#email {
+	width: 250px;
+}
+#password {
+	width: 250px;
+}
+#login {
+	width: 180px;
+}
+#register {
+	width: 180px;
+}
