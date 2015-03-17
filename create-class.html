@@ -2,90 +2,113 @@
 
 <html>
 	<head>
-		
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="author" content="Jolas Burayag">
+		<title>
+			Create Class
+		</title>
 	</head>
 
 	<body>
 		<div class="container">
 				<h2 class="page-heading">Create Class</h2>
-				
+				<p class="page-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus sit in natus, beatae modi vero aperiam provident labore asperiores, culpa alias corporis, accusantium quasi tempora non ut eveniet aut consequuntur.</p>
+
 				<div class="content-wrap">
-					<form action="">
-						Class Code: <input type="text" name="ClassCode"><br>
-						Class Schedule: Days 
-							<select>
+					<form class="master-form" action="">
+						<label for="input-classcode">Class Code:</label>
+						<input id="input-classcode" class="tbox" autofocus type="text" name="ClassCode"><br>
+						<label for="day-selection">Days:</label>
+							<select id="day-selection" class="selector">
 							  <option value="">MWF</option>
 							  <option value="">TThS</option>
 							  <option value="">MTh</option>
 							  <option value="">TF</option>
 							  <option value="">WS</option>
 							</select>
-							Time
-								<select>
-								  <option value="">7:30 AM</option>
-								  <option value="">8:00 AM</option>
-								  <option value="">8:30 AM</option>
-								  <option value="">9:00 AM</option>
-								  <option value="">9:30 AM</option>
-								  <option value="">10:00 AM</option>
-								  <option value="">10:30 AM</option>
-								  <option value="">11:00 AM</option>
-								  <option value="">11:30 AM</option>
-								  <option value="">12:00 PM</option>
-								  <option value="">12:30 PM</option>
-								  <option value="">1:00 PM</option>
-								  <option value="">1:30 PM</option>
-								  <option value="">2:00 PM</option>
-								  <option value="">2:30 PM</option>
-								  <option value="">3:00 PM</option>
-								  <option value="">3:30 PM</option>
-								  <option value="">4:00 PM</option>
-								  <option value="">4:30 PM</option>
-								  <option value="">5:00 PM</option>
-								  <option value="">5:30 PM</option>
-								  <option value="">6:00 PM</option>
-								  <option value="">6:30 PM</option>
-								  <option value="">7:00 PM</option>
-								  <option value="">7:30 PM</option>
+							<label for="timea-selection">Time:</label>
+								<select id="timea-selection" class="selector">
+								  <option value="7:30 AM">7:30 AM</option>
+								  <option value="8:00 AM">8:00 AM</option>
+								  <option value="8:30 AM">8:30 AM</option>
+								  <option value="9:00 AM">9:00 AM</option>
+								  <option value="9:30 AM">9:30 AM</option>
+								  <option value="10:00 A">10:00 AM</option>
+								  <option value="10:30 A">10:30 AM</option>
+								  <option value="11:00 A">11:00 AM</option>
+								  <option value="11:30 A">11:30 AM</option>
+								  <option value="12:00 P">12:00 PM</option>
+								  <option value="12:30 P">12:30 PM</option>
+								  <option value="1:00 PM">1:00 PM</option>
+								  <option value="1:30 PM">1:30 PM</option>
+								  <option value="2:00 PM">2:00 PM</option>
+								  <option value="2:30 PM">2:30 PM</option>
+								  <option value="3:00 PM">3:00 PM</option>
+								  <option value="3:30 PM">3:30 PM</option>
+								  <option value="4:00 PM">4:00 PM</option>
+								  <option value="4:30 PM">4:30 PM</option>
+								  <option value="5:00 PM">5:00 PM</option>
+								  <option value="5:30 PM">5:30 PM</option>
+								  <option value="6:00 PM">6:00 PM</option>
+								  <option value="6:30 PM">6:30 PM</option>
+								  <option value="7:00 PM">7:00 PM</option>
+								  <option value="7:30 PM">7:30 PM</option>
 								</select>
 								-
-								<select>
-								  <option value="">8:30 AM</option>
-								  <option value="">9:00 AM</option>
-								  <option value="">9:30 AM</option>
-								  <option value="">10:00 AM</option>
-								  <option value="">10:30 AM</option>
-								  <option value="">11:00 AM</option>
-								  <option value="">11:30 AM</option>
-								  <option value="">12:00 PM</option>
-								  <option value="">12:30 PM</option>
-								  <option value="">1:00 PM</option>
-								  <option value="">1:30 PM</option>
-								  <option value="">2:00 PM</option>
-								  <option value="">2:30 PM</option>
-								  <option value="">3:00 PM</option>
-								  <option value="">3:30 PM</option>
-								  <option value="">4:00 PM</option>
-								  <option value="">4:30 PM</option>
-								  <option value="">5:00 PM</option>
-								  <option value="">5:30 PM</option>
-								  <option value="">6:00 PM</option>
-								  <option value="">6:30 PM</option>
-								  <option value="">7:00 PM</option>
-								  <option value="">7:30 PM</option>
+								<select id="timeb-selection selector">
+								  <option value="8:30 AM">8:30 AM</option>
+								  <option value="9:00 AM">9:00 AM</option>
+								  <option value="9:30 AM">9:30 AM</option>
+								  <option value="10:00 A">10:00 AM</option>
+								  <option value="10:30 A">10:30 AM</option>
+								  <option value="11:00 A">11:00 AM</option>
+								  <option value="11:30 A">11:30 AM</option>
+								  <option value="12:00 P">12:00 PM</option>
+								  <option value="12:30 P">12:30 PM</option>
+								  <option value="1:00 PM">1:00 PM</option>
+								  <option value="1:30 PM">1:30 PM</option>
+								  <option value="2:00 PM">2:00 PM</option>
+								  <option value="2:30 PM">2:30 PM</option>
+								  <option value="3:00 PM">3:00 PM</option>
+								  <option value="3:30 PM">3:30 PM</option>
+								  <option value="4:00 PM">4:00 PM</option>
+								  <option value="4:30 PM">4:30 PM</option>
+								  <option value="5:00 PM">5:00 PM</option>
+								  <option value="5:30 PM">5:30 PM</option>
+								  <option value="6:00 PM">6:00 PM</option>
+								  <option value="6:30 PM">6:30 PM</option>
+								  <option value="7:00 PM">7:00 PM</option>
+								  <option value="7:30 PM">7:30 PM</option>
 								</select><br>
 
-								<h3>Add Students</h3>
-								<select name="sometext" multiple="multiple">
-								    <option>Lorem, Ipsum D.</option>
-								    <option>Lorem, Ipsum D.</option>
-								    <option>Lorem, Ipsum D.</option>
-								    <option>Lorem, Ipsum D.</option>
-								    <option>Lorem, Ipsum D.</option>
+								<h3 class="section-heading">Add Students</h3>
+								<label for="lastname-input">Lastname:</label>
+								<input id="lastname-input" class="tbox" type="text" name="lastname"> 
+								<label for="firstname-input">First name:</label>
+								<input id="firstname-input" class="tbox" type="text" name="firstname">
+								<button id="addstudent-btn" class="btn" value="">Add</button><br>
+								
+								<h4 class="form-heading">Retrieve students from text file</h4>
+								<input id="addtextfile-btn" class="btn" type="file" value="Browse"><br>
+
+								<h4 class="form-heading">List of existing students</h4>
+								<select id="student-selection" class="selector" name="sometext" multiple="multiple" size="8">
+								    <option value="">Lorem, Ipsum D.</option>
+								    <option value="">Burayag, Jolas G.</option>
+								    <option value="">Lorem, Ipsum D.</option>
+								    <option value="">Lorem, Ipsum D.</option>
+								    <option value="">Lorem, Ipsum D.</option>
+								    <option value="">Lorem, Ipsum D.</option>
+								    <option value="">Lorem, Ipsum D.</option>
+								    <option value="">Lorem, Ipsum D.</option>
+								    <option value="">Lorem, Ipsum D.</option>
 								</select>
-								<input type="submit" value="Add students">
-								<textarea disabled rows="5" cols="30" ></textarea>
-						<br><input type="submit" value="Submit">
+								<br><button id="addselected-btn" class="btn" value="">Add selected</button><br>
+
+								<h4 class="form-heading">Students in your class</h4>
+								<textarea id="myclass-ta" class="tarea" disabled rows="5" cols="30" placeholder="Your class is lonely. Add students to be happy."></textarea>
+						<br><input id="finalclass-btn" class="btn" type="submit" value="Finalize Class">
 					</form>
 				</div>
 		</div>
