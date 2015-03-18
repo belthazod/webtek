@@ -13,7 +13,7 @@
 	</head>
 
 	<body>
-		<div class="container">
+		<div id="createclass-div" class="container">
 			<h2 class="page-heading">Create Class</h2>
 			<p class="page-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus sit in natus, beatae modi vero aperiam provident labore asperiores, culpa alias corporis, accusantium quasi tempora non ut eveniet aut consequuntur.</p>
 
@@ -85,7 +85,8 @@
 							</select><br>
 
 							<h3 class="section-heading">Add Students</h3>
-							<div class="row">
+							
+							<div id="div-addstudent" class="row">
 								<label for="lastname-input">Lastname:</label>
 								<input id="lastname-input" class="tbox" type="text" name="lastname"> 
 								<label for="firstname-input">First name:</label>
@@ -94,26 +95,38 @@
 							</div>
 							
 							
+
 							<h4 class="form-heading">Retrieve students from text file</h4>
-							<input id="addtextfile-btn" class="btn" type="file" value="Browse"><br>
+							
 
-							<h4 class="form-heading">List of existing students</h4>
-							<select id="student-selection" class="selector" name="sometext" multiple="multiple" size="8">
-							    <option value="">Lorem, Ipsum D.</option>
-							    <option value="">Burayag, Jolas G.</option>
-							    <option value="">Lorem, Ipsum D.</option>
-							    <option value="">Lorem, Ipsum D.</option>
-							    <option value="">Lorem, Ipsum D.</option>
-							    <option value="">Lorem, Ipsum D.</option>
-							    <option value="">Lorem, Ipsum D.</option>
-							    <option value="">Lorem, Ipsum D.</option>
-							    <option value="">Lorem, Ipsum D.</option>
-							</select>
-							<br><button id="addselected-btn" class="btn" value="">Add selected</button><br>
+							<div id="div-addtextfile" class="row">
+								<input id="addtextfile-btn" class="btn" type="file" value="Browse"><br>
+							</div>
 
-							<h4 class="form-heading">Students in your class</h4>
-							<textarea id="myclass-ta" class="tarea" disabled rows="5" cols="30" placeholder="Your class is lonely. Add students to be happy."></textarea>
-					<br><input id="finalclass-btn" class="btn" type="submit" value="Finalize Class">
+							
+							<div id="div-studentselection" class="row">
+								<div class="row-inside">
+									<h4 class="form-heading">List of existing students</h4>
+									<select id="student-selection" class="selector" name="sometext" multiple="multiple" size="8">
+								    <option value="">Lorem, Ipsum D.</option>
+								    <option value="">Burayag, Jolas G.</option>
+								    <option value="">Lorem, Ipsum D.</option>
+								    <option value="">Lorem, Ipsum D.</option>
+								    <option value="">Lorem, Ipsum D.</option>
+								    <option value="">Lorem, Ipsum D.</option>
+								    <option value="">Lorem, Ipsum D.</option>
+								    <option value="">Lorem, Ipsum D.</option>
+								    <option value="">Lorem, Ipsum D.</option>
+									</select>
+									<br><button id="addselected-btn" class="btn" value="">Add selected</button>	
+								</div>
+
+								<div class="row-inside">
+									<h4 class="form-heading">Students in your class</h4>
+									<textarea id="myclass-ta" class="tarea" disabled rows="5" cols="30" placeholder="Your class is lonely. Add students to be happy."></textarea>
+									<br><input id="finalclass-btn" class="btn" type="submit" value="Finalize Class">		
+								</div>
+							</div>
 				</form>
 			</div>
 		</div>
