@@ -1,40 +1,14 @@
 <!DOCTYPE html>
 <html>
-	<style type="text/css">
-		body {
-			width: 960px;
-			margin: auto;
-		}
-		#search {
-			width: 450px;
-			font-size: 20px;
-			padding: 20px 20px 20px 20px;
-			border-radius: 20px;
-		}
-		aside ul li {
-			list-style: none; 
-		}
-		table {
-			width: 890px;
-			margin: auto;
-		}
-		#sort {
-			text-align: right;
-		}
-		#update {
-			text-align: right;
-		}
-		th {
-			font-style: bold;
-		}
-	</style>
 	<head>
+		<meta charset="UTF-8">
 		<title>bwiSEATER Student Record</title>
+		<link rel="stylesheet" type="text/css" href="styles/studrec.css">
 	</head>
 	<body>
 		<fieldset>
-			<input id="search" type="text" placeholder="SEARCH" autofucos>
-			<input id="sign out" type="submit" value="Sign out">
+			<input id="search" type="text" placeholder="SEARCH">
+			<input id="signout" type="submit" value="Sign out">
 		</fieldset>
 		<header>
 			<h1>Student Record</h1>
@@ -53,7 +27,7 @@
 				<option>no. of absents</option>
 			</select>
 		</div>
-		<table border="1">
+		<table>
 			<tr>
 				<th>student number</th>
 				<th>last name</th>
