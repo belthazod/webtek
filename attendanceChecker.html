@@ -1,0 +1,104 @@
+<html>
+	<head>
+		<style>
+			#myCanvas{
+				margin:0 auto;
+				display:block;
+				position:absolute;
+			}
+			#form{
+				position: absolute;
+			}
+			.student{
+				background:gray;
+				display:block;
+				position:absolute;
+				width:80px;
+				height:40px;
+				z-index:10;
+			}
+			.selected{
+				background:blue;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+		</header>
+		
+		<div id="main">
+			<canvas id="myCanvas" width="1000" height="600" style="border:1px solid #000000;">
+			</canvas>
+		</div>
+		
+		<footer>
+		</footer>
+		
+	</body>
+	<script>
+		var c = document.getElementById("myCanvas");
+		var ctx = c.getContext("2d");
+		var seats = 0;
+		var y = 15;
+		var row = 1;
+		var main = document.getElementById('main');
+		var seatCount = 0;
+		for(var x = 15 ; row<6; x+=90){
+			if(seats > 4){
+				y+= 80;
+				seats = 0;
+				x = 15;
+				row++;
+			}
+			if (row<6){
+				seatCount++;
+				var div = document.createElement("div");
+				div.setAttribute("style", "margin-top:" + y + ";margin-left:" + x);
+				div.className="student";
+				div.setAttribute("onclick", "changeState("+seatCount+")");
+				div.setAttribute("draggable", "true");
+				main.appendChild(div);
+			
+				ctx.fillStyle = "#FF0000";
+				ctx.fillRect(x, y, 80, 40);
+				seats++;
+			}
+		}
+		var seats = 0;
+		var row = 1;
+		var y = 15;
+		
+		for(var x = 910 ; row<6; x-=90){
+			if(seats > 4){
+				y += 80;
+				seats = 0;
+				x = 910;
+				row++;
+			}
+			if (row<6){
+				seatCount++;
+				var div = document.createElement("div");
+				div.setAttribute("style", "margin-top:" + y + ";margin-left:" + x);
+				div.className="student";
+				div.setAttribute("onclick", "changeState("+seatCount+")");
+				main.appendChild(div);
+				
+				ctx.fillStyle = "#FF0000";
+				ctx.fillRect(x, y, 80, 40);
+				seats++;
+			}
+		}
+		
+		function changeState(index){
+			var main = document.getElementById('main');
+			var selectedStudent = main.getElementsByClassName('student')[index-1];
+			if(selectedStudent.className == "student"){
+				selectedStudent.className = "student selected";
+			}
+			else{
+				selectedStudent.className = "student";
+			}
+		}
+		
+	</script>
+</html>
