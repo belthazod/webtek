@@ -17,8 +17,11 @@
 				height:40px;
 				z-index:10;
 			}
-			.selected{
+			.absent{
 				background:blue;
+			}
+			.late{
+				background: pink;
 			}
 		</style>
 	</head>
@@ -27,6 +30,7 @@
 		</header>
 		
 		<div id="main">
+			<h1 id ="classCode"></h1>
 			<canvas id="myCanvas" width="1000" height="600" style="border:1px solid #000000;">
 			</canvas>
 		</div>
@@ -35,7 +39,24 @@
 		</footer>
 		
 	</body>
+	<script type="text/javascript" src="scripts/checkAttendance.js"></script>
 	<script>
+		var students = [new Student(1, "someone", 
+			"just", "enrolled", "7400", "belthazod"), 
+
+						new Student(2, "someone", 
+			"just", "enrolled", "7400", "belthazod"),
+
+						new Student(3, "someone", 
+			"just", "enrolled", "7400", "belthazod")];
+
+		var x = new universityClass(7006, "s421", "8:30-9:30", 50, "belthazod", students);
+		
+		localStorage.setItem("students", JSON.stringify(x));
+		var p = JSON.parse(localStorage.getItem('students'));
+		alert(p.classcode);
+		document.getElementById('classCode').innerHTML = p.classcode;
+		
 		var c = document.getElementById("myCanvas");
 		var ctx = c.getContext("2d");
 		var seats = 0;
@@ -93,12 +114,14 @@
 			var main = document.getElementById('main');
 			var selectedStudent = main.getElementsByClassName('student')[index-1];
 			if(selectedStudent.className == "student"){
-				selectedStudent.className = "student selected";
-			}
-			else{
+				selectedStudent.className = "student absent";
+			}else if(selectedStudent.className == "student absent"){
+				selectedStudent.className = "student late";
+			}else{
 				selectedStudent.className = "student";
 			}
 		}
 		
 	</script>
+	
 </html>
