@@ -1,8 +1,9 @@
-
-
 body {
-	background-color: #FFFFD1
+	width: 960px;
+	margin: auto;
+	background-color: #D1E0E0;
 }
+
 #header {
 	text-align: center;
 	color: #5F5F5F;
@@ -14,11 +15,11 @@ li {
 
 #table {
 
-	position: absolute;
-	left: 45px;
+	margin: auto;
 }
 #nav li{
 	display: inline;
-	
+
 }
+
 
