@@ -1,50 +1,89 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>My Classes</title>
-</head>
-<body>
+	<head>
+		<meta charset="UTF-8">
+		<title>bwiSEATER My Classes</title>
+		<link rel="stylesheet" type="text/css" href="styles/styles1.css">
+	</head>
+	<body>
+		<header id="banner">
+			<input id="search" type="text" placeholder="SEARCH">
+			<input type="submit" value="Search">
+			<div id="template">
+				<img src="images/1.png" alt="profile">
+				<label>Instructors Name</label>
+				<img src="images/2.png" alt="settings">
+				<img src="images/3.png" alt="signout">
+			</div>
+		</header>
 
-	<div>
-	<ul>
-		<li><a href="MyClasses.html">My Classes</a></li>
-		<li><a href="create-class.html">Create a Class</a></li>
-		<li><a href="studrec.html">Student Record</a></li>
-	</ul>
-	</div>
-	
-	<div>
-	<ul>
-		<li>Programming Applications
-			<br>Lecture
-			<br>8:30-9:30 S423 TF</li>
-		<li>Programming Applications
-			<br>Laboratory
-			<br>9:00-10:30 S326 MTH</li>
-	</ul>
+		<nav id="navigate">
+			<ul>
+				<li><a href="">My Classes</a></li>
+				<li><a href="">Create Class</a></li>
+				<li><a href="">Attendance Checker</a></li>
+				<li><a href="">Attendance Summary</a></li>
+				<li><a href="">Student Record</a></li>
+			</ul>
+		</nav>
 
-	<ul>
-		<li>Database Management System
-			<br>Lecture
-			<br>9:30-10:30 S423 WS</li>
-		<li>Programming Applications
-			<br>Laboratory
-			<br>10:30-12:00 S326 WS</li>
-	</ul>
+		<main id="content">
+			<section id="lecture">
+				<h1>Lecture Class</h1>
+				<article>
+					<ul>
+					<li>
+						Programming Applications
+						<br>Lecture
+						<br>8:30-9:30 S423 TF
+					</li>
 
-	<ul>
-		<li>Webtek
-			<br>Lecture
-			<br>1:00-2:00 S423 WS</li>
-		<li>Programming Applications
-			<br>Laboratory
-			<br>4:00-5:300 S326 WS</li>
-	</ul>
-	</div>
+					<li>
+						Database Management System
+						<br>Lecture
+						<br>9:30-10:30 S423 WS
+					</li>
 
-	<div>
-		<button>Delete Class</button>
-		<button>Edit Class</button>
-	</div>
-</body>
+					<li>
+						Webtek
+						<br>Lecture
+						<br>1:00-2:00 S423 WS
+					</li>
+				</ul>
+				</article>
+			</section>
+			<section id="laboratory">
+				<h1>Laboratory Classes</h1>
+				<article>
+					<ul>
+						<li>
+							Programming Applications
+								<br>Laboratory
+								<br>9:00-10:30 S326 MTH
+						</li>
+						<li>
+							Database Management System
+							<br>Laboratory
+							<br>10:30-12:00 S326 WS
+						</li>
+
+						<li>
+							Webtek
+							<br>Laboratory
+							<br>4:00-5:300 S326 WS
+						</li>		
+					</ul>
+				</article>
+			</section>
+
+			<div id="delEdit">
+				<button>Delete Class</button>
+				<button>Edit Class</button>
+			</div>
+		</main>
+		
+		<footer>
+			&copy; 2015 Group#__. All rights reserved.
+		</footer>
+	</body>
 </html>

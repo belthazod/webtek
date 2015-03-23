@@ -3,63 +3,74 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>bwiSEATER ViewAttendance</title>
-		<link rel="stylesheet" type="text/css" href="styles/VAttendance.css">
+		<link rel="stylesheet" type="text/css" href="styles/styles1.css">
 	</head>
 	
 	<body>
-		<div id = "nav">
+		<header id="banner">
+			<input id="search" type="text" placeholder="SEARCH">
+			<input type="submit" value="Search">
+			<div id="template">
+				<img src="images/1.png" alt="profile">
+				<label>Instructors Name</label>
+				<img src="images/2.png" alt="settings">
+				<img src="images/3.png" alt="signout">
+			</div>
+		</header>
+
+		<nav id="navigate">
 			<ul>
-				<li><a href="MyClasses.html">My Classes</a></li>
-				<li><a href="create-class.html">Create a Class</a></li>
-				<li><a href="studrec.html">Student Record</a></li>
+				<li><a href="">My Classes</a></li>
+				<li><a href="">Create Class</a></li>
+				<li><a href="">Attendance Checker</a></li>
+				<li><a href="">Attendance Summary</a></li>
+				<li><a href="">Student Record</a></li>
 			</ul>
-		
-		</div>
-		<hr>
-		<div id = "header">
+		</nav>
+		<main id="content">
+			<div id = "label">
+				<ul>
+					<li>Classcode</li>
+					<li>Subject No</li>
+					<li>Room</li>
+					<li>Time and Days</li>
+				</ul>
+			</div>
 			
-			<h1> Summary of Attendance </h1>
-			<hr>
-		</div>
-		
-		<div id = "label">
-			<ul>
-				<li>Classcode</li>
-				<li>Subject No</li>
-				<li>Room</li>
-				<li>Time and Days</li>
-			</ul>
-		</div>
-		
-		<div id = "table">
-			<table style = 100% border = 1%> 
-				<tr>
-					<th>Name</th>
-					<th>Date</th>
-					<th>Late/Absent</th>
-					<th>Remarks</th>
-				</tr>
-				<tr>
-					<td>Student 1</td>
-					<td>
-						<ul>
-							<li>03-18-15</li>
-							<li>03-19-15</li>
-							<li>03-20-15</li>
-							<li>03-21-15</li>
-						<ul>	
-					</td>
-					<td>
-						<ul>
-							<li>Absent</li>
-							<li>Late</li>
-							<li>Absent</li>
-							<li>Absent</li>
-						</ul>
-					</td>
-					<td>Drop</td>
-				</tr>
-			</table>
-		</div>
+			<div id = "table">
+				<table style = 100% border = 1%> 
+					<tr>
+						<th>Name</th>
+						<th>Date</th>
+						<th>Late/Absent</th>
+						<th>Remarks</th>
+					</tr>
+					<tr>
+						<td>Student 1</td>
+						<td>
+							<ul>
+								<li>03-18-15</li>
+								<li>03-19-15</li>
+								<li>03-20-15</li>
+								<li>03-21-15</li>
+							<ul>	
+						</td>
+						<td>
+							<ul>
+								<li>Absent</li>
+								<li>Late</li>
+								<li>Absent</li>
+								<li>Absent</li>
+							</ul>
+						</td>
+						<td>Drop</td>
+					</tr>
+				</table>
+			</div>
+		</main>
+
+		<footer>
+			&copy; 2015 Group#__. All rights reserved.
+		</footer>
 	</body>
 </html>

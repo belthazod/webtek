@@ -1,0 +1,89 @@
+@charset "UTF-8";
+
+body, header, nav, main, footer {
+	display: block;
+	border-radius: 15px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+body {
+	width: 1000px;
+	margin: auto;
+	font-family: Helvetica;
+	font-size: 15px;
+}
+
+#banner {
+	padding: 20px 20px;
+}
+
+#banner img {
+	width: 30px;
+}
+
+#search {
+	width: 450px;
+	font-size: 15px;
+	padding: 10px 10px 10px 10px;
+	border-radius: 20px;
+}
+
+#navigate {
+}
+
+#navigate ul li {
+	display: inline;
+	font-size: 20px;
+	font-variant: small-caps;
+	font-weight: bold;
+}
+
+#navigate ul li a:hover{
+	color: lime;
+}
+
+#content {
+}
+
+#sort {
+	text-align: right;
+	margin-right: 70px
+}
+
+#update {
+	text-align: right;
+	margin-right: 70px;
+	border-radius: 20px;
+}
+
+#studrec {
+	width: 850px;
+	margin: auto;
+}
+
+#template {
+	float: right;
+}
+
+#classes {
+	display: inline;
+	list-style: none;
+}
+
+#lecture {
+	float: left;
+	width: 480px;
+}
+
+#laboratory {
+	float: right;
+	width: 480px;
+}
+
+#delEdit {
+	text-align: right;
+}
+
+footer{
+}

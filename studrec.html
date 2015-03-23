@@ -2,59 +2,82 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
+		<meta name="author" content="Ramel Laigo">
 		<title>bwiSEATER Student Record</title>
-		<link rel="stylesheet" type="text/css" href="styles/studrec.css">
+		<link rel="stylesheet" type="text/css" href="styles/styles1.css">
 	</head>
 	<body>
-		<fieldset>
+		<header id="banner">
 			<input id="search" type="text" placeholder="SEARCH">
-			<input id="signout" type="submit" value="Sign out">
-		</fieldset>
-		<header>
-			<h1>Student Record</h1>
+			<input type="submit" value="Search">
+			<div id="template">
+				<img src="images/1.png" alt="profile">
+				<label>Instructors Name</label>
+				<img src="images/2.png" alt="settings">
+				<img src="images/3.png" alt="signout">
+			</div>
 		</header>
-		<aside>
+
+		<nav id="navigate">
 			<ul>
-				<li><a href="">check attendance</a></li>
-				<li><a href="">student record</a></li>
+				<li><a href="">My Classes</a></li>
+				<li><a href="">Create Class</a></li>
+				<li><a href="">Attendance Checker</a></li>
+				<li><a href="">Attendance Summary</a></li>
+				<li><a href="">Student Record</a></li>
 			</ul>
-		</aside>
-		<div id="sort">
-			Sort by: 
-			<select>
-				<option>name</option>
-				<option>class</option>
-				<option>no. of absents</option>
-			</select>
-		</div>
-		<table>
-			<tr>
-				<th>student number</th>
-				<th>last name</th>
-				<th>first name</th>
-				<th>total no. of absents</th>
-			</tr>
-			<tr>
-				<td>1</td>
-				<td>studentlast</td>
-				<td>studentfirst</td>
-				<td>10</td>
-			</tr>
-			<tr>
-				<td>2</td>
-				<td>studentlast</td>
-				<td>studentfirst</td>
-				<td>9</td>
-			</tr>
-			<tr>
-				<td>3</td>
-				<td>studentlast</td>
-				<td>studentfirst</td>
-				<td>8</td>
-			</tr>
-		</table>
-		<div id="update">
-			<input type="submit" value="Update">
-		</div>			
+		</nav>
+
+		<main id="content">
+			<div id="sort">
+				<label>Sort by:</label> 
+				<select>
+					<option>name</option>
+					<option>class</option>
+					<option>no. of absents</option>
+				</select>
+			</div>
+			<table id="studrec" border="1">
+				<tr>
+					<th>student number</th>
+					<th>last name</th>
+					<th>first name</th>
+					<th>class schedule</th>
+					<th>day</th>
+					<th>total no. of absents</th>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>lastname1</td>
+					<td>firstname1</td>
+					<td>8:30-9:30</td>
+					<td>MWF</td>
+					<td>10</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>lastname2</td>
+					<td>firstname2</td>
+					<td>1:00-2:00</td>
+					<td>TThS</td>
+					<td>9</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>lastname3</td>
+					<td>firstname3</td>
+					<td>10:30-11:30</td>
+					<td>MWF</td>
+					<td>8</td>
+				</tr>
+			</table>
+			<div id="update">
+				<input type="submit" value="Update">
+			</div>
+		</main>
+		
+		<footer>
+			&copy; 2015 Group#__. All rights reserved.
+		</footer>
 	</body>
 </html>
