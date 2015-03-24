@@ -1,45 +1,94 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
-</head>
-<body>
-	<nav>
-		<ul>
-			<li><a href="">My Classes</a></li>
-			<li><a href="">Attendance</a></li>
-			<li><a href="">????</a></li>
-		</ul>
-		
-	</nav>
-	<section>
-		<article id="classAttr">
-				<input type="button" onclick="alert'("sukatam")" value="edit">
-				<input type="button" onclick="alert'("sukatam")" value="save">
-		</article>
+		<meta charset="UTF-8">
+		<meta name="author" content="Ramel Laigo">
+		<title>bwiSEATER EditClass</title>
+		<link rel="stylesheet" type="text/css" href="styles/styles1.css">
+	</head>
+	<body>
+		<header id="banner">
+			<input id="search" type="text" placeholder="SEARCH">
+			<input type="submit" value="Search">
+			<div id="template">
+				<img src="images/1.png" alt="profile">
+				<label>Instructors Name</label>
+				<img src="images/2.png" alt="settings">
+				<img src="images/3.png" alt="signout">
+			</div>
+		</header>
+		<nav id="navigate">
+			<ul>
+				<li><a href="">My Classes</a></li>
+				<li><a href="">Create Class</a></li>
+				<li><a href="">Attendance Checker</a></li>
+				<li><a href="">Attendance Summary</a></li>
+				<li><a href="">Student Record</a></li>
+			</ul>
+		</nav>
 
-		<article id="student">
-			<table border="1">
-				<input type="" value="search">
-				<caption>Student Registry</caption>
-				<tr>
-					<th>name</th>
-					<th># absences</th>
-					<th>cc status</th>
-				</tr>
-				<tr>
-					<td>Fina Tai</td>
-					<td>8</td>
-					<td>dropped</td>
-				</tr>
-			</table>
-				<input type="button" onclick="alert'("sukatam")" value="edit">
-				<input type="button" onclick="alert'("sukatam")" value="delete">
-				<input type="button" onclick="alert'("sukatam")" value="save">
+		<section>
+			<h1>Edit Class</h1>
+
+			<article id="classAttr">
+				<form class="class-form" action="">
+					<p id="classCodde">Class Code: 012F</p>
+					<p id="classDescription">Descriptive Title: Recess</p>
+					<p id="classDays">Days: MWF</p>
+					<p id="classTime">Time: 8:30 - 10:30</p>	
+					<input type="button" value="Edit">
+					<input type="button" value="Save">
+				</form>
+					
+			</article>
+
+			<article id="students">
+				<br>
+				<table id="studentTable" border="1">
+
+					<caption>Students</caption>
+					<tr>
+						<th>Student Number</th>
+						<th>Last Name</th>
+						<th>First Name</th>
+						<th>Number of Absences</th>
+						<th>Class Card Status</th>
+					</tr>
+					<tr>
+						<td>12345</td>
+						<td>Tai</td>
+						<td>Fina</td>
+						<td>8</td>
+						<td>Dropped</td>
+					</tr>
+					<tr>
+						<td>34556</td>
+						<td>Ngungot</td>
+						<td>Vina</td>
+						<td>5</td>
+						<td>Dropped</td>
+					</tr>
+
+				</table>
+					<input type="button" value="Edit">
+					<input type="button" value="Delete"><br>
+					<br>
+						<label for="studentnumber-input">Student Number:</label>
+						<input id="studentnumber-input" class="tbox" type="text" name="studentnumber"> 
+						<label for="lastname-input">Last Name:</label>
+						<input id="lastname-input" class="tbox" type="text" name="lastname"> 
+						<label for="firstname-input">First Name:</label>
+						<input id="firstname-input" class="tbox" type="text" name="firstname">
+						<button id="addstudent-btn" class="btn" value="">Add</button><br>
+					<br>
+					<input type="button" value="Save">
+					
+			</article>
 			
-		</article>
-		
-	</section>
-</body>
+		</section>
+		<footer>
+			&copy; 2015 Group#__. All rights reserved.
+		</footer>
+	</body>
 
 </html>
