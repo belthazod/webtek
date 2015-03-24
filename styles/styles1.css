@@ -85,5 +85,36 @@ body {
 	text-align: right;
 }
 
+#createClass h2 {
+	text-align: center;	
+}
+
+#createClass p {
+	text-indent: 50px;
+}
+
+.class-form {
+	border-style: dashed;
+	width: 700px;
+	margin: auto;
+}
+
+#input-desctitle {
+	width: 300px;
+}
+
+#div-addstudent {
+	text-align: center;
+
+}
+
+#student-selection {
+	width: 450px;
+}
+
+#myclass-ta {
+	width: 450px;
+}
+
 footer{
 }

@@ -32,132 +32,137 @@
 				<li><a href="">Student Record</a></li>
 			</ul>
 		</nav>
-		
-		<div id="createclass-div" class="container">
-			<div id="info-div" class="row">
-				<label>You are logged in as </label><a id="user-id" href="">Admin Test</a>
-			</div>
-			
-			
 
-			<div class="content-wrap">
-				<div class="page">
-					<h2 class="page-heading">Create Class</h2>
-					<p class="page-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus sit in natus, beatae modi vero aperiam provident labore asperiores, culpa alias corporis, accusantium quasi tempora non ut eveniet aut consequuntur.</p>
-					
-					<form class="class-form" action="">
-						<div class="column-4">
-							<label for="input-classcode">Class Code: </label>
-							<input required id="input-classcode" class="tbox" autofocus type="text" name="ClassCode">
-						</div>
-
-						<div class="column-8">
-							<label for="input-desctitle">Descriptive Title: </label>
-							<input required id="input-desctitle" class="tbox" autofocus type="text" name="DescTitle">
-						</div>
-						
-						<div class="column-12">
-							<label for="day-selection">Days:</label>
-							<select required id="day-selection" class="selector">
-							  <option value="">MWF</option>
-							  <option value="">TThS</option>
-							  <option value="">MTh</option>
-							  <option value="">TF</option>
-							  <option value="">WS</option>
-							</select>
-							<label for="timea-selection">Time:</label>
-								<select id="timea-selection" class="selector">
-								  <option value="7:30 AM">7:30 AM</option>
-								  <option value="8:00 AM">8:00 AM</option>
-								  <option value="8:30 AM">8:30 AM</option>
-								  <option value="9:00 AM">9:00 AM</option>
-								  <option value="9:30 AM">9:30 AM</option>
-								  <option value="10:00 A">10:00 AM</option>
-								  <option value="10:30 A">10:30 AM</option>
-								  <option value="11:00 A">11:00 AM</option>
-								  <option value="11:30 A">11:30 AM</option>
-								  <option value="12:00 P">12:00 PM</option>
-								  <option value="12:30 P">12:30 PM</option>
-								  <option value="1:00 PM">1:00 PM</option>
-								  <option value="1:30 PM">1:30 PM</option>
-								  <option value="2:00 PM">2:00 PM</option>
-								  <option value="2:30 PM">2:30 PM</option>
-								  <option value="3:00 PM">3:00 PM</option>
-								  <option value="3:30 PM">3:30 PM</option>
-								  <option value="4:00 PM">4:00 PM</option>
-								  <option value="4:30 PM">4:30 PM</option>
-								  <option value="5:00 PM">5:00 PM</option>
-								  <option value="5:30 PM">5:30 PM</option>
-								  <option value="6:00 PM">6:00 PM</option>
-								  <option value="6:30 PM">6:30 PM</option>
-								  <option value="7:00 PM">7:00 PM</option>
-								  <option value="7:30 PM">7:30 PM</option>
-								</select>
-								-
-								<select id="timeb-selection selector">
-								  <option value="8:30 AM">8:30 AM</option>
-								  <option value="9:00 AM">9:00 AM</option>
-								  <option value="9:30 AM">9:30 AM</option>
-								  <option value="10:00 A">10:00 AM</option>
-								  <option value="10:30 A">10:30 AM</option>
-								  <option value="11:00 A">11:00 AM</option>
-								  <option value="11:30 A">11:30 AM</option>
-								  <option value="12:00 P">12:00 PM</option>
-								  <option value="12:30 P">12:30 PM</option>
-								  <option value="1:00 PM">1:00 PM</option>
-								  <option value="1:30 PM">1:30 PM</option>
-								  <option value="2:00 PM">2:00 PM</option>
-								  <option value="2:30 PM">2:30 PM</option>
-								  <option value="3:00 PM">3:00 PM</option>
-								  <option value="3:30 PM">3:30 PM</option>
-								  <option value="4:00 PM">4:00 PM</option>
-								  <option value="4:30 PM">4:30 PM</option>
-								  <option value="5:00 PM">5:00 PM</option>
-								  <option value="5:30 PM">5:30 PM</option>
-								  <option value="6:00 PM">6:00 PM</option>
-								  <option value="6:30 PM">6:30 PM</option>
-								  <option value="7:00 PM">7:00 PM</option>
-								  <option value="7:30 PM">7:30 PM</option>
-								</select>
-							</div>
-							<br><input id="classform-btn" class="btn" type="submit" value="Next">
-						</form>
-					</div>
-
+		<main>
+			<div id="createclass-div" class="container">
+				<div id="info-div" class="row">
+					<label>You are logged in as </label><a id="user-id" href="">Admin Test</a>
+				</div>
+			<section id="createClass">
+				<div class="content-wrap">
 					<div class="page">
-						<h2 class="page-heading">Add Students</h2>
-
-						<div id="div-addstudent">
-							<label for="lastname-input">Lastname:</label>
-							<input id="lastname-input" class="tbox" type="text" name="lastname"> 
-							<label for="firstname-input">First name:</label>
-							<input id="firstname-input" class="tbox" type="text" name="firstname">
-							<button id="addstudent-btn" class="btn" value="">Add</button><br>	
-						</div>
+						<h2 class="page-heading">Create Class</h2>
+						<p class="page-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus sit in natus, beatae modi vero aperiam provident labore asperiores, culpa alias corporis, accusantium quasi tempora non ut eveniet aut consequuntur.</p>
 						
-						<h4 class="form-heading">Retrieve students from text file</h4>
-						
-						<div id="div-addtextfile">
-							<input id="addtextfile-btn" class="btn" type="file" value="Browse"><br>
-						</div>
+						<form class="class-form" action="">
+							<div class="column-4">
+								<label for="input-classcode">Class Code: </label>
+								<input required id="input-classcode" class="tbox" autofocus type="text" name="ClassCode">
+							</div>
 
-						<div id="div-studentselection">
-							<div class="row-inside">
-								<h4 class="form-heading">List of existing students</h4>
-								<select id="student-selection" class="selector" name="sometext" size="8">
+							<div class="column-8">
+								<label for="input-desctitle">Descriptive Title: </label>
+								<input required id="input-desctitle" class="tbox" autofocus type="text" name="DescTitle">
+							</div>
+							
+							<div class="column-12">
+								<label for="day-selection">Days:</label>
+								<select required id="day-selection" class="selector">
+								  <option value="">MWF</option>
+								  <option value="">TThS</option>
+								  <option value="">MTh</option>
+								  <option value="">TF</option>
+								  <option value="">WS</option>
 								</select>
-								<br><button id="addselected-btn" class="btn" value="">Add selected</button>	
+								<label for="timea-selection">Time:</label>
+									<select id="timea-selection" class="selector">
+									  <option value="7:30 AM">7:30 AM</option>
+									  <option value="8:00 AM">8:00 AM</option>
+									  <option value="8:30 AM">8:30 AM</option>
+									  <option value="9:00 AM">9:00 AM</option>
+									  <option value="9:30 AM">9:30 AM</option>
+									  <option value="10:00 A">10:00 AM</option>
+									  <option value="10:30 A">10:30 AM</option>
+									  <option value="11:00 A">11:00 AM</option>
+									  <option value="11:30 A">11:30 AM</option>
+									  <option value="12:00 P">12:00 PM</option>
+									  <option value="12:30 P">12:30 PM</option>
+									  <option value="1:00 PM">1:00 PM</option>
+									  <option value="1:30 PM">1:30 PM</option>
+									  <option value="2:00 PM">2:00 PM</option>
+									  <option value="2:30 PM">2:30 PM</option>
+									  <option value="3:00 PM">3:00 PM</option>
+									  <option value="3:30 PM">3:30 PM</option>
+									  <option value="4:00 PM">4:00 PM</option>
+									  <option value="4:30 PM">4:30 PM</option>
+									  <option value="5:00 PM">5:00 PM</option>
+									  <option value="5:30 PM">5:30 PM</option>
+									  <option value="6:00 PM">6:00 PM</option>
+									  <option value="6:30 PM">6:30 PM</option>
+									  <option value="7:00 PM">7:00 PM</option>
+									  <option value="7:30 PM">7:30 PM</option>
+									</select>
+									-
+									<select id="timeb-selection selector">
+									  <option value="8:30 AM">8:30 AM</option>
+									  <option value="9:00 AM">9:00 AM</option>
+									  <option value="9:30 AM">9:30 AM</option>
+									  <option value="10:00 A">10:00 AM</option>
+									  <option value="10:30 A">10:30 AM</option>
+									  <option value="11:00 A">11:00 AM</option>
+									  <option value="11:30 A">11:30 AM</option>
+									  <option value="12:00 P">12:00 PM</option>
+									  <option value="12:30 P">12:30 PM</option>
+									  <option value="1:00 PM">1:00 PM</option>
+									  <option value="1:30 PM">1:30 PM</option>
+									  <option value="2:00 PM">2:00 PM</option>
+									  <option value="2:30 PM">2:30 PM</option>
+									  <option value="3:00 PM">3:00 PM</option>
+									  <option value="3:30 PM">3:30 PM</option>
+									  <option value="4:00 PM">4:00 PM</option>
+									  <option value="4:30 PM">4:30 PM</option>
+									  <option value="5:00 PM">5:00 PM</option>
+									  <option value="5:30 PM">5:30 PM</option>
+									  <option value="6:00 PM">6:00 PM</option>
+									  <option value="6:30 PM">6:30 PM</option>
+									  <option value="7:00 PM">7:00 PM</option>
+									  <option value="7:30 PM">7:30 PM</option>
+									</select>
+								</div>
+								<br><input id="classform-btn" class="btn" type="submit" value="Next">
+							</form>
+						</div>
+			
+						<div class="page">
+							<h2 class="page-heading">Add Students</h2>
+
+							<div id="div-addstudent">
+								<label for="lastname-input">Lastname:</label>
+								<input id="lastname-input" class="tbox" type="text" name="lastname"> 
+								<label for="firstname-input">First name:</label>
+								<input id="firstname-input" class="tbox" type="text" name="firstname">
+								<button id="addstudent-btn" class="btn" value="">Add</button><br>	
+							</div>
+							
+							<h4 class="form-heading">Retrieve students from text file</h4>
+							
+							<div id="div-addtextfile">
+								<input id="addtextfile-btn" class="btn" type="file" value="Browse"><br>
 							</div>
 
-							<div class="row-inside">
-								<h4 class="form-heading">Students in your class</h4>
-								<textarea id="myclass-ta" class="tarea" disabled rows="5" cols="30" placeholder="Your class is lonely. Add students to be happy."></textarea>
+							<div id="div-studentselection">
+								<div class="row-inside">
+									<h4 class="form-heading">List of existing students</h4>
+									<select id="student-selection" class="selector" name="sometext" size="15">
+									</select>
+									<br><button id="addselected-btn" class="btn" value="">Add selected</button>	
+								</div>
+
+								<div class="row-inside">
+									<h4 class="form-heading">Students in your class</h4>
+									<textarea id="myclass-ta" class="tarea" disabled rows="5" cols="30" placeholder="Your class is lonely. Add students to be happy."></textarea>
+								</div>
 							</div>
-						</div>
-					</div>				
+						</div>				
+				</div>
+			</section>
 			</div>
-		</div>
-		<script type="text/javascript" src="scripts/create-class.js"></script>
+			<script type="text/javascript" src="scripts/create-class.js"></script>
+		</main>
+		
+		<footer>
+			&copy; 2015 Group#__. All rights reserved.
+		</footer>
 	</body>
 
 </html>
