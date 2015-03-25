@@ -43,7 +43,8 @@ body {
 	color: #00E6B8;
 }
 
-#content {
+#content li{
+	list-style: none;
 }
 
 #sort {
@@ -94,7 +95,6 @@ body {
 }
 
 .class-form {
-	border-style: dashed;
 	width: 700px;
 	margin: auto;
 }
