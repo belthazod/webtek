@@ -2,7 +2,6 @@
 <html>
 <head>
 		<meta charset="UTF-8">
-		<meta name="author" content="Ramel Laigo">
 		<title>bwiSEATER EditClass</title>
 		<link rel="stylesheet" type="text/css" href="styles/styles1.css">
 	</head>
@@ -36,8 +35,7 @@
 					<p id="classDescription">Descriptive Title: Recess</p>
 					<p id="classDays">Days: MWF</p>
 					<p id="classTime">Time: 8:30 - 10:30</p>	
-					<input type="button" value="Edit">
-					<input type="button" value="Save">
+					<button id="editbtn1" value="">Edit</button>
 				</form>
 					
 			</article>
@@ -48,21 +46,18 @@
 
 					<caption>Students</caption>
 					<tr>
-						<th>Student Number</th>
 						<th>Last Name</th>
 						<th>First Name</th>
 						<th>Number of Absences</th>
 						<th>Class Card Status</th>
 					</tr>
 					<tr>
-						<td>12345</td>
 						<td>Tai</td>
 						<td>Fina</td>
 						<td>8</td>
 						<td>Dropped</td>
 					</tr>
 					<tr>
-						<td>34556</td>
 						<td>Ngungot</td>
 						<td>Vina</td>
 						<td>5</td>
@@ -70,18 +65,16 @@
 					</tr>
 
 				</table>
-					<input type="button" value="Edit">
-					<input type="button" value="Delete"><br>
+					<button id="editbtn2" value="">Edit</button>
+					<button id="deletebtn" value="">Delete</button><br>
 					<br>
-						<label for="studentnumber-input">Student Number:</label>
-						<input id="studentnumber-input" class="tbox" type="text" name="studentnumber"> 
 						<label for="lastname-input">Last Name:</label>
 						<input id="lastname-input" class="tbox" type="text" name="lastname"> 
 						<label for="firstname-input">First Name:</label>
 						<input id="firstname-input" class="tbox" type="text" name="firstname">
-						<button id="addstudent-btn" class="btn" value="">Add</button><br>
+						<button id="addbtn" class="btn" value="">Add</button><br>
 					<br>
-					<input type="button" value="Save">
+					<button id="savebtn" value="">Save</button>
 					
 			</article>
 			
@@ -91,5 +84,36 @@
 			<br>All rights reserved.
 		</footer>
 	</body>
+	
+	<script type="text/javascript">
 
+			var editbtn1 = document.getElementById("editbtn1").addEventListener("click", editClass);
+			var editbtn2 = document.getElementById("editbtn2").addEventListener("click", editStudents);
+			var deletebtn = document.getElementById("deletebtn").addEventListener("click", deleteStudents);
+			var addbtn = document.getElementById("addbtn").addEventListener("click", addStudents);
+			var savebtn = document.getElementById("savebtn").addEventListener("click", saveEdit);
+
+			var studentTable = document.getElementById("studentTable");
+
+
+			function editClass() {
+
+			}
+
+			function editStudents() {
+
+
+			}
+
+			function addStudent() {
+
+
+			}
+
+			function deleteStudents() {
+
+
+			}
+
+	</script>
 </html>
