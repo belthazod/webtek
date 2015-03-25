@@ -40,7 +40,7 @@ body {
 }
 
 #navigate ul li a:hover{
-	color: lime;
+	color: #00E6B8;
 }
 
 #content {
@@ -116,5 +116,12 @@ body {
 	width: 450px;
 }
 
-footer{
+footer {
+
+	background-color: #949494;
+	clear: both;
+	text-align: center;
+	line-height: 20px;
+	position: relative;
+		 
 }
