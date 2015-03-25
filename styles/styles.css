@@ -57,3 +57,38 @@ a {
 #register {
 	width: 180px;
 }
+@media only screen and (max-width: 460px) {
+	body {
+		width: 95%;
+	}
+	#container {
+		width: 70%;
+	}
+	#container h1{
+		width: 60%;
+	}
+	label {
+		width: 70%;
+	}
+	#firstname {
+		width: 60%;
+	}
+	#lastname {
+		width: 60%;
+	}
+	#username {
+		width: 60%;
+	}
+	#email {
+		width: 60%;
+	}
+	#password {
+		width: 60%;
+	}
+	#login {
+		width: 70%;
+	}
+	#register {
+		width: 70%;
+	}
+}
