@@ -1,19 +1,20 @@
-function universityClass(classcode, room, sched, numOfStud, username, students){
+function universityClass( classcode, room, sched, numOfStud, username, students){
 	this.classcode = classcode;
 	this.room = room;
 	this.sched = sched;
 	this.numOfStud = numOfStud;
 	this.username = username;
 	this.students = students;
-
 }
 
-function Student(stud_id, last_name, first_name, studstatus, classcode, username){
+function Student(stud_id, last_name, first_name, middle_initial, x_coordinate, y_coordinate, studstatus, username){
 	this.stud_id = stud_id;
 	this.last_name = last_name;
 	this.first_name = first_name;
+	this.middle_inital = middle_initial;
+	this.x_coordinate = x_coordinate;
+	this.y_coordinate = y_coordinate;
 	this.studstatus = studstatus;
-	this.classcode = classcode;
 	this.username = username;
 }
 
