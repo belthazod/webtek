@@ -16,12 +16,13 @@ var myclass = {
 	endTime:null, 
 	students:null
 };
-var studens = [];
+var students = [];
+var selector = document.getElementById("student-selection");
 
 //populates student-selection element
 function initializeStudentSelector() {
-	var selector = document.getElementById("student-selection");
 	var eStudents = getExistingStudents();
+
 	for(var i in eStudents) {
 		var opt = document.createElement("option");
 		opt.value = i;
@@ -31,10 +32,78 @@ function initializeStudentSelector() {
 	}
 
 	var addSelected = document.getElementById("addselected-btn");
-	addSelected.addEventListener('click', function(){addSelectedEvent()});
-	function addSelectedEvent() {
-		alert(eStudents(selector.selectedIndex));
+	addSelected.addEventListener('click', function(){
+		createStudent(selector, eStudents);
+	});
+
+
+}
+function initializeManAdding() {
+	var name1 = document.createElement("lastname-input");
+	var name2 = document.createElement("firstname-input");
+	var addBtn = document.createElement("addstudent-btn");
+	addBtn.addEventListener('click', function(){
+		
+	});
+}
+
+function createStudent(selector, eStudents) {
+	var studentExists = checkExistence(eStudents[selector.selectedIndex]);
+	var prompt = document.getElementById("prompt-selection");
+	if(studentExists) {
+		prompt.innerHTML = eStudents[selector.selectedIndex]+"is already in your class";
 	}
+	if(selector.selectedIndex != -1 && !studentExists) {
+		prompt.innerHTML = "";
+		var studAnchor = document.createElement("a");
+		studAnchor.id = eStudents[selector.selectedIndex]
+		studAnchor.addEventListener('click', function(){ 
+			removeStudent(studAnchor.id);
+		});
+		studAnchor.appendChild(document.createTextNode(eStudents[selector.selectedIndex]+" |x")); 
+		students.push(eStudents[selector.selectedIndex]);
+		addStudent(studAnchor);
+	}	
+}
+function addStudent(studAnchor) {
+	var status = document.getElementById("status");
+	status.innerHTML = "";
+	var list = document.getElementById("classlist");
+	var li = document.createElement("li");
+	li.appendChild(studAnchor);
+	li.className = "studentLI";
+	li.id = studAnchor.id+"li";
+	list.appendChild(li);
+}
+function removeStudent(stud) {
+	var list = document.getElementById("classlist");
+	var li = document.getElementById(stud+"li");
+	var p = document.getElementById("status");
+	li.parentNode.removeChild(li);
+	for (var i in students) {
+		if(students[i] == stud) {
+			students.splice(i, 1);
+		}
+	}
+
+	if(students.length == 0) {
+		p.innerHTML = "Your class is lonely. Add students to be happy!";
+	}
+}
+function checkExistence(stud) {
+	var isExists = false;
+	if (students != null) {
+		for (var i in students) {
+			if (stud == students[i]) {
+				isExists = true;
+			}
+		}
+		if(!isExists) {
+			return false;
+		};
+		return true;
+	}
+	return false; 
 }
 
 //retrieves eStudents from localstorage
@@ -50,7 +119,7 @@ function emptyStudents() {
 //adds test data to localstorage 'eStudents'
 function addTestData() {
 	var eStudents = getExistingStudents();
-	var testStudents = ['Burayag, Jolas G.'];
+	var testStudents = ['Burayag, Jolas G.', 'New, Student F.'];
 	var trigger = false;
 	if (eStudents != null) {
 		for (var i in testStudents) {
@@ -87,6 +156,10 @@ function main() {
 	addTestData();
 	//printLocal();
 	initializeStudentSelector()	
+}
+
+function saveClass() {
+
 }
 
 main();
