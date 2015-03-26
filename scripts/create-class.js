@@ -2,7 +2,8 @@
 *On localStorage
 *	eStudents = array of existing students
 *To be stored
-*	
+*	myclass object
+*	students[]
 */
 
 //Class Object
@@ -27,7 +28,9 @@ function initializeStudentSelector() {
 		var opt = document.createElement("option");
 		opt.value = i;
 		opt.text = eStudents[i];
-
+		opt.addEventListener('dblclick', function(){
+			createStudent(selector, eStudents);
+		});
 		selector.add(opt);
 	}
 
@@ -35,15 +38,15 @@ function initializeStudentSelector() {
 	addSelected.addEventListener('click', function(){
 		createStudent(selector, eStudents);
 	});
-
-
 }
 function initializeManAdding() {
-	var name1 = document.createElement("lastname-input");
-	var name2 = document.createElement("firstname-input");
-	var addBtn = document.createElement("addstudent-btn");
+	console.log('initialized');
+	var name1 = document.getElementById("lastname-input");
+	var name2 = document.getElementById("firstname-input");
+	var addBtn = document.getElementById("addstudent-btn");
+
 	addBtn.addEventListener('click', function(){
-		
+		alert('you clicked it!');
 	});
 }
 
@@ -119,7 +122,22 @@ function emptyStudents() {
 //adds test data to localstorage 'eStudents'
 function addTestData() {
 	var eStudents = getExistingStudents();
-	var testStudents = ['Burayag, Jolas G.', 'New, Student F.'];
+	var testStudents = [
+		'Burayag, Jolas G.',
+		'New, Student A.', 
+		'New, Student B', 
+		'New, Student C.', 
+		'New, Student D.', 
+		'New, Student E.', 
+		'New, Student F.',
+		'New, Student G.',
+		'New, Student H.',
+		'New, Student I.',
+		'New, Student J.',
+		'New, Student K.',
+		'New, Student L.',
+		'New, Student M.'
+	];
 	var trigger = false;
 	if (eStudents != null) {
 		for (var i in testStudents) {
@@ -155,7 +173,8 @@ function main() {
 	emptyStudents();
 	addTestData();
 	//printLocal();
-	initializeStudentSelector()	
+	initializeStudentSelector();
+	initializeManAdding();
 }
 
 function saveClass() {

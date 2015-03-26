@@ -1,0 +1,19 @@
+.studentLI {
+	display: inline-table;
+	margin-right: 3px;
+}
+.studentLI a {
+	margin-bottom: 10px;
+	padding: 5px;
+	text-decoration: none;
+	border-radius: 3px;
+	background-color: gray;
+	color: white;
+}
+.studentlist-container {
+	width: 75%;
+}
+.studentLI a:hover {
+	background-color: orange;
+	cursor: pointer;
+}
