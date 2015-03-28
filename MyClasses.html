@@ -26,70 +26,55 @@
 		</nav>
 
 		<main id="content">
-			<section id="lecture">
-				<h1>Lecture Class</h1>
-				<article>
-					<ul>
-					<li> 
-						<a href="attendanceChecker.html">
+			<h1>Lecture Class</h1>
+				<select id="x" size="3">
+						<option value="1">
 							Programming Applications
-							<br>Lecture
-							<br>8:30-9:30 S423 TF
-						</a>
-					</li>
+							Lecture
+							8:30-9:30 S423 TF
+						</option>
 
-					<li>
-						<a href="attendanceChecker.html">
+						<option value="2">
 							Database Management System
-							<br>Lecture
-							<br>9:30-10:30 S423 WS
-						</a>
-					</li>
+							Lecture
+							9:30-10:30 S423 WS
+						</option>
 
-					<li>
-						<a href="attendanceChecker.html">
+						<option value="3">
 							Webtek
-							<br>Lecture
-							<br>1:00-2:00 S423 WS
-						</a>
-					</li>
-				</ul>
-				</article>
-			</section>
-			<section id="laboratory">
-				<h1>Laboratory Classes</h1>
-				<article>
-					<ul>
-						<li>
-							<a href="attendanceChecker.html">
+							Lecture
+							1:00-2:00 S423 WS
+						</option>
+					
+				
+			</select>
+
+			<h1>Laboratory Classes</h1>
+				<select id="x"  size="3">
+
+							<option value="4">
 								Programming Applications
-								<br>Laboratory
-								<br>9:00-10:30 S326 MTH
-							</a>
-						</li>
+								Laboratory
+								9:00-10:30 S326 MTH
+							</option>
 
-						<li>
-							<a href="attendanceChecker.html">
+							<option value="5">
 								Database Management System
-								<br>Laboratory
-								<br>10:30-12:00 S326 WS
-							</a>
-						</li>
-
-						<li>
-							<a href="attendanceChecker.html">
+								Laboratory
+								10:30-12:00 S326 WS
+							</option>
+							
+							<option value="6">
 								Webtek
-								<br>Laboratory
-								<br>4:00-5:300 S326 WS
-							</a>
-						</li>		
-					</ul>
-				</article>
-			</section>
+								Laboratory
+								4:00-5:300 S326 WS
+							</option>
+				
+			</select>
 
 			<div id="delEdit">
 
-				<button>Delete Class</button>
+				<button id="delBtn">Delete Class</button>
 				<button><a href="EditClass.html">Edit Class</a></button>
 
 			</div>
@@ -98,7 +83,31 @@
 		
 		<footer>
 			&copy; 2015 Group #7
-			<br> All rights reserved.
+			 All rights reserved.
 		</footer>
 	</body>
+	<script type="text/javascript">
+	//	var delBtn = document.getElementById("delBtn");
+	//	delBtn.addEventlistener('click', function(){delBtnEvent()});
+	//	function delBtnEvent(){
+	//		for (var i = 0; i < delBtn.options.length; i++) {
+	//		    if (delBtn.options[i].selected) {
+	//		        delBtn.options[i].remove();
+	//		    }
+
+	//	}
+
+		var button=document.getElementsByTagName("button")[0],
+		select=document.getElementsByTagName("select")[0];
+		button.onclick=function(){
+		select.removeChild(select.options[select.selectedIndex]);
+		};
+
+		var editBtn = document.getElementById("editBtn");
+		editBtn.addEventlistener('click', function(){editBtnEvent()});
+		function editBtnEvent(){
+
+		}
+
+	</script>
 </html>
