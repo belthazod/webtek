@@ -107,13 +107,14 @@
 						<h2 class="page-heading">Add Students</h2>
 
 						<div id="div-addstudent">
-							<label for="lastname-input">Lastname:</label>
-							<input id="lastname-input" class="tbox" type="text" name="lastname"> 
-							<label for="firstname-input">First name:</label>
-							<input id="firstname-input" class="tbox" type="text" name="firstname">
-							<label for="midinitial-input">Middle initial:</label>
-							<input id="midinitial-input" class="tbox" maxlength="1" size="1" type="text" name="midinitial">
-							<button id="addstudent-btn" class="btn" value="">Add</button><br>	
+							<form id="student-form">
+								<input id="lastname-input" class="tbox" type="text" placeholder="Last Name" name="lastname" required> 
+								
+								<input id="firstname-input" class="tbox" type="text" placeholder="First Name" name="firstname" required>
+								
+								<input id="midinitial-input" class="tbox" maxlength="1" size="1" type="text" placeholder="MI" name="midinitial" required>
+								<input id="student-btn" class="btn" type="submit" value="Add">
+							</form>
 						</div>
 						
 						<h4 class="form-heading">Retrieve students from text file</h4>

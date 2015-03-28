@@ -43,10 +43,12 @@ function initializeManAdding() {
 	console.log('initialized');
 	var name1 = document.getElementById("lastname-input");
 	var name2 = document.getElementById("firstname-input");
+	var name3 = document.getElementById("midInitial-input");
 	var addBtn = document.getElementById("addstudent-btn");
 
 	addBtn.addEventListener('click', function(){
-		alert('you clicked it!');
+		var stud = name1.value + ", "+name2.value+" "+name3.value+".";
+		console.log(stud);
 	});
 }
 
@@ -55,18 +57,20 @@ function createStudent(selector, eStudents) {
 	var prompt = document.getElementById("prompt-selection");
 	if(studentExists) {
 		prompt.innerHTML = eStudents[selector.selectedIndex]+"is already in your class";
+	} else {
+		if(selector.selectedIndex != -1 && !studentExists) {
+			prompt.innerHTML = "";
+			var studAnchor = document.createElement("a");
+			studAnchor.id = eStudents[selector.selectedIndex]
+			studAnchor.addEventListener('click', function(){ 
+				removeStudent(studAnchor.id);
+			});
+			studAnchor.appendChild(document.createTextNode(eStudents[selector.selectedIndex]+" |x")); 
+			students.push(eStudents[selector.selectedIndex]);
+			addStudent(studAnchor);
+		}	
 	}
-	if(selector.selectedIndex != -1 && !studentExists) {
-		prompt.innerHTML = "";
-		var studAnchor = document.createElement("a");
-		studAnchor.id = eStudents[selector.selectedIndex]
-		studAnchor.addEventListener('click', function(){ 
-			removeStudent(studAnchor.id);
-		});
-		studAnchor.appendChild(document.createTextNode(eStudents[selector.selectedIndex]+" |x")); 
-		students.push(eStudents[selector.selectedIndex]);
-		addStudent(studAnchor);
-	}	
+		
 }
 function addStudent(studAnchor) {
 	var status = document.getElementById("status");
@@ -125,18 +129,18 @@ function addTestData() {
 	var testStudents = [
 		'Burayag, Jolas G.',
 		'New, Student A.', 
-		'New, Student B', 
-		'New, Student C.', 
-		'New, Student D.', 
-		'New, Student E.', 
-		'New, Student F.',
-		'New, Student G.',
-		'New, Student H.',
-		'New, Student I.',
-		'New, Student J.',
-		'New, Student K.',
-		'New, Student L.',
-		'New, Student M.'
+		// 'New, Student B', 
+		// 'New, Student C.', 
+		// 'New, Student D.', 
+		// 'New, Student E.', 
+		// 'New, Student F.',
+		// 'New, Student G.',
+		// 'New, Student H.',
+		// 'New, Student I.',
+		// 'New, Student J.',
+		// 'New, Student K.',
+		// 'New, Student L.',
+		// 'New, Student M.'
 	];
 	var trigger = false;
 	if (eStudents != null) {
