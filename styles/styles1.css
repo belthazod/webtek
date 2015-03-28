@@ -64,6 +64,21 @@ a:hover {
 	color: #00FF99;
 }
 
+#table {
+	width: 100%;
+}
+th {
+	width: 100px;
+	height: 50px;
+}
+td {
+	vertical-align: center;
+}
+
+table, th, td {
+	border: 1px solid #94B8B8;
+}
+
 #content li{
 	list-style: none;
 }
