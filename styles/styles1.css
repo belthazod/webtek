@@ -12,6 +12,26 @@ body {
 	margin: auto;
 	font-family: Helvetica;
 	font-size: 15px;
+	background-image: url("../images/bgimg.jpg");
+	background-repeat: no-repeat;
+	background-position: fixed;
+	background-size: 102%;
+}
+
+header {
+	background-color: #00FF99;
+	color: #000000;
+}
+a:link {
+	color: #000000;
+	text-decoration: none;
+}
+a:visited {
+	color: #000000;
+	text-decoration: none;
+}
+a:hover {
+	color: #00FF99;	
 }
 
 #banner {
@@ -30,6 +50,7 @@ body {
 }
 
 #navigate {
+	background-color: #94B8B8;
 }
 
 #navigate ul li {
@@ -40,7 +61,22 @@ body {
 }
 
 #navigate ul li a:hover{
-	color: #00E6B8;
+	color: #00FF99;
+}
+
+#table {
+	width: 100%;
+}
+th {
+	width: 100px;
+	height: 50px;
+}
+td {
+	vertical-align: center;
+}
+
+table, th, td {
+	border: 1px solid #94B8B8;
 }
 
 #content li{
@@ -49,7 +85,7 @@ body {
 
 #sort {
 	text-align: right;
-	margin-right: 70px
+	margin-right: 70px;
 }
 
 #update {
@@ -117,11 +153,85 @@ body {
 }
 
 footer {
-
-	background-color: #949494;
+	background-color: #94B8B8;
 	clear: both;
 	text-align: center;
 	line-height: 20px;
-	position: relative;
-		 
+	position: relative;		 
+}
+
+@media only screen and (max-width: 992px) {
+	body {
+		width: 95%;
+	}
+
+	#banner img {
+		width: 12%;
+	}
+
+	#search {
+		width: 60%;
+	}
+
+	#navigate ul li {
+		width: 20%;
+	}
+
+	#sort {
+		width: 95%;
+	}
+
+	#update {
+		width: 95%;
+	}
+
+	#studrec {
+		width: 50%;
+	}
+
+	#classes {
+		display: inline;
+		list-style: none;
+	}
+
+	#lecture {
+		width: 100%;
+	}
+
+	#laboratory {
+		width: 100%;
+	}
+
+	#delEdit {
+	}
+/*continue*/
+	#createClass h2 {
+		text-align: center;	
+	}
+
+	#createClass p {
+		text-indent: 50px;
+	}
+
+	.class-form {
+		width: 700px;
+		margin: auto;
+	}
+
+	#input-desctitle {
+		width: 300px;
+	}
+
+	#div-addstudent {
+		text-align: center;
+
+	}
+
+	#student-selection {
+		width: 450px;
+	}
+
+	#myclass-ta {
+		width: 450px;
+	}
 }

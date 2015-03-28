@@ -57,7 +57,80 @@ a {
 #register {
 	width: 180px;
 }
-@media only screen and (max-width: 460px) {
+/*media querry for desktop*/
+@media only screen and (max-width: 992px) {
+	body {
+		width: 95%;
+	}
+	#container {
+		width: 70%;
+	}
+	#container h1{
+		width: 60%;
+	}
+	label {
+		width: 70%;
+	}
+	#firstname {
+		width: 60%;
+	}
+	#lastname {
+		width: 60%;
+	}
+	#username {
+		width: 60%;
+	}
+	#email {
+		width: 60%;
+	}
+	#password {
+		width: 60%;
+	}
+	#login {
+		width: 70%;
+	}
+	#register {
+		width: 70%;
+	}
+}
+/*media querry for phone*/
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+	body {
+		width: 95%;
+	}
+	#container {
+		width: 70%;
+	}
+	#container h1{
+		width: 60%;
+	}
+	label {
+		width: 70%;
+	}
+	#firstname {
+		width: 60%;
+	}
+	#lastname {
+		width: 60%;
+	}
+	#username {
+		width: 60%;
+	}
+	#email {
+		width: 60%;
+	}
+	#password {
+		width: 60%;
+	}
+	#login {
+		width: 70%;
+	}
+	#register {
+		width: 70%;
+	}
+}
+/*media querry for tablet*/
+@media only screen and (min-device-width: 600px) and (max-device-width: 1024px) {
 	body {
 		width: 95%;
 	}
