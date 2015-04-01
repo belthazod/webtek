@@ -122,36 +122,6 @@ table, th, td {
 	text-align: right;
 }
 
-#createClass h2 {
-	text-align: center;	
-}
-
-#createClass p {
-	text-indent: 50px;
-}
-
-.class-form {
-	width: 700px;
-	margin: auto;
-}
-
-#input-desctitle {
-	width: 300px;
-}
-
-#div-addstudent {
-	text-align: center;
-
-}
-
-#student-selection {
-	width: 450px;
-}
-
-#myclass-ta {
-	width: 450px;
-}
-
 footer {
 	background-color: #94B8B8;
 	clear: both;
@@ -159,14 +129,14 @@ footer {
 	line-height: 20px;
 	position: relative;		 
 }
-
+/*media querry for desktop*/
 @media only screen and (max-width: 992px) {
 	body {
 		width: 95%;
 	}
 
 	#banner img {
-		width: 12%;
+		width: 5%;
 	}
 
 	#search {
@@ -186,7 +156,7 @@ footer {
 	}
 
 	#studrec {
-		width: 50%;
+		width: 90%;
 	}
 
 	#classes {
@@ -204,34 +174,96 @@ footer {
 
 	#delEdit {
 	}
-/*continue*/
-	#createClass h2 {
-		text-align: center;	
+}
+/*media querry for phone*/
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+	body {
+		width: 95%;
 	}
 
-	#createClass p {
-		text-indent: 50px;
+	#banner img {
+		width: 5%;
 	}
 
-	.class-form {
-		width: 700px;
-		margin: auto;
+	#search {
+		width: 60%;
 	}
 
-	#input-desctitle {
-		width: 300px;
+	#navigate ul li {
+		width: 20%;
 	}
 
-	#div-addstudent {
-		text-align: center;
-
+	#sort {
+		width: 95%;
 	}
 
-	#student-selection {
-		width: 450px;
+	#update {
+		width: 95%;
 	}
 
-	#myclass-ta {
-		width: 450px;
+	#studrec {
+		width: 90%;
+	}
+
+	#classes {
+		display: inline;
+		list-style: none;
+	}
+
+	#lecture {
+		width: 100%;
+	}
+
+	#laboratory {
+		width: 100%;
+	}
+
+	#delEdit {
+	}
+}
+/*media querry for tablet*/
+@media only screen and (min-device-width: 600px) and (max-device-width: 1024px) {
+	body {
+		width: 95%;
+	}
+
+	#banner img {
+		width: 5%;
+	}
+
+	#search {
+		width: 60%;
+	}
+
+	#navigate ul li {
+		width: 20%;
+	}
+
+	#sort {
+		width: 95%;
+	}
+
+	#update {
+		width: 95%;
+	}
+
+	#studrec {
+		width: 90%;
+	}
+
+	#classes {
+		display: inline;
+		list-style: none;
+	}
+
+	#lecture {
+		width: 100%;
+	}
+
+	#laboratory {
+		width: 100%;
+	}
+
+	#delEdit {
 	}
 }
