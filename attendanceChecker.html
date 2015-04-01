@@ -42,6 +42,9 @@
 				display:inline-block;
 				margin-right:40px
 			}
+			#postCanvas{
+				margin-top:625px;
+			}
 		</style>
 	</head>
 	<body>
@@ -66,7 +69,7 @@
 			
 		</div>
 		<section id = "postCanvas">
-				<button>End Class</button>
+				<button onclick = endClass()>End Class</button>
 		</section>
 		
 		<footer>
@@ -78,105 +81,105 @@
 		//for sample getting of data from localStorage
 		var id = 0;
 		var students = [new Student( ++id,"last_name", 
-			"first_name", "middle_initial", "15", "15" ,"enrolled", "belthazod"), 
+			"first_name", "middle_initial", "15", "15" ,"enrolled", "belthazod",  []), 
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "105", "15" ,"enrolled", "belthazod"),
+			"first_name", "middle_initial", "105", "15" ,"enrolled", "belthazod",  []),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "195", "15" ,"enrolled", "belthazod"),
+			"first_name", "middle_initial", "195", "15" ,"enrolled", "belthazod",  []),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "285", "15" ,"enrolled", "belthazod"),
+			"first_name", "middle_initial", "285", "15" ,"enrolled", "belthazod",  []),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "375", "15" ,"enrolled", "belthazod"),
+			"first_name", "middle_initial", "375", "15" ,"enrolled", "belthazod",  []),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "15", "95" ,"enrolled", "belthazod"),
+			"first_name", "middle_initial", "15", "95" ,"enrolled", "belthazod",  []),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "105", "95" ,"enrolled", "belthazod"),
+			"first_name", "middle_initial", "105", "95" ,"enrolled", "belthazod",  []),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "195", "95" ,"enrolled", "belthazod"),
+			"first_name", "middle_initial", "195", "95" ,"enrolled", "belthazod",  []),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "285", "95" ,"enrolled", "belthazod"),
+			"first_name", "middle_initial", "285", "95" ,"enrolled", "belthazod",  []),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "375", "95" ,"enrolled", "belthazod"),
+			"first_name", "middle_initial", "375", "95" ,"enrolled", "belthazod",  []),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "15", "175" ,"enrolled", "belthazod"),
+			"first_name", "middle_initial", "15", "175" ,"enrolled", "belthazod",  []),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "105", "175" ,"enrolled", "belthazod"),
+			"first_name", "middle_initial", "105", "175" ,"enrolled", "belthazod",  []),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "195", "175" ,"enrolled", "belthazod"),
+			"first_name", "middle_initial", "195", "175" ,"enrolled", "belthazod",  []),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "285", "175" ,"enrolled", "belthazod"),
+			"first_name", "middle_initial", "285", "175" ,"enrolled", "belthazod",  []),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "375", "175" ,"enrolled", "belthazod"),
+			"first_name", "middle_initial", "375", "175" ,"enrolled", "belthazod",  []),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "15", "255" ,"enrolled", "belthazod"),
+			"first_name", "middle_initial", "15", "255" ,"enrolled", "belthazod",  []),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "105", "255" ,"enrolled", "belthazod"),
+			"first_name", "middle_initial", "105", "255" ,"enrolled", "belthazod",  []),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "195", "255" ,"enrolled", "belthazod"),
+			"first_name", "middle_initial", "195", "255" ,"enrolled", "belthazod",  []),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "285", "255" ,"enrolled", "belthazod"),
+			"first_name", "middle_initial", "285", "255" ,"enrolled", "belthazod",  []),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "375", "255" ,"enrolled", "belthazod"),
+			"first_name", "middle_initial", "375", "255" ,"enrolled", "belthazod",  []),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "15", "335" ,"enrolled", "belthazod"),
+			"first_name", "middle_initial", "15", "335" ,"enrolled", "belthazod",  []),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "105", "335" ,"enrolled", "belthazod"),
+			"first_name", "middle_initial", "105", "335" ,"enrolled", "belthazod",  []),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "195", "335" ,"enrolled", "belthazod"),
+			"first_name", "middle_initial", "195", "335" ,"enrolled", "belthazod",  []),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "285", "335" ,"enrolled", "belthazod"),
+			"first_name", "middle_initial", "285", "335" ,"enrolled", "belthazod",  []),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "375", "335" ,"enrolled", "belthazod"),
+			"first_name", "middle_initial", "375", "335" ,"enrolled", "belthazod",  []),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "910", "15" ,"enrolled", "belthazod"),
+			"first_name", "middle_initial", "910", "15" ,"enrolled", "belthazod",  []),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "820", "15" ,"enrolled", "belthazod"),
+			"first_name", "middle_initial", "820", "15" ,"enrolled", "belthazod",  []),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "730", "15" ,"enrolled", "belthazod"),
+			"first_name", "middle_initial", "730", "15" ,"enrolled", "belthazod",  []),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "640", "15" ,"enrolled", "belthazod"),
+			"first_name", "middle_initial", "640", "15" ,"enrolled", "belthazod",  []),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "550", "15" ,"enrolled", "belthazod"),
+			"first_name", "middle_initial", "550", "15" ,"enrolled", "belthazod",  []),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "910", "95" ,"enrolled", "belthazod"),
+			"first_name", "middle_initial", "910", "95" ,"enrolled", "belthazod",  []),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "820", "95" ,"enrolled", "belthazod"),
+			"first_name", "middle_initial", "820", "95" ,"enrolled", "belthazod",  []),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "730", "95" ,"enrolled", "belthazod"),
+			"first_name", "middle_initial", "730", "95" ,"enrolled", "belthazod",  []),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "640", "95" ,"enrolled", "belthazod"),
+			"first_name", "middle_initial", "640", "95" ,"enrolled", "belthazod",  []),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "550", "95" ,"enrolled", "belthazod"),
+			"first_name", "middle_initial", "550", "95" ,"enrolled", "belthazod",  []),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "910", "175" ,"enrolled", "belthazod"),
+			"first_name", "middle_initial", "910", "175" ,"enrolled", "belthazod",  []),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "820", "175" ,"enrolled", "belthazod"),
+			"first_name", "middle_initial", "820", "175" ,"enrolled", "belthazod",  []),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "730", "175" ,"enrolled", "belthazod"),
+			"first_name", "middle_initial", "730", "175" ,"enrolled", "belthazod",  []),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "640", "175" ,"enrolled", "belthazod"),
+			"first_name", "middle_initial", "640", "175" ,"enrolled", "belthazod",  []),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "550", "175" ,"enrolled", "belthazod"),
+			"first_name", "middle_initial", "550", "175" ,"enrolled", "belthazod",  []),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "910", "255" ,"enrolled", "belthazod"),
+			"first_name", "middle_initial", "910", "255" ,"enrolled", "belthazod",  []),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "820", "255" ,"enrolled", "belthazod"),
+			"first_name", "middle_initial", "820", "255" ,"enrolled", "belthazod",  []),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "730", "255" ,"enrolled", "belthazod"),
+			"first_name", "middle_initial", "730", "255" ,"enrolled", "belthazod",  []),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "640", "255" ,"enrolled", "belthazod"),
+			"first_name", "middle_initial", "640", "255" ,"enrolled", "belthazod",  []),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "550", "255" ,"enrolled", "belthazod"),
+			"first_name", "middle_initial", "550", "255" ,"enrolled", "belthazod",  []),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "910", "335" ,"enrolled", "belthazod"),
+			"first_name", "middle_initial", "910", "335" ,"enrolled", "belthazod",  []),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "820", "335" ,"enrolled", "belthazod"),
+			"first_name", "middle_initial", "820", "335" ,"enrolled", "belthazod",  []),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "730", "335" ,"enrolled", "belthazod"),
+			"first_name", "middle_initial", "730", "335" ,"enrolled", "belthazod",  []),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "640", "335" ,"enrolled", "belthazod"),
+			"first_name", "middle_initial", "640", "335" ,"enrolled", "belthazod",  []),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "550", "335" ,"enrolled", "belthazod"),];
+			"first_name", "middle_initial", "550", "335" ,"enrolled", "belthazod",  []),];
 			
 		var x = new universityClass(7006, "s421", "8:30-9:30", 50, "belthazod", students);
 		
@@ -255,6 +258,7 @@
 				div.className="student unselectable";
 				div.setAttribute("onclick", "changeState("+seatCount+")");
 				div.innerHTML = "student";
+				div.title =  p.students[i].stud_id;
 				main.appendChild(div);
 			
 				ctx.fillStyle = "#FF0000";
@@ -270,6 +274,27 @@
 				selectedStudent.className = "student late unselectable";
 			}else{
 				selectedStudent.className = "student unselectable";
+			}
+		}
+		
+		function endClass(){
+			var main = document.getElementById('main');
+			
+			var absentStudents = main.getElementsByClassName('absent');
+			alert(absentStudents);
+			for(var i = 0; i < absentStudents.length; i++){
+				alert(absentStudents[i].title);
+				p.students.records.push( new Record("10,10,2015", "absent"));
+			}
+			
+			var lateStudents = main.getElementsByClassName('late');
+			alert("Late students" + lateStudents);
+			for(var i = 0; i < lateStudents.length; i++){
+				alert(lateStudents[i].title);
+				p.students.records.push( new Record("10,10,2014","tardy"));
+			}
+			for(var i = 0; i < p.students.length; i++){
+				
 			}
 		}
 		
