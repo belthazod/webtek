@@ -185,4 +185,58 @@ function saveClass() {
 
 }
 
+var pageNumber = 1;
+function nextPage(){
+	var pages = document.getElementsByClassName('page');
+
+	for (var x = 0; x< pages.length; x++){
+		if(x == pageNumber){
+			pages[x].className = "page active";
+		}else{
+			pages[x].className = "page inactive";
+		}
+	}
+	pageNumber++;
+	if( pageNumber > 1){
+		document.getElementById('classform-btn-prev').className = "btn active";
+	}
+	if( pageNumber == 3){
+		document.getElementById('classform-btn-next').className = 'btn inactive';
+	}
+	if( pageNumber == 2){
+		document.getElementById('classCode').innerHTML = document.getElementById("input-classcode").value;
+		document.getElementById('descriptiveTitle').innerHTML = document.getElementById("input-desctitle").value;
+		document.getElementById('room').innerHTML = document.getElementById("input-room").value;
+		var timeA = document.getElementById("timea-selection");
+		var timeB = document.getElementById("timeb-selection");
+		var days = document.getElementById("day-selection");
+		document.getElementById('sched').innerHTML =  timeA.options[timeA.selectedIndex].value + "-" + timeB.options[timeB.selectedIndex].value + " " + days.options[days.selectedIndex].innerHTML;
+		document.getElementById('classCode').innerHTML 
+		
+	}
+
+}
+
+function previousPage(){
+	var pages = document.getElementsByClassName('page');
+
+	for (var x = 0; x< pages.length; x++){
+		if(x == pageNumber-2){
+			pages[x ].className = "page active";
+		}else{
+			pages[x].className = "page inactive";
+		}
+	}
+	pageNumber--;
+	if( pageNumber == 1){
+		document.getElementById('classform-btn-prev').className = "btn inactive";
+	}
+	if( pageNumber > 1){
+		document.getElementById('classform-btn-prev').className = 'btn active';
+	}
+	if(pageNumber < 3){
+		document.getElementById('classform-btn-next').className = 'btn-active';
+	}
+}
+
 main();
