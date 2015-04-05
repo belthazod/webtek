@@ -5,6 +5,7 @@ body, header, nav, main, footer {
 	border-radius: 15px;
 	margin-top: 10px;
 	margin-bottom: 10px;
+	font-color: white;
 }
 
 body {
@@ -12,13 +13,18 @@ body {
 	margin: auto;
 	font-family: Helvetica;
 	font-size: 15px;
-	background-image: url("../images/bgimg.jpg");
+	font-color: white;
+	background-image: url("../images/alternatebg.jpg");
 	background-repeat: no-repeat;
 	background-position: fixed;
-	background-size: 102%;
+	background-size: 1340px 665px;
 }
 
 header {
+	background-image: url("../images/header.jpg");
+	background-repeat: no-repeat;
+	background-position: fixed;
+	background-size: 1000px 113px;
 	background-color: #00FF99;
 	color: #000000;
 }
@@ -42,6 +48,10 @@ a:hover {
 	width: 30px;
 }
 
+#banner label {
+	color: white;
+}
+
 #search {
 	width: 450px;
 	font-size: 15px;
@@ -50,7 +60,8 @@ a:hover {
 }
 
 #navigate {
-	background-color: #94B8B8;
+	background-color: gray;
+	opacity: 0.8;
 }
 
 #navigate ul li {
@@ -62,7 +73,7 @@ a:hover {
 }
 
 #navigate ul li a:hover{
-	color: #00FF99;
+	color: white;
 }
 
 #table {
@@ -109,7 +120,8 @@ table, th, td {
 }
 
 footer {
-	background-color: #94B8B8;
+	background-color: gray;
+	opacity: 0.8;
 	clear: both;
 	text-align: center;
 	line-height: 20px;
