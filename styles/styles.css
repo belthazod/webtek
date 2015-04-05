@@ -5,13 +5,16 @@ body {
 	padding-top: 100px;
 }
 #container {
-	width: 460px;
+	width: 403px;
+	min-height: 315px;
 	margin: auto;
 	border: 2px solid #cccccc;
 	padding: 0 15px 15px 15px;
 	border-radius: 20px;
 	background: #ffffff;
-	min-height: 400px;
+}
+ul {
+	padding-left: 0;
 }
 li {
 	list-style: none;
@@ -34,28 +37,71 @@ a {
 }
 #buttons {
 	text-align: right;
-	padding-right: 55px;
+	padding-right: 0;
 }
 #firstname {
-	width: 250px;
+	width: 290px;
 }
 #lastname {
-	width: 250px;
+	width: 290px;
 }
 #username {
-	width: 250px;
+	width: 290px;
+}
+#regUsername {
+	width: 290px;
 }
 #email {
-	width: 250px;
+	width: 290px;
 }
 #password {
-	width: 250px;
+	width: 290px;
 }
 #login {
 	width: 180px;
 }
 #register {
 	width: 180px;
+}
+
+/*media querry for huge pc's*/
+@media only screen and (max-width: 1280px) {
+	body {
+		width: 95%;
+	}
+	#container {
+		width: 70%;
+	}
+	#container h1{
+		width: 60%;
+	}
+	label {
+		width: 70%;
+	}
+	#firstname {
+		width: 95%;
+	}
+	#lastname {
+		width: 95%;
+	}
+	#username {
+		width: 95%;
+	}
+	#regUsername {
+		width: 95%;
+	}
+	#email {
+		width: 95%;
+	}
+	#password {
+		width: 95%;
+	}
+	#login {
+		width: 30%;
+	}
+	#register {
+		width: 30%;
+	}
 }
 /*media querry for desktop*/
 @media only screen and (max-width: 992px) {
@@ -72,65 +118,71 @@ a {
 		width: 70%;
 	}
 	#firstname {
-		width: 60%;
-	}
-	#lastname {
-		width: 60%;
-	}
-	#username {
-		width: 60%;
-	}
-	#email {
-		width: 60%;
-	}
-	#password {
-		width: 60%;
-	}
-	#login {
-		width: 70%;
-	}
-	#register {
-		width: 70%;
-	}
-}
-/*media querry for phone*/
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-	body {
 		width: 95%;
 	}
-	#container {
-		width: 70%;
-	}
-	#container h1{
-		width: 60%;
-	}
-	label {
-		width: 70%;
-	}
-	#firstname {
-		width: 60%;
-	}
 	#lastname {
-		width: 60%;
+		width: 95%;
 	}
 	#username {
-		width: 60%;
+		width: 95%;
+	}
+	#regUsername {
+		width: 95%;
 	}
 	#email {
-		width: 60%;
+		width: 95%;
 	}
 	#password {
-		width: 60%;
+		width: 95%;
 	}
 	#login {
-		width: 70%;
+		width: 30%;
 	}
 	#register {
-		width: 70%;
+		width: 50%;
 	}
 }
 /*media querry for tablet*/
-@media only screen and (min-device-width: 600px) and (max-device-width: 1024px) {
+@media only screen and (max-width: 968px) {
+	body {
+		width: 95%;
+	}
+	#container {
+		width: 60%;
+	}
+	#container h1{
+		width: 60%;
+	}
+	label {
+		width: 70%;
+	}
+	#firstname {
+		width: 95%;
+	}
+	#lastname {
+		width: 95%;
+	}
+	#username {
+		width: 95%;
+	}
+	#regUsername {
+		width: 95%;
+	}
+	#email {
+		width: 95%;
+	}
+	#password {
+		width: 95%;
+	}
+	#login {
+		width: 50%;
+	}
+	#register {
+		width: 50%;
+	}
+}
+/*media querry for phone*/
+@media only screen and (max-width: 480px) {
 	body {
 		width: 95%;
 	}
@@ -144,24 +196,27 @@ a {
 		width: 70%;
 	}
 	#firstname {
-		width: 60%;
+		width: 90%;
 	}
 	#lastname {
-		width: 60%;
+		width: 90%;
+	}
+	#regUsername {
+		width: 90%;
 	}
 	#username {
-		width: 60%;
+		width: 90%;
 	}
 	#email {
-		width: 60%;
+		width: 90%;
 	}
 	#password {
-		width: 60%;
+		width: 90%;
 	}
 	#login {
-		width: 70%;
+		width: 30%;
 	}
 	#register {
-		width: 70%;
+		width: 30%;
 	}
 }
