@@ -3,15 +3,24 @@ body {
 	font-family: calibri;
 	font-size: 17px;
 	padding-top: 100px;
+	background-image: url("../images/logreg.jpg");
+	background-repeat: no-repeat;
+	background-position: fixed;
+	background-size: 102%;
 }
 #container {
 	width: 403px;
 	min-height: 315px;
 	margin: auto;
-	border: 2px solid #cccccc;
+	border: 2px solid black;
 	padding: 0 15px 15px 15px;
 	border-radius: 20px;
 	background: #ffffff;
+	opacity: 0.5;
+	background-image: url("../images/logreg.jpg");
+	background-repeat: no-repeat;
+	background-position: fixed;
+	background-size: 145%;
 }
 ul {
 	padding-left: 0;
