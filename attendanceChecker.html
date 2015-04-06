@@ -1,56 +1,29 @@
 <html>
 	<head>
-		<style>
-			#myCanvas{
-				margin:0 auto;
-				display:block;
-				position:absolute;
-			}
-			#form{
-				position: absolute;
-			}
-			.student{
-				background:gray;
-				display:block;
-				position:absolute;
-				width:80px;
-				height:40px;
-				z-index:10;
-				cursor:pointer;
-			}
-			.absent{
-				background:blue;
-			}
-			.late{
-				background: pink;
-			}
-			.studentName{
-				position:relative;
-				z-index:-1;
-				cursor:pointer;
-			}
-			
-			.unselectable {
-				-webkit-touch-callout: none;
-				-webkit-user-select: none;
-				-khtml-user-select: none;
-				-moz-user-select: none;
-				-ms-user-select: none;
-				user-select: none;
-			}
-			.classInfo{
-				display:inline-block;
-				margin-right:40px
-			}
-			#postCanvas{
-				margin-top:625px;
-			}
-		</style>
+		<meta charset="UTF-8">
+		<title>bwiSEATER AttendanceChecker</title>
+		<link rel="stylesheet" type="text/css" title="Preffered" href="styles/styles1.css">
+		<link rel="stylesheet" type="text/css" title="Alternate" href="styles/styles2.css">
 	</head>
 	<body>
-		<header>
+		<header id="banner">
+			<input id="search" type="text" placeholder="SEARCH">
+			<input type="submit" value="Search">
+			<div id="template">
+				<img src="images/1.png" alt="profile">
+				<label>Instructors Name</label>
+				<img src="images/2.png" alt="settings">
+				<img src="images/3.png" alt="signout">
+			</div>
 		</header>
-		
+
+		<nav id="navigate">
+			<ul>
+				<li><a href="MyClasses.html">My Classes</a></li>
+				<li><a href="create-class.html">Create Class</a></li>
+				<li><a href="studrec.html">Student Record</a></li>
+			</ul>
+		</nav>
 		<div id="main">
 			<section>
 				<span>Class Code:</span>
@@ -73,6 +46,8 @@
 		</section>
 		
 		<footer>
+			&copy; 2015 Group #7. 
+			<br>All rights reserved.
 		</footer>
 		
 	</body>

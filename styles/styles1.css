@@ -15,7 +15,7 @@ body {
 	background-image: url("../images/bgimg.jpg");
 	background-repeat: no-repeat;
 	background-position: fixed;
-	background-size: 102%;
+	background-size: cover;
 }
 
 header {
@@ -107,7 +107,51 @@ table, th, td {
 #delEdit {
 	text-align: right;
 }
+/*attendance checker*/
+#myCanvas{
+	margin:0 auto;
+	display:block;
+	position:absolute;
+}
+#form{
+	position: absolute;
+}
+.student{
+	background:gray;
+	display:block;
+	position:absolute;
+	width:80px;
+	height:40px;
+	z-index:10;
+	cursor:pointer;
+}
+.absent{
+	background:blue;
+}
+.late{
+	background: pink;
+}
+.studentName{
+	position:relative;
+	z-index:-1;
+	cursor:pointer;
+}
 
+.unselectable {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+.classInfo{
+	display:inline-block;
+	margin-right:40px
+}
+#postCanvas{
+	margin-top:625px;
+}
 footer {
 	background-color: #94B8B8;
 	clear: both;

@@ -6,7 +6,7 @@ body {
 	background-image: url("../images/logreg.jpg");
 	background-repeat: no-repeat;
 	background-position: fixed;
-	background-size: 1350px 700px;
+	background-size: cover;
 }
 #container {
 	width: 403px;
@@ -20,7 +20,7 @@ body {
 	background-image: url("../images/logreg.jpg");
 	background-repeat: no-repeat;
 	background-position: fixed;
-	background-size: 500px 500px;
+	background-size: cover;
 }
 ul {
 	padding-left: 0;
