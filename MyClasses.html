@@ -22,64 +22,110 @@
 			<ul>
 				<li><a href="MyClasses.html">My Classes</a></li>
 				<li><a href="create-class.html">Create Class</a></li>
-				<li><a href="studrec.html">Student Record</a></li>
-			</ul>
+				
 		</nav>
 
 		<main id="content">
-			<h1>Lecture Class</h1>
-				<select id="x" size="3">
-						<option value="1">
-							Programming Applications
-							Lecture
-							8:30-9:30 S423 TF
-						</option>
+			<div id="lecture">
+				<table id="dataTable" border="1">
+				<h1>Lecture Class</h1>
+					<tr>
+						<th>Class Code</th>
+						<th>Descriptive Title</th>
+						<th>Room</th>
+						<th>Time</th>
+						<th>Days</th>
+						<th>Student Record</th>
+						
+					</tr>
 
-						<option value="2">
-							Database Management System
-							Lecture
-							9:30-10:30 S423 WS
-						</option>
+					<tr onclick="HighLightTR(this,'#c9cc99','cc3333');">
+						<td><a href="attendanceChecker.html">9558</a></td>
+						<td>Programming Applications</td>
+						<td>S423</td>
+						<td>9:30-10:30</td>
+						<td>WS</td>
+						<td><button><a href="studrec.html">view</a></button></td>
+						
+					</tr>
 
-						<option value="3">
-							Webtek
-							Lecture
-							1:00-2:00 S423 WS
-						</option>
-					
-				
-			</select>
+					<tr onclick="HighLightTR(this,'#c9cc99','cc3333');">
+						<td><a href="attendanceChecker.html">9569</a></td>
+						<td>Database Management System</td>
+						<td>S423</td>
+						<td>8:30-9:30</td>
+						<td>TF</td>
+						<td><button><a href="studrec.html">view</a></button></td>
+						
+					</tr>
 
-			<h1>Laboratory Classes</h1>
-				<select id="x"  size="3">
-
-							<option value="4">
-								Programming Applications
-								Laboratory
-								9:00-10:30 S326 MTH
-							</option>
-
-							<option value="5">
-								Database Management System
-								Laboratory
-								10:30-12:00 S326 WS
-							</option>
-							
-							<option value="6">
-								Webtek
-								Laboratory
-								4:00-5:300 S326 WS
-							</option>
-				
-			</select>
-
-			<div id="delEdit">
-
-				<button id="delBtn">Delete Class</button>
-				<button><a href="EditClass.html">Edit Class</a></button>
-
+					<tr onclick="HighLightTR(this,'#c9cc99','cc3333');">
+						<td><a href="attendanceChecker.html">9515</a></td>
+						<td>Web Systems and Technologies</td>
+						<td>S423</td>
+						<td>1:00-2:00</td>
+						<td>WS</td>
+						<td><button><a href="studrec.html">view</a></button></td>
+						
+					</tr>
+				</table>
 			</div>
 
+
+			<div id="laboratory">	
+				<table id="dataTable" border="1">
+				<h1>Laboratory Class</h1>
+					<tbody>
+					<tr>
+						<th>Class Code</th>
+						<th>Descriptive Title</th>
+						<th>Room</th>
+						<th>Time</th>
+						<th>Days</th>
+						<th>Student Record</th>
+						
+					</tr>
+
+					<tr onclick="HighLightTR(this,'#c9cc99','cc3333');">
+						<td><a href="attendanceChecker.html">9559</a></td>
+						<td>Programming Applications</td>
+						<td>S326</td>
+						<td>9:00-10:30 </td>
+						<td>MTH</td>
+						<td><button><a href="studrec.html">view</a></button></td>
+						
+
+					</tr>
+
+					<tr onclick="HighLightTR(this,'#c9cc99','cc3333');">
+						<td><a href="attendanceChecker.html">9570</a></td>
+						<td>Database Management System</td>
+						<td>S326</td>
+						<td>10:30-12:00</td>
+						<td>WS</td>
+						<td><button><a href="studrec.html">view</a></button></td>
+						
+					</tr>
+
+					<tr onClick="HighLightTR(this,'#c9cc99','cc3333');">
+						<td><a href="attendanceChecker.html">9516</a></td>
+						<td>Web Systems and Technologies</td>
+						<td>S326</td>
+						<td>4:00-5:300</td>
+						<td>WS</td>
+						<td><button><a href="studrec.html">view</a></button></td>
+						
+					</tr>
+					</tbody>
+
+				</table>
+			</div>	
+
+			<div id="delEdit">
+				<button><a onclick="deleteRow('dataTable')">Delete Class</a></button>
+				<button id="editBtn">Edit Class</button>
+			</div>
+		
 		</main>
 		
 		<footer>
@@ -88,21 +134,85 @@
 		</footer>
 	</body>
 	<script type="text/javascript">
-	//	var delBtn = document.getElementById("delBtn");
-	//	delBtn.addEventlistener('click', function(){delBtnEvent()});
+
+
+		var preEl ;
+		var orgBColor;
+		var orgTColor;
+		function HighLightTR(el, backColor,textColor){
+		  if(typeof(preEl)!='undefined') {
+		     preEl.bgColor=orgBColor;
+		     try{ChangeTextColor(preEl,orgTColor);}catch(e){;}
+		  }
+		  orgBColor = el.bgColor;
+		  orgTColor = el.style.color;
+		  el.bgColor=backColor;
+
+		  try{ChangeTextColor(el,textColor);}catch(e){;}
+		  preEl = el;
+		}
+
+
+		function ChangeTextColor(a_obj,a_color){  ;
+		   for (i=0;i<a_obj.cells.length;i++)
+		    a_obj.cells(i).style.color=a_color;
+		}
+
+		function selectRow(row) {
+		    if (row.className.indexOf("selected") != -1) {
+		        row.className = row.className.replace("selected", "");
+		    } else {
+		        row.className += " selected";
+		    }
+		}
+
+		function deleteRow(tableID) {
+		    try {
+		        var table = document.getElementById(tableID);
+		        var rowCount = table.rows.length;
+		        for (var i = 0; i < rowCount; i++) {
+		            var row = table.rows[i];
+		            /*var chkbox = row.cells[0].childNodes[0];*/
+		            /*if (null != chkbox && true == chkbox.checked)*/
+
+		            if (row.getElementsByTagName("input")[0].className.indexOf("selected")!=-1) {
+		                if (rowCount <= 1) {
+		                    alert("Cannot delete all the rows.");
+		                    break;
+		                }
+		                table.deleteRow(i);
+		                rowCount--;
+		                i--;
+		            }
+		        }
+		    } catch (e) {
+		        alert(e);
+		    }
+		    //getValues();
+		}
+
+	//		var delBtn = document.getElementById("delBtn");
+	//	delBtn.addEventlistener('click', function(){deleteRow(t)});
 	//	function delBtnEvent(){
 	//		for (var i = 0; i < delBtn.options.length; i++) {
 	//		    if (delBtn.options[i].selected) {
 	//		        delBtn.options[i].remove();
 	//		    }
+	//	function deleteRow(t){
+	//		    var row = t.parentNode.parentNode;
+	//		    document.getElementById("dataTable").deleteRow(row.rowIndex);
+	//		    console.log(row);
+	//		}
 
 	//	}
+		
+	//	var button=document.getElementById("delBtn")[0],
+	//	select=document.getElementsByTagName("select")[0];
+	//	button.onclick=function(){
+	//	select.removeChild(select.options[select.selectedIndex]);
+	//	};
 
-		var button=document.getElementsByTagName("button")[0],
-		select=document.getElementsByTagName("select")[0];
-		button.onclick=function(){
-		select.removeChild(select.options[select.selectedIndex]);
-		};
+
 
 		var editBtn = document.getElementById("editBtn");
 		editBtn.addEventlistener('click', function(){editBtnEvent()});
