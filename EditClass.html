@@ -29,14 +29,89 @@
 			<h1>Edit Class</h1>
 
 			<article id="classAttr">
+
 				<form class="class-form" action="">
-					<p id="classCodde">Class Code: 012F</p>
-					<p id="classDescription">Descriptive Title: Recess</p>
-					<p id="classDays">Days: MWF</p>
-					<p id="classTime">Time: 8:30 - 10:30</p>	
-					<button id="editbtn1" value="">Edit</button>
-				</form>
-					
+					<div class="column-4">
+							<label for="input-classcode">Class Code: </label>
+							<input required id="input-classcode" class="tbox" autofocus type="text" name="ClassCode">
+						</div>
+
+						<div class="column-8">
+							<label for="input-desctitle">Descriptive Title: </label>
+							<input required id="input-desctitle" class="tbox" autofocus type="text" name="DescTitle">
+						</div>
+
+						<div class="column-8">
+							<label for="input-room">Room: </label>
+							<input required id="input-room" class="tbox" autofocus type="text" name="DescTitle">
+						</div>
+						
+						<div class="column-12">
+							<label for="day-selection">Days:</label>
+							<select required id="day-selection" class="selector">
+							  <option value="">MWF</option>
+							  <option value="">TThS</option>
+							  <option value="">MTh</option>
+							  <option value="">TF</option>
+							  <option value="">WS</option>
+							</select>
+							<label for="timea-selection">Time:</label>
+								<select id="timea-selection" class="selector">
+								  <option value="7:30 AM">7:30 AM</option>
+								  <option value="8:00 AM">8:00 AM</option>
+								  <option value="8:30 AM">8:30 AM</option>
+								  <option value="9:00 AM">9:00 AM</option>
+								  <option value="9:30 AM">9:30 AM</option>
+								  <option value="10:00 A">10:00 AM</option>
+								  <option value="10:30 A">10:30 AM</option>
+								  <option value="11:00 A">11:00 AM</option>
+								  <option value="11:30 A">11:30 AM</option>
+								  <option value="12:00 P">12:00 PM</option>
+								  <option value="12:30 P">12:30 PM</option>
+								  <option value="1:00 PM">1:00 PM</option>
+								  <option value="1:30 PM">1:30 PM</option>
+								  <option value="2:00 PM">2:00 PM</option>
+								  <option value="2:30 PM">2:30 PM</option>
+								  <option value="3:00 PM">3:00 PM</option>
+								  <option value="3:30 PM">3:30 PM</option>
+								  <option value="4:00 PM">4:00 PM</option>
+								  <option value="4:30 PM">4:30 PM</option>
+								  <option value="5:00 PM">5:00 PM</option>
+								  <option value="5:30 PM">5:30 PM</option>
+								  <option value="6:00 PM">6:00 PM</option>
+								  <option value="6:30 PM">6:30 PM</option>
+								  <option value="7:00 PM">7:00 PM</option>
+								  <option value="7:30 PM">7:30 PM</option>
+								</select>
+								-
+								<select id="timeb-selection" class="selector">
+								  <option value="8:30 AM">8:30 AM</option>
+								  <option value="9:00 AM">9:00 AM</option>
+								  <option value="9:30 AM">9:30 AM</option>
+								  <option value="10:00 A">10:00 AM</option>
+								  <option value="10:30 A">10:30 AM</option>
+								  <option value="11:00 A">11:00 AM</option>
+								  <option value="11:30 A">11:30 AM</option>
+								  <option value="12:00 P">12:00 PM</option>
+								  <option value="12:30 P">12:30 PM</option>
+								  <option value="1:00 PM">1:00 PM</option>
+								  <option value="1:30 PM">1:30 PM</option>
+								  <option value="2:00 PM">2:00 PM</option>
+								  <option value="2:30 PM">2:30 PM</option>
+								  <option value="3:00 PM">3:00 PM</option>
+								  <option value="3:30 PM">3:30 PM</option>
+								  <option value="4:00 PM">4:00 PM</option>
+								  <option value="4:30 PM">4:30 PM</option>
+								  <option value="5:00 PM">5:00 PM</option>
+								  <option value="5:30 PM">5:30 PM</option>
+								  <option value="6:00 PM">6:00 PM</option>
+								  <option value="6:30 PM">6:30 PM</option>
+								  <option value="7:00 PM">7:00 PM</option>
+								  <option value="7:30 PM">7:30 PM</option>
+								</select>
+						</div>		
+				</form>	
+					<button id="savebtn1" value="">SAVE</button>			
 			</article>
 
 			<article id="students">
@@ -64,16 +139,17 @@
 					</tr>
 
 				</table>
-					<button id="editbtn2" value="">Edit</button>
-					<button id="deletebtn" value="">Delete</button><br>
+					<button id="editbtn2" value="">EDIT</button>
+					<button id="deletebtn" value="">DELETE</button><br>
 					<br>
 						<label for="lastname-input">Last Name:</label>
 						<input id="lastname-input" class="tbox" type="text" name="lastname"> 
 						<label for="firstname-input">First Name:</label>
 						<input id="firstname-input" class="tbox" type="text" name="firstname">
-						<button id="addbtn" class="btn" value="">Add</button><br>
+						<button id="addbtn" class="btn" value="">ADD</button><br>
 					<br>
-					<button id="savebtn" value="">Save</button>
+					<button id="savebtn2" value="">SAVE</button>
+					<button id="seatplan" value="">EDIT SEAT PLAN</button>
 					
 			</article>
 			
@@ -86,17 +162,56 @@
 	
 	<script type="text/javascript">
 
-			var editbtn1 = document.getElementById("editbtn1").addEventListener("click", editClass);
-			var editbtn2 = document.getElementById("editbtn2").addEventListener("click", editStudents);
+			var savebtn1 = document.getElementById("savebtn").addEventListener("click", editClass);
+			var editbtn = document.getElementById("editbtn").addEventListener("click", editStudents);
 			var deletebtn = document.getElementById("deletebtn").addEventListener("click", deleteStudents);
 			var addbtn = document.getElementById("addbtn").addEventListener("click", addStudents);
-			var savebtn = document.getElementById("savebtn").addEventListener("click", saveEdit);
+			var savebtn2 = document.getElementById("savebtn").addEventListener("click", saveEdit);
+			var seatplan = document.getElementById("seatplan").addEventListener("click", editseatplan);
 
 			var studentTable = document.getElementById("studentTable");
 
 
 			function editClass() {
 
+					var classCodeV = document.getElementById("input-classcode").value;
+					var classDescV = document.getElementById("input-desctitle").value;
+					var classRoomV = document.getElementById("input-room").value;
+					var selectDay = document.getElementById("day-selection");
+					var classDayV = selectDay.options[selectDay.selectedItem].value;
+					var slectTimeA = document.getElementById("timea--selection");
+					var classStartV = selectTimeA.options[selectTimeA.selectedItem].value;
+					var slectTimeB = document.getElementById("timeb--selection");
+					var classEndV = selectTimeB.options[selectTimeB.selectedItem].value;
+
+					document.getElementById("input-classcode").innerHtml = classCodeV;
+
+					/*var newform = document.createElement("form");
+					var pCode = document.createElement("p");
+						var p1txt = document.createTextNode(classCodeV);
+							pCode.appendChild(p1txt);
+					var p1 = document.createElement("p");
+					var p1 = document.createElement("p");
+					var p1 = document.createElement("p");
+
+					var classCode = document.getElementById("input-classcode");
+					var classDesc = document.getElementById("input-desctitle");
+					var classRoom = document.getElementById("input-room");
+					var classDay = document.getElementById("day-selection");
+					var classStart = document.getElementById("timea-selection");
+					var classEnd = document.getElementById("timeb-selection");*/
+
+
+
+
+
+					//oldForm.parentNode.removeChild(oldForm);
+					//var item = document.getElementById("classAttr");
+					//item.removeChild(item.childNodes[0]);
+
+					
+
+				
 			}
 
 			function editStudents() {
@@ -112,6 +227,10 @@
 			function deleteStudents() {
 
 
+			}
+			function editseatplan(){
+
+				//create canvas here, then append to html//get values from storage
 			}
 
 	</script>
