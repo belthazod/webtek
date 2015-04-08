@@ -22,13 +22,17 @@
 			<ul>
 				<li><a href="MyClasses.html" id="myClassesLink">My Classes</a></li>
 				<li><a href="create-class.html" id = "createClassLink">Create Class</a></li>
-				<li><a href="studrec.html" id="studRecLink">Student Record</a></li>
 			</ul>
 		</nav>
 
 		<main id="content">
 			<h1>My Classes</h1>
 			<table id= "classesTable">
+				<th>Classcode</th>
+				<th>Descriptive Title</th>
+				<th>Schedule</th>
+				<th>Room</th>
+				<th>Student Record</th>
 			</table>
 		</main>
 		
@@ -131,23 +135,31 @@
 		function changeLinks(){
 			document.getElementById('myClassesLink').href="MyClasses.html#" + username;
 			document.getElementById('createClassLink').href="create-class.html#" + username;
-			document.getElementById('studRecLink').href="MyClasses.html#" + username;
 		}
 		var table = document.getElementById('classesTable');
 		for(var x = 0; x < account.uniclasses.length; x++){
 			var row = document.createElement("tr");
 			var col1 = document.createElement("td");
-			col1.innerHTML = account.uniclasses[x].classcode;
+			var link = document.createElement("a");
+			link.href = "AttendanceChecker.html#" + username + "&" + account.uniclasses[x].classcode;
+			link.innerHTML = account.uniclasses[x].classcode;
+			col1.appendChild(link);
 			var col2 = document.createElement("td");
 			col2.innerHTML = account.uniclasses[x].room;
 			var col3 = document.createElement("td");
 			col3.innerHTML = account.uniclasses[x].sched;
 			var col4 = document.createElement("td");
 			col4.innerHTML = account.uniclasses[x].numOfStud;
+			var col5 = document.createElement("td");
+			var recLink = document.createElement("a");
+			recLink.href = "studrec.html#" + username + "&" + account.uniclasses[x].classcode;
+			recLink.innerHTML = "View";
+			col5.appendChild(recLink);
 			row.appendChild(col1);
-			row.appendChild(col2);
 			row.appendChild(col3);
-			row.appendChild(col4);	
+			row.appendChild(col4);
+			row.appendChild(col2);
+			row.appendChild(col5);	
 			table.appendChild(row);
 		}
 

@@ -39,38 +39,7 @@
 				</select>
 			</div>
 			<table id="studrec" border="1">
-				<tr>
-					<th>student number</th>
-					<th>last name</th>
-					<th>first name</th>
-					<th>class schedule</th>
-					<th>day</th>
-					<th>total no. of absents</th>
-				</tr>
-				<tr>
-					<td>1</td>
-					<td>lastname1</td>
-					<td>firstname1</td>
-					<td>8:30-9:30</td>
-					<td>MWF</td>
-					<td>10</td>
-				</tr>
-				<tr>
-					<td>2</td>
-					<td>lastname2</td>
-					<td>firstname2</td>
-					<td>1:00-2:00</td>
-					<td>TThS</td>
-					<td>9</td>
-				</tr>
-				<tr>
-					<td>3</td>
-					<td>lastname3</td>
-					<td>firstname3</td>
-					<td>10:30-11:30</td>
-					<td>MWF</td>
-					<td>8</td>
-				</tr>
+				
 			</table>
 			<div id="update">
 				<input type="submit" value="Update">
@@ -82,4 +51,11 @@
 			<br>All rights reserved.
 		</footer>
 	</body>
+	<script>
+		var user = window.location.hash.substring(1);
+		var username =  user.split("&")[0];
+		document.getElementById('instructorName').innerHTML = username;
+
+		}
+	</script>
 </html>

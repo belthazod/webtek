@@ -36,6 +36,10 @@
 				<p id = "numOfStud" class = "classInfo"></p>
 				<span>Instructor:</span>
 				<p id = "instructor" class = "classInfo"></p>
+				<br>
+				<span>Date:</span>
+				<input type="date" id = "date">
+				
 			</section>
 			<canvas id="myCanvas" width="1000" height="600" style="border:1px solid #000000;">
 			</canvas>
@@ -53,6 +57,12 @@
 	</body>
 	<script type="text/javascript" src="scripts/checkAttendance.js"></script>
 	<script>
+		Date.prototype.toDateInputValue = (function() {
+		    var local = new Date(this);
+		    local.setMinutes(this.getMinutes() - this.getTimezoneOffset());
+		    return local.toJSON().slice(0,10);
+		});
+		document.getElementById('date').value = new Date().toDateInputValue();
 		var user = window.location.hash.substring(1);
 		var username =  user.split("&")[0];
 		document.getElementById('instructorName').innerHTML = username;
@@ -167,13 +177,24 @@
 			new Student(++id,"last_name", 
 			"first_name", "middle_initial", "550", "335" ,"enrolled", "belthazod",  array),];
 			
-		var x = new universityClass(7006, "s421", "8:30-9:30", 50, "belthazod", students);
+		var x = new universityClass(7006, "Webtek", "s421"  ,"8:30-9:30", 50, "belthazod", students);
 		var bwiseater = JSON.parse(localStorage.getItem("bwiseater"));
-		alert(bwiseater.accounts.length);
-		alert(document.getElementById('instructorName').innerHTML);
 		for(var y = 0; y<bwiseater.accounts.length; y++){
 			if(bwiseater.accounts[y].username == document.getElementById('instructorName').innerHTML){
-				bwiseater.accounts[y].uniclasses.push(x);
+				var exists = false;
+				for(var z = 0; z< bwiseater.accounts[y].uniclasses.length; z++){
+					if(bwiseater.accounts[y].uniclasses[z].classcode == 7006){
+						exists = true;
+						break;
+					}
+				}
+
+				if(exists){
+				
+				}
+				else{
+					bwiseater.accounts[y].uniclasses.push(x);
+				}
 			}
 		}
 		localStorage.setItem("bwiseater", JSON.stringify(bwiseater));
@@ -195,7 +216,6 @@
 				}
 			}
 		}
-		alert(p);
 		document.getElementById('classCode').innerHTML = p.classcode;
 		document.getElementById('room').innerHTML = p.room;
 		document.getElementById('sched').innerHTML = p.sched;

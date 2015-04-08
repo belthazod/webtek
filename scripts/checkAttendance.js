@@ -1,5 +1,6 @@
-function universityClass( classcode, room, sched, numOfStud, username, students){
+function universityClass( classcode, descriptiveTitle, room, sched, numOfStud, username, students){
 	this.classcode = classcode;
+	this.descriptiveTitle = descriptiveTitle;
 	this.room = room;
 	this.sched = sched;
 	this.numOfStud = numOfStud;
