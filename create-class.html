@@ -20,6 +20,14 @@
 				display:inline-block;
 				margin-right:40px;
 			}
+			#myCanvas{
+				margin:0 auto;
+				display:block;
+				position:absolute;
+			}
+			#form{
+				position: absolute;
+			}
 		</style>
 	</head>
 
@@ -28,11 +36,8 @@
 			<div id="info-div" class="row">
 				<label>You are logged in as </label><a id="user-id" href="">Admin Test</a>
 			</div>
-			
-			
-
 			<div class="content-wrap">
-				<form class="class-form" action="">
+				<form class="class-form" action="" novalidate>
 					<div class="page active">
 					<h2 class="page-heading">Create Class</h2>
 					<p class="page-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus sit in natus, beatae modi vero aperiam provident labore asperiores, culpa alias corporis, accusantium quasi tempora non ut eveniet aut consequuntur.</p>
@@ -132,7 +137,7 @@
 								<input id="firstname-input" class="tbox" type="text" placeholder="First Name" name="firstname" required>
 								
 								<input id="midinitial-input" class="tbox" maxlength="1" size="1" type="text" placeholder="MI" name="midinitial" required>
-								<input id="addstudent-btn" class="btn" type="submit" value="Add">
+								<button id="addstudent-btn" class="btn" type="button">Add</button>
 						</div>
 						
 						<h4 class="form-heading">Retrieve students from text file</h4>
@@ -146,7 +151,7 @@
 								<h4 class="form-heading">List of existing students</h4>
 								<select id="student-selection" class="selector" name="sometext" size="8">
 								</select>
-								<br><button id="addselected-btn" class="btn" value="">Add selected</button>
+								<br><button id="addselected-btn" class="btn" type="button">Add selected</button>
 								<p id="prompt-selection"></p>	
 							</div>
 							
@@ -191,6 +196,9 @@
 
 		
 	</body>
+	<script>
+
+	</script>
 	<script type="text/javascript" src="scripts/create-class.js">
 	</script>
 </html>

@@ -43,12 +43,20 @@ function initializeManAdding() {
 	console.log('initialized');
 	var name1 = document.getElementById("lastname-input");
 	var name2 = document.getElementById("firstname-input");
-	var name3 = document.getElementById("midInitial-input");
+	var name3 = document.getElementById("midinitial-input");
 	var addBtn = document.getElementById("addstudent-btn");
 
 	addBtn.addEventListener('click', function(){
 		var stud = name1.value + ", "+name2.value+" "+name3.value+".";
-		console.log(stud);
+		
+			prompt.innerHTML = "";
+			var studAnchor = document.createElement("a");
+			studAnchor.id = stud;
+			studAnchor.addEventListener('click', function(){ 
+				removeStudent(studAnchor.id);
+			});
+			studAnchor.appendChild(document.createTextNode(stud+" |x")); 
+			addStudent(studAnchor);
 	});
 }
 
@@ -202,6 +210,8 @@ function nextPage(){
 	}
 	if( pageNumber == 3){
 		document.getElementById('classform-btn-next').className = 'btn inactive';
+		document.getElementById('numOfStud').innerHTML = document.getElementsByClassName('studentLI').length;
+		initiateCanvas();
 	}
 	if( pageNumber == 2){
 		document.getElementById('classCode').innerHTML = document.getElementById("input-classcode").value;
@@ -211,7 +221,7 @@ function nextPage(){
 		var timeB = document.getElementById("timeb-selection");
 		var days = document.getElementById("day-selection");
 		document.getElementById('sched').innerHTML =  timeA.options[timeA.selectedIndex].value + "-" + timeB.options[timeB.selectedIndex].value + " " + days.options[days.selectedIndex].innerHTML;
-		document.getElementById('classCode').innerHTML 
+		
 		
 	}
 
@@ -239,4 +249,25 @@ function previousPage(){
 	}
 }
 
+
+function initiateCanvas(){
+	var totalStudents = document.getElementById('numOfStud').innerHTML;
+	var seats = 0;
+	alert(totalStudents);
+	var c = document.getElementById("myCanvas");
+	var canvas = c.getContext("2d");
+	var y = 400;
+	canvas.fillStyle = "#FF0000";
+ 	while(seats != totalStudents){
+		for(var leftSide = 0, x = 375; leftSide<5 && seats != totalStudents; leftSide++, seats++, x-=90){
+			
+			canvas.fillRect(x, y, 80, 40);
+		}
+		for(var rightSide = 0, x = 550; rightSide<5 && seats != totalStudents; rightSide++, seats++, x+=90){
+			
+			canvas.fillRect(x, y, 80, 40);
+		}
+		y -= 80;
+	}
+}
 main();

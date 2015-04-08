@@ -12,18 +12,6 @@
 			<form method="post">
 				<ul>
 					<li>
-						<label>First Name: </label>
-						<input id="firstname" type="text" placeholder="Marc" required>
-					</li>
-					<li>
-						<label>Last Name: </label>
-						<input id="lastname" type="text" placeholder="Lim" required>
-					</li>
-					<li>
-						<label>Email: </label>
-						<input id="email" type="text" placeholder="marcLim@sample.com" required>
-					</li>
-					<li>
 						<label>User Name: </label>
 						<input id="regUsername" type="text" placeholder="freekstyle" required>
 					</li>
@@ -31,13 +19,62 @@
 						<label>Password: </label>
 						<input id="password" type="password" placeholder="password" required>
 					</li>
+					<li>
+						<label>Confirm Password: </label>
+						<input id="password2" type="password" placeholder="password" required>
+					</li>
+
 				</ul>
 				<ul id="buttons">
 					<li>
-						<input id="register" type="submit" value="Register">
+						<input id="register" type="button"  onclick="checkIfSame()" value = "Register">
 					</li>
 				</ul>
 			</form>
 		</div>
 	</body>
+	<script>
+		function Account(username, password, uniclasses){
+			this.username = username;
+			this.password = password;
+			this.uniclasses =uniclasses;
+		}
+		function Bwiseater(accounts){
+			this.accounts = accounts;
+		}
+		function checkIfSame(){
+			var password1 = document.getElementById('password').value;
+			var password2 = document.getElementById('password2').value;
+			if(password1 == password2){
+				var username = document.getElementById('regUsername').value;
+				var password = document.getElementById('password').value;
+				if(localStorage.getItem("bwiseater") == undefined){
+					var accounts = [];
+					accounts.push(new Account(username, password, []));
+					var bwisiter = new Bwiseater(accounts);
+					localStorage.setItem("bwiseater", JSON.stringify(bwisiter));
+				}else{
+					var bwiSEATER =JSON.parse(localStorage.getItem("bwiseater"));
+					var isTaken = false;
+					for(var x  = 0; x< bwiSEATER.accounts.length; x++){
+						if(bwiSEATER.accounts[x].username == username){
+							alert("That username already exists. Please try another username instead");
+							isTaken = true;
+							break;
+						}
+					}
+					if(!isTaken){
+					bwiSEATER.accounts.push(new Account(username, password, []));
+					localStorage.setItem("bwiseater", JSON.stringify(bwiSEATER));
+					alert("Your account was created successfully.");
+					window.location.assign("index.html");
+					}
+				}
+
+			}else{
+				alert("The passwords you have entered do not match. Please input the same password in the textboxes provided.");
+			}
+		}
+		
+	</script>
 </html>

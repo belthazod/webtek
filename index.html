@@ -22,11 +22,32 @@
 				</ul>
 				<ul id="buttons">
 					<li>
-						<input id="login" type="submit" value="Login">
+						<input id="login" type="button" onclick="logIn()" value="Login">
+
 						<a href="registration.html">Register</a>
 					</li>
 				</ul>
 			</form>
 		</div>
+		<script>
+		function logIn(){
+			var username = document.getElementById("username").value;
+			var password = document.getElementById("password").value;
+
+			var bwiseater = JSON.parse(localStorage.getItem("bwiseater"));
+			var noMatch = true;
+			for( var x = 0; x < bwiseater.accounts.length; x++ ){
+				if(bwiseater.accounts[x].username == username && bwiseater.accounts[x].password == password){
+					noMatch = false;
+					window.location.assign("MyClasses.html#"+username );
+					break;
+				}
+			}
+			if(noMatch){
+				alert("You have entered an invalid username/password. To create a  new account, please click Register");
+			}
+		}
+	</script>
 	</body>
+	
 </html>

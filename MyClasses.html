@@ -12,7 +12,7 @@
 			<input type="submit" value="Search">
 			<div id="template">
 				<img src="images/1.png" alt="profile">
-				<label>Instructors Name</label>
+				<label id="instructor">Instructors Name</label>
 				<img src="images/2.png" alt="settings">
 				<img src="images/3.png" alt="signout">
 			</div>
@@ -20,112 +20,16 @@
 
 		<nav id="navigate">
 			<ul>
-				<li><a href="MyClasses.html">My Classes</a></li>
-				<li><a href="create-class.html">Create Class</a></li>
-				
+				<li><a href="MyClasses.html" id="myClassesLink">My Classes</a></li>
+				<li><a href="create-class.html" id = "createClassLink">Create Class</a></li>
+				<li><a href="studrec.html" id="studRecLink">Student Record</a></li>
+			</ul>
 		</nav>
 
 		<main id="content">
-			<div id="lecture">
-				<table id="dataTable" border="1">
-				<h1>Lecture Class</h1>
-					<tr>
-						<th>Class Code</th>
-						<th>Descriptive Title</th>
-						<th>Room</th>
-						<th>Time</th>
-						<th>Days</th>
-						<th>Student Record</th>
-						
-					</tr>
-
-					<tr onclick="HighLightTR(this,'#c9cc99','cc3333');">
-						<td><a href="attendanceChecker.html">9558</a></td>
-						<td>Programming Applications</td>
-						<td>S423</td>
-						<td>9:30-10:30</td>
-						<td>WS</td>
-						<td><button><a href="studrec.html">view</a></button></td>
-						
-					</tr>
-
-					<tr onclick="HighLightTR(this,'#c9cc99','cc3333');">
-						<td><a href="attendanceChecker.html">9569</a></td>
-						<td>Database Management System</td>
-						<td>S423</td>
-						<td>8:30-9:30</td>
-						<td>TF</td>
-						<td><button><a href="studrec.html">view</a></button></td>
-						
-					</tr>
-
-					<tr onclick="HighLightTR(this,'#c9cc99','cc3333');">
-						<td><a href="attendanceChecker.html">9515</a></td>
-						<td>Web Systems and Technologies</td>
-						<td>S423</td>
-						<td>1:00-2:00</td>
-						<td>WS</td>
-						<td><button><a href="studrec.html">view</a></button></td>
-						
-					</tr>
-				</table>
-			</div>
-
-
-			<div id="laboratory">	
-				<table id="dataTable" border="1">
-				<h1>Laboratory Class</h1>
-					<tbody>
-					<tr>
-						<th>Class Code</th>
-						<th>Descriptive Title</th>
-						<th>Room</th>
-						<th>Time</th>
-						<th>Days</th>
-						<th>Student Record</th>
-						
-					</tr>
-
-					<tr onclick="HighLightTR(this,'#c9cc99','cc3333');">
-						<td><a href="attendanceChecker.html">9559</a></td>
-						<td>Programming Applications</td>
-						<td>S326</td>
-						<td>9:00-10:30 </td>
-						<td>MTH</td>
-						<td><button><a href="studrec.html">view</a></button></td>
-						
-
-					</tr>
-
-					<tr onclick="HighLightTR(this,'#c9cc99','cc3333');">
-						<td><a href="attendanceChecker.html">9570</a></td>
-						<td>Database Management System</td>
-						<td>S326</td>
-						<td>10:30-12:00</td>
-						<td>WS</td>
-						<td><button><a href="studrec.html">view</a></button></td>
-						
-					</tr>
-
-					<tr onClick="HighLightTR(this,'#c9cc99','cc3333');">
-						<td><a href="attendanceChecker.html">9516</a></td>
-						<td>Web Systems and Technologies</td>
-						<td>S326</td>
-						<td>4:00-5:300</td>
-						<td>WS</td>
-						<td><button><a href="studrec.html">view</a></button></td>
-						
-					</tr>
-					</tbody>
-
-				</table>
-			</div>	
-
-			<div id="delEdit">
-				<button><a onclick="deleteRow('dataTable')">Delete Class</a></button>
-				<button id="editBtn">Edit Class</button>
-			</div>
-		
+			<h1>My Classes</h1>
+			<table id= "classesTable">
+			</table>
 		</main>
 		
 		<footer>
@@ -212,6 +116,49 @@
 	//	select.removeChild(select.options[select.selectedIndex]);
 	//	};
 
+		var username = window.location.hash.substring(1);
+		document.getElementById('instructor').innerHTML = username;
+
+		var bwiseater = JSON.parse(localStorage.getItem("bwiseater"));
+		var account;
+		for(var x = 0; x< bwiseater.accounts.length; x++){
+			if(bwiseater.accounts[x].username == username){
+				account = bwiseater.accounts[x];
+				break;
+			}
+		}
+		changeLinks();
+		function changeLinks(){
+			document.getElementById('myClassesLink').href="MyClasses.html#" + username;
+			document.getElementById('createClassLink').href="create-class.html#" + username;
+			document.getElementById('studRecLink').href="MyClasses.html#" + username;
+		}
+		var table = document.getElementById('classesTable');
+		for(var x = 0; x < account.uniclasses.length; x++){
+			var row = document.createElement("tr");
+			var col1 = document.createElement("td");
+			col1.innerHTML = account.uniclasses[x].classcode;
+			var col2 = document.createElement("td");
+			col2.innerHTML = account.uniclasses[x].room;
+			var col3 = document.createElement("td");
+			col3.innerHTML = account.uniclasses[x].sched;
+			var col4 = document.createElement("td");
+			col4.innerHTML = account.uniclasses[x].numOfStud;
+			row.appendChild(col1);
+			row.appendChild(col2);
+			row.appendChild(col3);
+			row.appendChild(col4);	
+			table.appendChild(row);
+		}
+
+		/*
+		var button=document.getElementsByTagName("button")[0],
+		select=document.getElementsByTagName("select")[0];
+		button.onclick=function(){
+		select.removeChild(select.options[select.selectedIndex]);
+		};
+=======
+>>>>>>> .r60
 
 
 		var editBtn = document.getElementById("editBtn");
@@ -219,6 +166,9 @@
 		function editBtnEvent(){
 
 		}
+		*/
+
+
 
 	</script>
 </html>
