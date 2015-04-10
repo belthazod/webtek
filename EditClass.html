@@ -29,22 +29,22 @@
 			<article id="classAttr">
 
 				<form class="class-form" action="">
-					<div class="column-4">
+					<div id="edit" class="column-4">
 							<label for="input-classcode">Class Code: </label>
 							<input required id="input-classcode" class="tbox" autofocus type="text" name="ClassCode">
 						</div>
 
-						<div class="column-8">
+						<div id="edit" class="column-8">
 							<label for="input-desctitle">Descriptive Title: </label>
 							<input required id="input-desctitle" class="tbox" autofocus type="text" name="DescTitle">
 						</div>
 
-						<div class="column-8">
+						<div id="edit" class="column-8">
 							<label for="input-room">Room: </label>
 							<input required id="input-room" class="tbox" autofocus type="text" name="DescTitle">
 						</div>
 						
-						<div class="column-12">
+						<div id="edit" class="column-12">
 							<label for="day-selection">Days:</label>
 							<select required id="day-selection" class="selector">
 							  <option value="">MWF</option>
@@ -109,7 +109,7 @@
 								</select>
 						</div>		
 				</form>	
-					<button id="savebtn1" value="">SAVE</button>			
+					<button id="savebtn1">SAVE</button>			
 			</article>
 
 			<article id="students">
@@ -117,19 +117,19 @@
 				<table id="studentTable" border="1">
 
 					<caption>Students</caption>
-					<tr>
+					<tr onClick="HighLightTR(this,'#c9cc99','cc3333')">
 						<th>Last Name</th>
 						<th>First Name</th>
 						<th>Number of Absences</th>
 						<th>Class Card Status</th>
 					</tr>
-					<tr>
+					<tr onClick="HighLightTR(this,'#c9cc99','cc3333')">
 						<td>Tai</td>
 						<td>Fina</td>
 						<td>8</td>
 						<td>Dropped</td>
 					</tr>
-					<tr>
+					<tr onClick="HighLightTR(this,'#c9cc99','cc3333')">
 						<td>Ngungot</td>
 						<td>Vina</td>
 						<td>5</td>
@@ -159,12 +159,89 @@
 	</body>
 	
 	<script type="text/javascript">
+			var savebtn = document.getElementById("savebtn1");
+			savebtn.addEventlistener('click', function(){saveEdits()});
+			var savebtn1 = document.getElementById("savebtn2");
+			savebtn.addEventlistener('click', function(){saveEdits()});
 
-			var savebtn1 = document.getElementById("savebtn").addEventListener("click", editClass);
+			function saveEdits() {
+				var editElem = document.getElementById("edit");
+				var userVersion = editElem.innerHTML;
+				localStorage.userEdits = userVersion;
+				document.getElementById("classAttr").innerHTML="Edits saved!";
+			}
+
+			var preEl ;
+			var orgBColor;
+			var orgTColor;
+			function HighLightTR(el, backColor,textColor){
+			  if(typeof(preEl)!='undefined') {
+			     preEl.bgColor=orgBColor;
+			     try{ChangeTextColor(preEl,orgTColor);}catch(e){;}
+			  }
+			  orgBColor = el.bgColor;
+			  orgTColor = el.style.color;
+			  el.bgColor=backColor;
+
+			  try{ChangeTextColor(el,textColor);}catch(e){;}
+			  preEl = el;
+			}
+
+
+			function ChangeTextColor(a_obj,a_color){  ;
+			   for (i=0;i<a_obj.cells.length;i++)
+			    a_obj.cells(i).style.color=a_color;
+			}
+
+			function selectRow(row) {
+			    if (row.className.indexOf("selected") != -1) {
+			        row.className = row.className.replace("selected", "");
+			    } else {
+			        row.className += " selected";
+			    }
+			}
+
+			function deleteRow(tableID) {
+		    try {
+		        var table = document.getElementById(tableID);
+		        var rowCount = table.rows.length;
+		        for (var i = 0; i < rowCount; i++) {
+		            var row = table.rows[i];
+		            /*var chkbox = row.cells[0].childNodes[0];*/
+		            /*if (null != chkbox && true == chkbox.checked)*/
+
+		            if (row.getElementsByTagName("input")[0].className.indexOf("selected")!=-1) {
+		                if (rowCount <= 1) {
+		                    alert("Cannot delete all the rows.");
+		                    break;
+		                }
+		                table.deleteRow(i);
+		                rowCount--;
+		                i--;
+		            }
+		        }
+		    } catch (e) {
+		        alert(e);
+		    }
+		    //getValues();
+		}
+
+
+
+
+
+			
+
+
+
+
+
+
+		//	var savebtn1 = document.getElementById("savebtn").addEventListener("click", editClass);
 			var editbtn = document.getElementById("editbtn").addEventListener("click", editStudents);
 			var deletebtn = document.getElementById("deletebtn").addEventListener("click", deleteStudents);
 			var addbtn = document.getElementById("addbtn").addEventListener("click", addStudents);
-			var savebtn2 = document.getElementById("savebtn").addEventListener("click", saveEdit);
+		//	var savebtn2 = document.getElementById("savebtn").addEventListener("click", saveEdit);
 			var seatplan = document.getElementById("seatplan").addEventListener("click", editseatplan);
 
 			var studentTable = document.getElementById("studentTable");
