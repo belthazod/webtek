@@ -124,7 +124,7 @@
 
 				</table>
 					<button id="editbtn2" value="">EDIT</button>
-					<button id="deletebtn" value="">DELETE</button><br>
+					<button><a onclick="deleteRow('dataTable')">Delete</a></button><br>
 					<br>
 						<label for="lastname-input">Last Name:</label>
 						<input id="lastname-input" class="tbox" type="text" name="lastname"> 
@@ -149,6 +149,48 @@
 	</body>
 	
 	<script type="text/javascript">
+
+			var savebtn = document.getElementById("savebtn");
+			savebtn.addEventlistener('click', function(){saveEdits()});
+
+			function saveEdits() {
+				var editElem = document.getElementById("edit");
+				var userVersion = editElem.innerHTML;
+				localStorage.userEdits = userVersion;
+				document.getElementById("classAttr").innerHTML="Edits saved!";
+			}
+
+
+			function selectRow(row) {
+			    if (row.className.indexOf("selected") != -1) {
+			        row.className = row.className.replace("selected", "");
+			    } else {
+			        row.className += " selected";
+			    }
+			}
+
+			function deleteRow(studentTable) {
+			    try {
+			        var table = document.getElementById(studentTable);
+			        var rowCount = table.rows.length;
+			        for (var i = 0; i < rowCount; i++) {
+			            var row = table.rows[i];
+			            
+			            if (row.getElementsByTagName("input")[0].className.indexOf("selected")!=-1) {
+			                if (rowCount <= 1) {
+			                    alert("Cannot delete all the rows.");
+			                    break;
+			                }
+			                table.deleteRow(i);
+			                rowCount--;
+			                i--;
+			            }
+			        }
+			    } catch (e) {
+			        alert(e);
+			    }
+			    
+			}
 
 			var addbtn = document.getElementById("addbtn").addEventListener("click", function() {
 
