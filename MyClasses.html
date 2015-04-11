@@ -11,8 +11,7 @@
 			<div id="template">
 				<img src="images/1.png" alt="profile">
 				<label id="instructor">Instructors Name</label>
-				<img src="images/2.png" alt="settings">
-				<img src="images/3.png" alt="signout">
+				<a href="index.html"><img src="images/3.png" alt="signout"></a>
 			</div>
 		</header>
 
@@ -38,10 +37,19 @@
 		<footer>
 			&copy; 2015 Group #7
 			<br>All rights reserved.
+			<hr>
+			<div>
+				<label>Feeling bored in the theme? Choose here:</label>
+				<button onclick="swapStyleSheet('styles/styles1.css')">Preferred</button>
+				<button onclick="swapStyleSheet('styles/styles2.css')">Alternate</button>
+			</div>
 		</footer>
 	</body>
 	<script type="text/javascript">
-
+		/*for swapping stylesheet*/
+		function swapStyleSheet(sheet){
+			document.getElementById('pagestyle').setAttribute('href', sheet);
+		}
 
 		var preEl ;
 		var orgBColor;
