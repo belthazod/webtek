@@ -1,10 +1,14 @@
 @charset "UTF-8";
 
 body, header, nav, main, footer {
+	
 	display: block;
 	border-radius: 15px;
 	margin-top: 10px;
 	margin-bottom: 10px;
+}
+body, header, nav {
+	color: #D1E0E0;
 }
 
 body {
@@ -39,7 +43,7 @@ a:hover {
 #banner {
 	padding: 20px 20px 280px;
 	background-image: url("../images/scislogo.png");
-	background-size: 50%;
+	background-size: 35%;
 	background-repeat: no-repeat;
 	background-position: fixed;
 	color: white;
@@ -75,7 +79,7 @@ a:hover {
 #table {
 	width: 100%;
 	position: relative;
-	left: 160px;
+	left: 180px;
 }
 th {
 	width: 150px;
@@ -163,6 +167,7 @@ table, th, td {
 	margin-top:625px;
 }
 footer {
+	color: black;
 	background-color: #94B8B8;
 	clear: both;
 	text-align: center;
