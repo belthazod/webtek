@@ -21,7 +21,7 @@ body {
 }
 
 header {
-	background-color: #00FF99;
+
 	color: #000000;
 }
 a:link {
@@ -37,7 +37,12 @@ a:hover {
 }
 
 #banner {
-	padding: 20px 20px 50px;
+	padding: 20px 20px 280px;
+	background-image: url("../images/scislogo.png");
+	background-size: 50%;
+	background-repeat: no-repeat;
+	background-position: fixed;
+	color: white;
 }
 
 #banner img {
@@ -69,6 +74,8 @@ a:hover {
 
 #table {
 	width: 100%;
+	position: relative;
+	left: 160px;
 }
 th {
 	width: 150px;
