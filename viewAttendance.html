@@ -11,7 +11,7 @@
 		<header id="banner">
 			<div id="template">
 				<img src="images/1.png" alt="profile">
-				<label>Instructors Name</label>
+				<label id="instructorName">Instructors Name</label>
 				<img src="images/2.png" alt="settings">
 				<img src="images/3.png" alt="signout">
 			</div>
@@ -28,10 +28,10 @@
 		<main id="content">
 			<div id = "label">
 				<ul>
-					<li>Classcode</li>
-					<li>Subject No</li>
-					<li>Room</li>
-					<li>Time and Days</li>
+					<li id="classCode">Classcode</li>
+					<li id="descriptiveTitle">Subject No</li>
+					<li id="room">Room</li>
+					<li id="sched">Time and Days</li>
 				</ul>
 			</div>
 			
@@ -72,4 +72,16 @@
 			All rights reserved.
 		</footer>
 	</body>
+	<script>
+		var user = window.location.hash.substring(1);
+		var username =  user.split("&")[0];
+		document.getElementById('instructorName').innerHTML = username;
+
+		var user = window.location.hash.substring(1);
+		var username =  user.split("&")[0];
+		alert(username);
+		document.getElementById('instructorName').innerHTML = username;
+		var classCode = user.split("&")[1];
+		document.getElementById('classCode').innerHTML=classCode;
+	</script>
 </html>

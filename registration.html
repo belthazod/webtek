@@ -26,9 +26,13 @@
 
 				</ul>
 				<ul id="buttons">
+					
 					<li>
 						<input id="register" type="button"  onclick="checkIfSame()" value = "Register">
 					</li>
+					<p>Already have an account? Click 
+					<a href="index.html"> here </a>
+					 to log in
 				</ul>
 			</form>
 		</div>
@@ -53,6 +57,8 @@
 					accounts.push(new Account(username, password, []));
 					var bwisiter = new Bwiseater(accounts);
 					localStorage.setItem("bwiseater", JSON.stringify(bwisiter));
+					alert("Your account was created successfully.");
+					window.location.assign("index.html");
 				}else{
 					var bwiSEATER =JSON.parse(localStorage.getItem("bwiseater"));
 					var isTaken = false;

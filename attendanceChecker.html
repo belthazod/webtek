@@ -19,7 +19,6 @@
 			<ul>
 				<li><a href="MyClasses.html" id="myClassesLink">My Classes</a></li>
 				<li><a href="create-class.html" id = "createClassLink">Create Class</a></li>
-				<li><a href="studrec.html" id="studRecLink">Student Record</a></li>
 			</ul>
 		</nav>
 		<div id="main">
@@ -68,114 +67,113 @@
 		function changeLinks(){
 			document.getElementById('myClassesLink').href="MyClasses.html#" + username;
 			document.getElementById('createClassLink').href="create-class.html#" + username;
-			document.getElementById('studRecLink').href="MyClasses.html#" + username;
 		}
 		changeLinks();
 		//for sample getting of data from localStorage
 		var id = 0;
 		var array = [];
 		var students = [new Student( ++id,"last_name", 
-			"first_name", "middle_initial", "15", "15" ,"enrolled", "belthazod",  array), 
+			"first_name", "middle_initial", "15", "15" ,"enrolled", "belthazod",  array, 0, 0), 
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "105", "15" ,"enrolled", "belthazod",  array),
+			"first_name", "middle_initial", "105", "15" ,"enrolled", "belthazod",  array, 0, 0),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "195", "15" ,"enrolled", "belthazod",  array),
+			"first_name", "middle_initial", "195", "15" ,"enrolled", "belthazod",  array, 0, 0),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "285", "15" ,"enrolled", "belthazod",  array),
+			"first_name", "middle_initial", "285", "15" ,"enrolled", "belthazod",  array, 0, 0),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "375", "15" ,"enrolled", "belthazod",  array),
+			"first_name", "middle_initial", "375", "15" ,"enrolled", "belthazod",  array, 0, 0),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "15", "95" ,"enrolled", "belthazod",  array),
+			"first_name", "middle_initial", "15", "95" ,"enrolled", "belthazod",  array, 0, 0),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "105", "95" ,"enrolled", "belthazod",  array),
+			"first_name", "middle_initial", "105", "95" ,"enrolled", "belthazod",  array, 0, 0),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "195", "95" ,"enrolled", "belthazod",  array),
+			"first_name", "middle_initial", "195", "95" ,"enrolled", "belthazod",  array, 0, 0),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "285", "95" ,"enrolled", "belthazod",  array),
+			"first_name", "middle_initial", "285", "95" ,"enrolled", "belthazod",  array, 0, 0),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "375", "95" ,"enrolled", "belthazod",  array),
+			"first_name", "middle_initial", "375", "95" ,"enrolled", "belthazod",  array, 0, 0),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "15", "175" ,"enrolled", "belthazod",  array),
+			"first_name", "middle_initial", "15", "175" ,"enrolled", "belthazod",  array, 0, 0),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "105", "175" ,"enrolled", "belthazod",  array),
+			"first_name", "middle_initial", "105", "175" ,"enrolled", "belthazod",  array, 0, 0),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "195", "175" ,"enrolled", "belthazod",  array),
+			"first_name", "middle_initial", "195", "175" ,"enrolled", "belthazod",  array, 0, 0),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "285", "175" ,"enrolled", "belthazod",  array),
+			"first_name", "middle_initial", "285", "175" ,"enrolled", "belthazod",  array, 0, 0),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "375", "175" ,"enrolled", "belthazod",  array),
+			"first_name", "middle_initial", "375", "175" ,"enrolled", "belthazod",  array, 0, 0),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "15", "255" ,"enrolled", "belthazod",  array),
+			"first_name", "middle_initial", "15", "255" ,"enrolled", "belthazod",  array, 0, 0),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "105", "255" ,"enrolled", "belthazod",  array),
+			"first_name", "middle_initial", "105", "255" ,"enrolled", "belthazod",  array, 0, 0),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "195", "255" ,"enrolled", "belthazod",  array),
+			"first_name", "middle_initial", "195", "255" ,"enrolled", "belthazod",  array, 0, 0),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "285", "255" ,"enrolled", "belthazod",  array),
+			"first_name", "middle_initial", "285", "255" ,"enrolled", "belthazod",  array, 0, 0),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "375", "255" ,"enrolled", "belthazod",  array),
+			"first_name", "middle_initial", "375", "255" ,"enrolled", "belthazod",  array, 0, 0),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "15", "335" ,"enrolled", "belthazod",  array),
+			"first_name", "middle_initial", "15", "335" ,"enrolled", "belthazod",  array, 0, 0),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "105", "335" ,"enrolled", "belthazod",  array),
+			"first_name", "middle_initial", "105", "335" ,"enrolled", "belthazod",  array, 0, 0),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "195", "335" ,"enrolled", "belthazod",  array),
+			"first_name", "middle_initial", "195", "335" ,"enrolled", "belthazod",  array, 0, 0),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "285", "335" ,"enrolled", "belthazod",  array),
+			"first_name", "middle_initial", "285", "335" ,"enrolled", "belthazod",  array, 0, 0),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "375", "335" ,"enrolled", "belthazod",  array),
+			"first_name", "middle_initial", "375", "335" ,"enrolled", "belthazod",  array, 0, 0),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "910", "15" ,"enrolled", "belthazod",  array),
+			"first_name", "middle_initial", "910", "15" ,"enrolled", "belthazod",  array, 0, 0),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "820", "15" ,"enrolled", "belthazod",  array),
+			"first_name", "middle_initial", "820", "15" ,"enrolled", "belthazod",  array, 0, 0),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "730", "15" ,"enrolled", "belthazod",  array),
+			"first_name", "middle_initial", "730", "15" ,"enrolled", "belthazod",  array, 0, 0),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "640", "15" ,"enrolled", "belthazod",  array),
+			"first_name", "middle_initial", "640", "15" ,"enrolled", "belthazod",  array, 0, 0),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "550", "15" ,"enrolled", "belthazod",  array),
+			"first_name", "middle_initial", "550", "15" ,"enrolled", "belthazod",  array, 0, 0),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "910", "95" ,"enrolled", "belthazod",  array),
+			"first_name", "middle_initial", "910", "95" ,"enrolled", "belthazod",  array, 0, 0),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "820", "95" ,"enrolled", "belthazod",  array),
+			"first_name", "middle_initial", "820", "95" ,"enrolled", "belthazod",  array, 0, 0),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "730", "95" ,"enrolled", "belthazod",  array),
+			"first_name", "middle_initial", "730", "95" ,"enrolled", "belthazod",  array, 0, 0),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "640", "95" ,"enrolled", "belthazod",  array),
+			"first_name", "middle_initial", "640", "95" ,"enrolled", "belthazod",  array, 0, 0),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "550", "95" ,"enrolled", "belthazod",  array),
+			"first_name", "middle_initial", "550", "95" ,"enrolled", "belthazod",  array, 0, 0),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "910", "175" ,"enrolled", "belthazod",  array),
+			"first_name", "middle_initial", "910", "175" ,"enrolled", "belthazod",  array, 0, 0),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "820", "175" ,"enrolled", "belthazod",  array),
+			"first_name", "middle_initial", "820", "175" ,"enrolled", "belthazod",  array, 0, 0),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "730", "175" ,"enrolled", "belthazod",  array),
+			"first_name", "middle_initial", "730", "175" ,"enrolled", "belthazod",  array, 0, 0),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "640", "175" ,"enrolled", "belthazod",  array),
+			"first_name", "middle_initial", "640", "175" ,"enrolled", "belthazod",  array, 0, 0),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "550", "175" ,"enrolled", "belthazod",  array),
+			"first_name", "middle_initial", "550", "175" ,"enrolled", "belthazod",  array, 0, 0),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "910", "255" ,"enrolled", "belthazod",  array),
+			"first_name", "middle_initial", "910", "255" ,"enrolled", "belthazod",  array, 0, 0),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "820", "255" ,"enrolled", "belthazod",  array),
+			"first_name", "middle_initial", "820", "255" ,"enrolled", "belthazod",  array, 0, 0),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "730", "255" ,"enrolled", "belthazod",  array),
+			"first_name", "middle_initial", "730", "255" ,"enrolled", "belthazod",  array, 0, 0),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "640", "255" ,"enrolled", "belthazod",  array),
+			"first_name", "middle_initial", "640", "255" ,"enrolled", "belthazod",  array, 0, 0),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "550", "255" ,"enrolled", "belthazod",  array),
+			"first_name", "middle_initial", "550", "255" ,"enrolled", "belthazod",  array, 0, 0),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "910", "335" ,"enrolled", "belthazod",  array),
+			"first_name", "middle_initial", "910", "335" ,"enrolled", "belthazod",  array, 0, 0),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "820", "335" ,"enrolled", "belthazod",  array),
+			"first_name", "middle_initial", "820", "335" ,"enrolled", "belthazod",  array, 0, 0),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "730", "335" ,"enrolled", "belthazod",  array),
+			"first_name", "middle_initial", "730", "335" ,"enrolled", "belthazod",  array, 0, 0),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "640", "335" ,"enrolled", "belthazod",  array),
+			"first_name", "middle_initial", "640", "335" ,"enrolled", "belthazod",  array, 0, 0),
 			new Student(++id,"last_name", 
-			"first_name", "middle_initial", "550", "335" ,"enrolled", "belthazod",  array),];
+			"first_name", "middle_initial", "550", "335" ,"enrolled", "belthazod",  array, 0, 0),];
 			
-		var x = new universityClass(7006, "Webtek", "s421"  ,"8:30-9:30", 50, "belthazod", students);
+		var x = new universityClass(7006, "Webtek", "s421"  ,"8:30-9:30 MWF", 50, "belthazod", students, []);
 		var bwiseater = JSON.parse(localStorage.getItem("bwiseater"));
 		for(var y = 0; y<bwiseater.accounts.length; y++){
 			if(bwiseater.accounts[y].username == document.getElementById('instructorName').innerHTML){
@@ -187,10 +185,7 @@
 					}
 				}
 
-				if(exists){
-				
-				}
-				else{
+				if(!exists){
 					bwiseater.accounts[y].uniclasses.push(x);
 				}
 			}
@@ -223,58 +218,7 @@
 		var c = document.getElementById("myCanvas");
 		var ctx = c.getContext("2d");
 		var main = document.getElementById('main');
-		
-		/*var seats = 0;
-		var y = 15;
-		var row = 1;
-		var main = document.getElementById('main');
-		var seatCount = 0;
-		for(var x = 15 ; row<6; x+=90){
-			if(seats > 4){
-				y+= 80;
-				seats = 0;
-				x = 15;
-				row++;
-			}
-			if (row<6){
-				seatCount++;
-				var div = document.createElement("div");
-				div.setAttribute("style", "margin-top:" + (y+1) + ";margin-left:" + (x+1));
-				div.className="student unselectable";
-				div.setAttribute("onclick", "changeState("+seatCount+")");
-				div.innerHTML = "student";
-				main.appendChild(div);
-			
-				ctx.fillStyle = "#FF0000";
-				ctx.fillRect(x, y, 80, 40);
-				seats++;
-			}
-		}
-		var seats = 0;
-		var row = 1;
-		var y = 15;
-		
-		for(var x = 910 ; row<6; x-=90){
-			if(seats > 4){
-				y += 80;
-				seats = 0;
-				x = 910;
-				row++;
-			}
-			if (row<6){
-				seatCount++;
-				var div = document.createElement("div");
-				div.setAttribute("style", "margin-top:" + (y+1) + ";margin-left:" + (x+1));
-				div.className="student unselectable";
-				div.setAttribute("onclick", "changeState("+seatCount+")");
-				div.innerHTML = "student";
-				main.appendChild(div);
-				
-				ctx.fillStyle = "#FF0000";
-				ctx.fillRect(x, y, 80, 40);
-				seats++;
-			}
-		}*/
+
 		seatCount = 0;
 		for(var i = 0; i< p.students.length; i++){
 				seatCount++;
@@ -304,43 +248,53 @@
 		
 		function endClass(){
 			var main = document.getElementById('main');
-			
+			var classDate = document.getElementById('date').value;
+			p.classDates.push(classDate);
 			var absentStudents = main.getElementsByClassName('absent');
-			alert(absentStudents);
 			var absentStudentsList = [];
 			for(var i = 0; i < absentStudents.length; i++){
 				absentStudentsList.push(absentStudents[i].title);
 			}
-			for(var index = 0; index < absentStudentsList.length; index++){
+			for(var index = 0; index < absentStudentsList.length;){
 				var studentID = absentStudentsList.pop();
 				for(var x = 0; x<p.students.length; x++){
-					
 					if(studentID == p.students[x].stud_id){
-						p.students[x].records.push(new Record("10,10,2014","absent"));
-						break;
+						p.students[x].absenceCount++;
+						p.students[x].records.push(new Record(classDate,"absent"));
+						
 					}
 				}
 			}
 			
 			var lateStudents = main.getElementsByClassName('late');
-			alert("Late students" + lateStudents);
 			var lateStudentsList = [];
 			for(var i = 0; i < lateStudents.length; i++){
 				lateStudentsList.push(lateStudents[i].title);
 			}
-			for(var index = 0; index < lateStudentsList.length; index++){
+			for(var index = 0; index < lateStudentsList.length;){
 				var studentID = lateStudentsList.pop();
 				for(var i = 0; i < p.students.length; i++){
-					
 					if(studentID == p.students[i].stud_id){
-						p.students[i].records.push(new Record("10,10,2014","tardy"));
-						break;
+						p.students[i].tardinessCount++;
+						p.students[i].records.push(new Record(classDate,"tardy"));
 					}
 				}
 			}
 			var classCode = document.getElementById("classCode").innerHTML;
-			localStorage.setItem(classCode, JSON.stringify(p));
+
+			for( var x =0; x < bwiseater.accounts.length; x++){
+				if(bwiseater.accounts[x].username == username){
+					for(var y = 0; y<bwiseater.accounts[x].uniclasses.length; y++){
+						if(bwiseater.accounts[x].uniclasses[y].classcode == classCode){
+							bwiseater.accounts[x].uniclasses[y] = p;
+						}
+					}
+				}
+			}
+			localStorage.setItem("bwiseater", JSON.stringify(bwiseater));
 		}
+
+
 		
 	</script>
 	

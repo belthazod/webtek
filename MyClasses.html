@@ -29,6 +29,7 @@
 				<th>Classcode</th>
 				<th>Descriptive Title</th>
 				<th>Schedule</th>
+				<th>Number of Students</th>
 				<th>Room</th>
 				<th>Student Record</th>
 			</table>
@@ -139,9 +140,10 @@
 			var row = document.createElement("tr");
 			var col1 = document.createElement("td");
 			var link = document.createElement("a");
-			link.href = "AttendanceChecker.html#" + username + "&" + account.uniclasses[x].classcode;
+			link.href = "attendanceChecker.html#" + username + "&" + account.uniclasses[x].classcode;;
 			link.innerHTML = account.uniclasses[x].classcode;
 			col1.appendChild(link);
+
 			var col2 = document.createElement("td");
 			col2.innerHTML = account.uniclasses[x].room;
 			var col3 = document.createElement("td");
@@ -152,8 +154,12 @@
 			var recLink = document.createElement("a");
 			recLink.href = "studrec.html#" + username + "&" + account.uniclasses[x].classcode;
 			recLink.innerHTML = "View";
+			var col6 = document.createElement("td");
+			col6.innerHTML = account.uniclasses[x].descriptiveTitle;
+
 			col5.appendChild(recLink);
 			row.appendChild(col1);
+			row.appendChild(col6);
 			row.appendChild(col3);
 			row.appendChild(col4);
 			row.appendChild(col2);
