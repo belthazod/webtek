@@ -24,6 +24,7 @@
 		</nav>
 		<!--End of Ramel Laigo's contribution -->
 
+		<!--Contributor: Ian Bulosan, though, form and input forms copied from Jolas^^-->
 		<section>
 			<h1>Edit Class</h1>
 
@@ -135,14 +136,15 @@
 						<input id="middleinitial-input" class="tbox" type="text" size="1" name="middleinitial">
 						<button id="addbtn" class="btn" value="">ADD STUDENT</button><br>
 					<br>
-					<button id="seatplan" value="">EDIT SEAT PLAN</button>
-					<br>
-					<button id="savebtn" value="">SAVE CHANGES</button>
-					
-					
 			</article>
-			
+
+			<article id="seatCanvas">
+				<canvas></canvas>
+			</article>
+					<br>
+					<button id="savebtn" value="">SAVE CHANGES</button>				
 		</section>
+		<!--End of Ian's contribution-->
 		<!-- Contributor: Ramel Laigo -->
 		<footer>
 			&copy; 2015 Group #7. 
@@ -164,6 +166,56 @@
 			document.getElementById('pagestyle').setAttribute('href', sheet);
 		}
 		// End of Ramel Laigo's contribution
+
+		/**adding student to list***/
+		//Contributor: Ian Bulosan
+				document.getElementById("addbtn").addEventListener("click", function() {
+
+					var lastname = document.getElementById("lastname-input").value;
+					var firstname = document.getElementById("firstname-input").value;
+					var middlename = document.getElementById("middleinitial-input").value;
+
+					var table = document.getElementById("studentTable");
+					
+					var length = table.rows.length;
+					
+					if(lastname != "" && firstname != "" && middlename != ""){
+	    				
+						var newStud = document.createElement("tr");
+							//newStud.setAttribute(onclick);
+
+						var studLname = document.createElement("td");
+							newStud.appendChild(studLname);
+						var Lname = document.createTextNode(lastname);
+							studLname.appendChild(Lname);
+
+						var studFname = document.createElement("td");
+							newStud.appendChild(studFname);
+						var Fname = document.createTextNode(firstname);
+							studFname.appendChild(Fname);
+
+						var studMname = document.createElement("td");
+							newStud.appendChild(studMname);
+						var Mname = document.createTextNode(middlename);
+							studMname.appendChild(Mname);
+							
+							table.appendChild(newStud);
+	
+	    				/*var row = table.insertRow(length);
+	    				var cell1 = row.insertCell(0);
+	    				var cell2 = row.insertCell(1);
+	    				var cell3 = row.insertCell(2);
+	    				cell1.innerHTML = lastname;
+	    				cell2.innerHTML = firstname;
+	    				cell3.innerHTML = middlename;*/
+
+	    				document.getElementById("lastname-input").value = "";
+	    				document.getElementById("firstname-input").value = "";
+	    				document.getElementById("middleinitial-input").value = "";
+					}
+
+			});
+		//end of Ian's Contribution
 
 		// Contributor: Jeremy
 			var savebtn = document.getElementById("savebtn");
@@ -208,25 +260,6 @@
 			    
 			}
 			// End of Jeremy contribution -->
-
-			var addbtn = document.getElementById("addbtn").addEventListener("click", function() {
-
-					var lastname = document.getElementById("lastname-input").value;
-					var firstname = document.getElementById("firstname-input").value;
-					var middlename = document.getElementById("middleinitial-input").value;
-
-					
-					var table = document.getElementById("studentTable");
-					var length = table.rows.length;
-    				var row = table.insertRow(length);
-    				var cell1 = row.insertCell(0);
-    				var cell2 = row.insertCell(1);
-    				var cell3 = row.insertCell(2);
-    				cell1.innerHTML = lastname;
-    				cell2.innerHTML = firstname;
-    				cell3.innerHTML = middlename ;
-	
-			});
 
 			var seatplan = document.getElementById("seatplan").addEventListener("click", editseatplan);
 
