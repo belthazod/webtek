@@ -165,7 +165,8 @@ footer {
 	text-align: center;
 	line-height: 20px;
 	position: relative;
-	
+}
+/* Contributor: Ramel Laigo */
 /*media querry for huge pc's*/
 @media only screen and (max-width: 1280px) {
 	body {
@@ -366,3 +367,4 @@ footer {
 
 	}
 }
+/* End of Ramel Laigo's contribution */
