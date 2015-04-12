@@ -34,11 +34,12 @@
 					<option value="3">Students with absences and tardiness</option>
 					<option value="1">Students with absences</option>
 					<option value="2">Students with tardiness</option>
+					<option value="5">Dropped students</option>
 					<option value="4">All students</option>
 				</select>
 			</div>
 
-			<div id="sort">
+			<!--<div id="sort">
 				<label>Sort by:</label> 
 				<select>
 					<option >last name</option>
@@ -46,14 +47,15 @@
 					<option>class schedule</option>
 					<option>no. of absents</option>
 				</select>
-			</div>
+			</div>-->
 			<table id="studrec" border="1" style="width:100%">
 				<thead>
 					<th>Student Name</th>
 					<th>Tardiness</th>
 					<th>Absences</th>
 					<th>Status</th>
-					<th></th>
+					<th>Info</th>
+					<th>Change status</th>
 				</thead>
 				<tbody id="body">
 
@@ -100,7 +102,7 @@
 					for(var y = 0; y<bwiseater.accounts[x].uniclasses.length; y++){
 						if(bwiseater.accounts[x].uniclasses[y].classcode == classCode){
 								document.getElementById('descriptiveTitle').innerHTML=bwiseater.accounts[x].uniclasses[y].descriptiveTitle;
-								document.getElementById('sched').innerHTML = bwiseater.accounts[x].uniclasses[y].sched + " " + bwiseater.accounts[x].uniclasses[y].days;
+								document.getElementById('sched').innerHTML = bwiseater.accounts[x].uniclasses[y].sched;
 								students = bwiseater.accounts[x].uniclasses[y].students;
 							
 							break;
@@ -139,14 +141,29 @@
 					var link = document.createElement("a");
 					td5.appendChild(link);
 					if(students[x].absenceCount >0 || students[x].tardinessCount>0){
-						link.innerHTML = "View / Change status";
+						link.innerHTML = "View Details";
 						link.href="viewAttendance.html#"+username+"&"+classCode+"&"+students[x].stud_id;
+					}
+					
+					var td6 = document.createElement("td");
+					var button = document.createElement("button");
+				
+					if(students[x].absenceCount > 0 || students[x].tardinessCount>0){
+						td6.appendChild(button);
+						if(students[x].studstatus == "enrolled"){
+							button.innerHTML = "Drop Student";
+							button.setAttribute("onclick", "changeStatus("+ students[x].stud_id +")");
+						}else{
+							button.innerHTML = "Re-admit Student";
+							button.setAttribute("onclick", "changeStatus("+ students[x].stud_id +")");
+						}
 					}
 					tr.appendChild(td1);
 					tr.appendChild(td2);
 					tr.appendChild(td3);
 					tr.appendChild(td4);
 					tr.appendChild(td5);
+					tr.appendChild(td6);
 					main.appendChild(tr);
 				}
 			}
@@ -170,15 +187,28 @@
 					var link = document.createElement("a");
 					td5.appendChild(link);
 					if(students[x].absenceCount >0 || students[x].tardinessCount>0){
-						link.innerHTML = "View / Change status";
+						link.innerHTML = "View Details";
 						link.href="viewAttendance.html#"+username+"&"+classCode+"&"+students[x].stud_id;
 					}
-
+					var td6 = document.createElement("td");
+					var button = document.createElement("button");
+				
+					if(students[x].absenceCount > 0 || students[x].tardinessCount>0){
+						td6.appendChild(button);
+						if(students[x].studstatus == "enrolled"){
+							button.innerHTML = "Drop Student";
+							button.setAttribute("onclick", "changeStatus("+ students[x].stud_id +")");
+						}else{
+							button.innerHTML = "Re-admit Student";
+							button.setAttribute("onclick", "changeStatus("+ students[x].stud_id +")");
+						}
+					}
 					tr.appendChild(td1);
 					tr.appendChild(td2);
 					tr.appendChild(td3);
 					tr.appendChild(td4);
 					tr.appendChild(td5);
+					tr.appendChild(td6);
 					main.appendChild(tr);
 				}
 			}
@@ -202,15 +232,28 @@
 					var link = document.createElement("a");
 					td5.appendChild(link);
 					if(students[x].absenceCount >0 || students[x].tardinessCount>0){
-						link.innerHTML = "View / Change status";
+						link.innerHTML = "View Details";
 						link.href="viewAttendance.html#"+username+"&"+classCode+"&"+students[x].stud_id;
 					}
-
+					var td6 = document.createElement("td");
+					var button = document.createElement("button");
+				
+					if(students[x].absenceCount > 0 || students[x].tardinessCount>0){
+						td6.appendChild(button);
+						if(students[x].studstatus == "enrolled"){
+							button.innerHTML = "Drop Student";
+							button.setAttribute("onclick", "changeStatus("+ students[x].stud_id +")");
+						}else{
+							button.innerHTML = "Re-admit Student";
+							button.setAttribute("onclick", "changeStatus("+ students[x].stud_id +")");
+						}
+					}
 					tr.appendChild(td1);
 					tr.appendChild(td2);
 					tr.appendChild(td3);
 					tr.appendChild(td4);
 					tr.appendChild(td5);
+					tr.appendChild(td6);
 					main.appendChild(tr);
 				}
 			}
@@ -233,19 +276,78 @@
 					var link = document.createElement("a");
 					td5.appendChild(link);
 					if(students[x].absenceCount >0 || students[x].tardinessCount>0){
-						link.innerHTML = "View / Change status";
+						link.innerHTML = "View Details";
 						link.href="viewAttendance.html#"+username+"&"+classCode+"&"+students[x].stud_id;
 					}
-
+					var td6 = document.createElement("td");
+					var button = document.createElement("button");
+				
+					if(students[x].absenceCount > 0 || students[x].tardinessCount>0){
+						td6.appendChild(button);
+						if(students[x].studstatus == "enrolled"){
+							button.innerHTML = "Drop Student";
+							button.setAttribute("onclick", "changeStatus("+ students[x].stud_id +")");
+						}else{
+							button.innerHTML = "Re-admit Student";
+							button.setAttribute("onclick", "changeStatus("+ students[x].stud_id +")");
+						}
+					}
 					tr.appendChild(td1);
 					tr.appendChild(td2);
 					tr.appendChild(td3);
 					tr.appendChild(td4);
 					tr.appendChild(td5);
-					main.appendChild(tr);
-				
+					tr.appendChild(td6);
+					main.appendChild(tr);			
 			}
 		}
+		
+		function viewDroppedStudents(){
+			clearTable();
+			var main = document.getElementById("body");
+			for(var x = 0; x< students.length; x++){
+				if(students[x].studstatus == "dropped"){
+					var tr = document.createElement("tr");
+					var td1= document.createElement("td");
+					td1.innerHTML = students[x].last_name + ", " + students[x].first_name + " " +students[x].middle_initial+".";
+					var td2 = document.createElement("td");
+					td2.innerHTML =  students[x].tardinessCount;
+					var td3 = document.createElement("td");
+					td3.innerHTML = students[x].absenceCount;
+					var td4 = document.createElement("td");
+					td4.innerHTML = students[x].studstatus;
+					var td5 = document.createElement("td");
+					var link = document.createElement("a");
+					td5.appendChild(link);
+					if(students[x].absenceCount > 0 || students[x].tardinessCount > 0){
+						link.innerHTML = "View Details";
+						link.href="viewAttendance.html#"+username+"&"+classCode+"&"+students[x].stud_id;
+					}
+					var td6 = document.createElement("td");
+					var button = document.createElement("button");
+				
+					if(students[x].absenceCount > 0 || students[x].tardinessCount > 0){
+						td6.appendChild(button);
+						if(students[x].studstatus == "enrolled"){
+							button.innerHTML = "Drop Student";
+							button.setAttribute("onclick", "changeStatus("+ students[x].stud_id +")");
+						}else{
+							button.innerHTML = "Re-admit Student";
+							button.setAttribute("onclick", "changeStatus("+ students[x].stud_id +")");
+						}
+					}
+					tr.appendChild(td1);
+					tr.appendChild(td2);
+					tr.appendChild(td3);
+					tr.appendChild(td4);
+					tr.appendChild(td5);
+					tr.appendChild(td6);
+					main.appendChild(tr);
+				}
+			}
+		}
+
+
 		function filter(){
 			var select = document.getElementById("filterSelect");
 			var value = select.options[select.selectedIndex].value;
@@ -261,9 +363,43 @@
 					break;
 				case "4":
 					viewAllStudents();
-				break;
+					break;
+				case "5":
+					viewDroppedStudents();
+					break;
 			}
 		}
 		changeLinks();
+		
+		function changeStatus(studID){
+			
+			for(var x = 0; x < students.length; x++){
+
+				if(students[x].stud_id == studID){
+					
+					if(students[x].studstatus == "enrolled"){
+						students[x].studstatus = "dropped";
+					}else{
+						students[x].studstatus = "enrolled";
+					}
+					break;
+				}
+			}
+			
+			var classCode = document.getElementById("classCode").innerHTML;
+
+			for( var x =0; x < bwiseater.accounts.length; x++){
+				if(bwiseater.accounts[x].username == username){
+					for(var y = 0; y < bwiseater.accounts[x].uniclasses.length; y++){
+						if(bwiseater.accounts[x].uniclasses[y].classcode == classCode){
+							bwiseater.accounts[x].uniclasses[y].students = students;
+						}
+					}
+				}
+			}
+			localStorage.setItem("bwiseater", JSON.stringify(bwiseater));
+			window.location.reload();
+		}
+		
 	</script>
 </html>

@@ -24,7 +24,7 @@
 
 			</ul>
 		</nav>
-		<main id="content">
+		<div id="content">
 			<div id = "label">
 				<ul>
 					<li id="classCode">Classcode</li>
@@ -33,38 +33,17 @@
 					<li id="sched">Time and Days</li>
 				</ul>
 			</div>
-			
-			<div id = "table">
-				<table style = 100% border = 1%> 
+			<h1 id="studentName">Student Name</h1>
+			<div id = "table" style "width= 100%">
+				<table style "width= 100%" border = 1 id="attendance"> 
 					<tr>
-						<th>Name</th>
 						<th>Date</th>
-						<th>Late/Absent</th>
 						<th>Remarks</th>
 					</tr>
-					<tr>
-						<td>Student 1</td>
-						<td>
-							<ul>
-								<li>03-18-15</li>
-								<li>03-19-15</li>
-								<li>03-20-15</li>
-								<li>03-21-15</li>
-							<ul>	
-						</td>
-						<td>
-							<ul>
-								<li>Absent</li>
-								<li>Late</li>
-								<li>Absent</li>
-								<li>Absent</li>
-							</ul>
-						</td>
-						<td>Drop</td>
-					</tr>
+					
 				</table>
 			</div>
-		</main>
+		</div>
 
 		<footer>
 			&copy; 2015 Group #7. <br>
@@ -88,9 +67,47 @@
 
 		var user = window.location.hash.substring(1);
 		var username =  user.split("&")[0];
-		alert(username);
 		document.getElementById('instructorName').innerHTML = username;
 		var classCode = user.split("&")[1];
+		var studentID = user.split("&")[2];
 		document.getElementById('classCode').innerHTML=classCode;
+		var bwiseater = JSON.parse(localStorage.getItem("bwiseater"));
+		var students;
+		
+		for(var x = 0; x < bwiseater.accounts.length; x++){
+			
+			if(bwiseater.accounts[x].username == username){
+				for(var y = 0; y < bwiseater.accounts[x].uniclasses.length; y++){
+					if(bwiseater.accounts[x].uniclasses[y].classcode == classCode){
+						document.getElementById("room").innerHTML = bwiseater.accounts[x].uniclasses[y].room;
+						document.getElementById("sched").innerHTML = bwiseater.accounts[x].uniclasses[y].sched;
+						students = bwiseater.accounts[x].uniclasses[y].students;
+						break;
+					}
+				}
+			}
+		}
+		var table = document.getElementById("attendance");
+		for(var i = 0; i < students.length; i++){
+			if(students[i].stud_id == studentID){
+				document.getElementById("studentName").innerHTML = students[i].last_name + ", "+ students[i].first_name + " " + students[i].middle_initial + ".";
+				
+				for(var x = 0; x < students.length ; x++){
+					var tr = document.createElement("tr");
+						var td1= document.createElement("td");
+						td1.innerHTML = students[i].records[x].date;
+						var td2 = document.createElement("td");
+						td2.innerHTML =  students[i].records[x].type;
+
+
+						tr.appendChild(td1);
+						tr.appendChild(td2);
+
+						table.appendChild(tr);
+					
+				}
+				break;
+			}
+		}
 	</script>
 </html>
