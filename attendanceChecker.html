@@ -6,6 +6,7 @@
 		<link rel="stylesheet" type="text/css" title="Alternate" href="styles/styles2.css">
 	</head>
 	<body>
+		<!-- Contributor: Ramel Laigo -->
 		<header id="banner">
 			<div id="template">
 				<img src="images/1.png" alt="profile">
@@ -20,31 +21,34 @@
 				<li><a href="create-class.html" id = "createClassLink">Create Class</a></li>
 			</ul>
 		</nav>
-		<div id="main">
-			<section>
-				<span>Class Code:</span>
-				<p id = "classCode" class = "classInfo"></p>
-				<span>Room:</span>
-				<p id = "room" class = "classInfo"></p>
-				<span>Schedule:</span>
-				<p id = "sched" class = "classInfo"></p>
-				<span>Number of Students:</span>
-				<p id = "numOfStud" class = "classInfo"></p>
-				<span>Instructor:</span>
-				<p id = "instructor" class = "classInfo"></p>
-				<br>
-				<span>Date:</span>
-				<input type="date" id = "date">
+		<!--End of Ramel Laigo's contribution -->
+		<main id="content">
+			<div id="main">
+				<section>
+					<span>Class Code:</span>
+					<p id = "classCode" class = "classInfo"></p>
+					<span>Room:</span>
+					<p id = "room" class = "classInfo"></p>
+					<span>Schedule:</span>
+					<p id = "sched" class = "classInfo"></p>
+					<span>Number of Students:</span>
+					<p id = "numOfStud" class = "classInfo"></p>
+					<span>Instructor:</span>
+					<p id = "instructor" class = "classInfo"></p>
+					<br>
+					<span>Date:</span>
+					<input type="date" id = "date">
+					
+				</section>
+				<canvas id="myCanvas" width="1000" height="600" style="border:1px solid #000000;">
+				</canvas>
 				
+			</div>
+			<section id = "postCanvas">
+					<button onclick = endClass()>End Class</button>
 			</section>
-			<canvas id="myCanvas" width="1000" height="600" style="border:1px solid #000000;">
-			</canvas>
-			
-		</div>
-		<section id = "postCanvas">
-				<button onclick = endClass()>End Class</button>
-		</section>
-		
+		</main>
+		<!-- Contributor: Ramel Laigo -->
 		<footer>
 			&copy; 2015 Group #7. 
 			<br>All rights reserved.
@@ -55,14 +59,17 @@
 				<button onclick="swapStyleSheet('styles/styles2.css')">Alternate</button>
 			</div>
 		</footer>
+		<!--End of Ramel Laigo's contribution -->
 		
 	</body>
 	<script type="text/javascript" src="scripts/checkAttendance.js"></script>
 	<script>
+		// Contributor: Ramel Laigo
 		/*for swapping stylesheet*/
 		function swapStyleSheet(sheet){
 			document.getElementById('pagestyle').setAttribute('href', sheet);
 		}
+		// End of Ramel Laigo's contribution
 
 		Date.prototype.toDateInputValue = (function() {
 		    var local = new Date(this);

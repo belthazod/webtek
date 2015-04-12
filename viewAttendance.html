@@ -8,6 +8,7 @@
 	</head>
 	
 	<body>
+		<!-- Contributor: Ramel Laigo -->
 		<header id="banner">
 			<div id="template">
 				<img src="images/1.png" alt="profile">
@@ -24,6 +25,8 @@
 
 			</ul>
 		</nav>
+		<!--End of Ramel Laigo's contribution -->
+
 		<div id="content">
 			<div id = "label">
 				<ul>
@@ -45,6 +48,7 @@
 			</div>
 		</div>
 
+		<!-- Contributor: Ramel Laigo -->
 		<footer>
 			&copy; 2015 Group #7. <br>
 			All rights reserved.
@@ -55,12 +59,16 @@
 				<button onclick="swapStyleSheet('styles/styles2.css')">Alternate</button>
 			</div>
 		</footer>
+		<!--End of Ramel Laigo's contribution -->
 	</body>
 	<script>
+		// Contributor: Ramel Laigo
 		/*for swapping stylesheet*/
 		function swapStyleSheet(sheet){
 			document.getElementById('pagestyle').setAttribute('href', sheet);
 		}
+		// End of Ramel Laigo's contribution
+
 		var user = window.location.hash.substring(1);
 		var username =  user.split("&")[0];
 		document.getElementById('instructorName').innerHTML = username;
