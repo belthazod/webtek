@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- Contributor: Jeremy -->
 <html>
 	<head>
 		<meta charset="UTF-8">
@@ -57,6 +58,8 @@
 		}
 		// End of Ramel Laigo's contribution
 
+		// Contributor: Jeremy
+		/*
 		var preEl ;
 		var orgBColor;
 		var orgTColor;
@@ -87,14 +90,12 @@
 		    }
 		}
 
-		function deleteRow(tableID) {
+		function deleteRow(classesTable) {
 		    try {
-		        var table = document.getElementById(tableID);
+		        var table = document.getElementById(classesTable);
 		        var rowCount = table.rows.length;
 		        for (var i = 0; i < rowCount; i++) {
 		            var row = table.rows[i];
-		            /*var chkbox = row.cells[0].childNodes[0];*/
-		            /*if (null != chkbox && true == chkbox.checked)*/
 
 		            if (row.getElementsByTagName("input")[0].className.indexOf("selected")!=-1) {
 		                if (rowCount <= 1) {
@@ -109,29 +110,9 @@
 		    } catch (e) {
 		        alert(e);
 		    }
-		    //getValues();
 		}
-
-	//		var delBtn = document.getElementById("delBtn");
-	//	delBtn.addEventlistener('click', function(){deleteRow(t)});
-	//	function delBtnEvent(){
-	//		for (var i = 0; i < delBtn.options.length; i++) {
-	//		    if (delBtn.options[i].selected) {
-	//		        delBtn.options[i].remove();
-	//		    }
-	//	function deleteRow(t){
-	//		    var row = t.parentNode.parentNode;
-	//		    document.getElementById("dataTable").deleteRow(row.rowIndex);
-	//		    console.log(row);
-	//		}
-
-	//	}
-		
-	//	var button=document.getElementById("delBtn")[0],
-	//	select=document.getElementsByTagName("select")[0];
-	//	button.onclick=function(){
-	//	select.removeChild(select.options[select.selectedIndex]);
-	//	};
+		*/
+		// End of Jeremy contribution -->
 
 		var username = window.location.hash.substring(1);
 		document.getElementById('instructor').innerHTML = username;
@@ -181,24 +162,9 @@
 			table.appendChild(row);
 		}
 
-		/*
-		var button=document.getElementsByTagName("button")[0],
-		select=document.getElementsByTagName("select")[0];
-		button.onclick=function(){
-		select.removeChild(select.options[select.selectedIndex]);
-		};
-=======
->>>>>>> .r60
-
-
-		var editBtn = document.getElementById("editBtn");
-		editBtn.addEventlistener('click', function(){editBtnEvent()});
-		function editBtnEvent(){
-
-		}
-		*/
 
 
 
 	</script>
 </html>
+<!--End of Jeremy's contribution -->
