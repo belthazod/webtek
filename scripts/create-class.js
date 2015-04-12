@@ -25,6 +25,12 @@ var myClass = {
 var students = [];
 var selector = document.getElementById("student-selection");
 
+var page1 = document.getElementById("add-class-wrap");
+var page2 = document.getElementById("add-student-wrap");
+page2.style.visibility = "hidden";
+
+main();
+
 function initializeClass() {
 	var cc = document.getElementById("input-classcode");
 	var desc = document.getElementById("input-desctitle");
@@ -43,6 +49,10 @@ function initializeClass() {
 			myClass.room = room.value;
 			myClass.meeting = meet.options[meet.selectedIndex].value;
 			myClass.sked = days.options[days.selectedIndex].value+", "+timeA.options[timeA.selectedIndex].value+" - "+timeB.options[timeB.selectedIndex].value;
+
+			page1.style.visibility = "hidden";
+			page1.style.position = "fixed";
+			page2.style.visibility = "visible";
 		}
 	});
 }
@@ -273,5 +283,3 @@ function main() {
 function saveClass() {
 
 }
-
-main();

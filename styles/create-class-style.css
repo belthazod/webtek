@@ -13,7 +13,7 @@ h1, h2, h3, h4 {
 }
 .studentLI {
 	display: inline-table;
-	margin-right: 3px;
+  margin: 10px 3px;
 }
 .page {
 	clear: both;
