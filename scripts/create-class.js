@@ -10,15 +10,77 @@
 
 var userID = document.getElementById("user-id").innerHTML;
 
-var myclass = {
-	classCode:null, 
-	days:null, 
-	startTime:null, 
-	endTime:null, 
+var classForm = document.getElementById("add-class-wrap");
+var studentForm = document.getElementById("add-student-wrap");
+
+var myClass = {
+	classCode:null,
+	descTitle:null,
+	room:null,
+	meeting:null,		 
+	sked:null, 
 	students:null
 };
+
 var students = [];
 var selector = document.getElementById("student-selection");
+
+function initializeClass() {
+	var cc = document.getElementById("input-classcode");
+	var desc = document.getElementById("input-desctitle");
+	var room = document.getElementById("input-room");		
+	var meet = document.getElementById("select-meeting");
+	var days = document.getElementById("select-day");
+
+	var timeA = document.getElementById("select-timea");
+	var timeB = document.getElementById("select-timeb");
+
+	var next = document.getElementById("classform-btn");
+	next.addEventListener('click', function(){
+		if(validateClass(cc, desc, room, meet, days, timeA, timeB)) {
+			myClass.classCode = cc.value;
+			myClass.descTitle = desc.value;
+			myClass.room = room.value;
+			myClass.meeting = meet.options[meet.selectedIndex].value;
+			myClass.sked = days.options[days.selectedIndex].value+", "+timeA.options[timeA.selectedIndex].value+" - "+timeB.options[timeB.selectedIndex].value;
+		}
+	});
+}
+function validateClass(cc, desc, room, meet, days, timeA, timeB) {
+	var a = document.getElementById("class-prompt");
+	var trigger = true;
+	
+	if(cc.value == "") {
+		cc.style.border = "2px solid #e74c3c";
+		trigger = false;
+	}
+
+	if(desc.value == "") {
+		desc.style.border = "2px solid #e74c3c";
+		trigger = false;
+	} 
+	if(room.value == "") {
+		room.style.border = "2px solid #e74c3c";
+		trigger = false;
+	}
+
+	if(days.options[days.selectedIndex].value == "Day") {
+		days.style.border = "2px solid #e74c3c";
+		trigger = false;
+	}
+
+	if(timeA.options[timeA.selectedIndex].value == "StartTime") {
+	 timeA.style.border = "2px solid #e74c3c";
+	 trigger = false;
+	}
+
+	if(timeB.options[timeB.selectedIndex].value == "EndTime") {
+		timeB.style.border = "2px solid #e74c3c";
+		trigger = false;
+	}
+	
+	return trigger;
+}
 
 //populates student-selection element
 function initializeStudentSelector() {
@@ -39,19 +101,50 @@ function initializeStudentSelector() {
 		createStudent(selector, eStudents);
 	});
 }
+
 function initializeManAdding() {
 	console.log('initialized');
 	var name1 = document.getElementById("lastname-input");
 	var name2 = document.getElementById("firstname-input");
-	var name3 = document.getElementById("midInitial-input");
-	var addBtn = document.getElementById("addstudent-btn");
-
-	addBtn.addEventListener('click', function(){
-		var stud = name1.value + ", "+name2.value+" "+name3.value+".";
-		console.log(stud);
+	var name3 = document.getElementById("midinitial-input");
+	var add = document.getElementById("student-btn");
+	var a = document.getElementById("man-add-prompt");
+	add.addEventListener('click', function(){
+		if(name1.value != "" && name2.value != "" && name3.value != "") {
+			a.innerHTML = "";
+			var name = name1.value + ", "+name2.value+" "+name3.value+".";
+			createStudentByName(name);
+		} else {
+			a.style.color = "red";
+			a.innerHTML = "Please fill in all the fields.";
+		}
 	});
 }
 
+/**
+* Creates a student anchor from the student form
+*/
+function createStudentByName(name) {
+	var a = document.getElementById("man-add-prompt");
+	if(checkExistence(name)){
+		a.style.color = "red";
+		a.innerHTML = name + " is already in your class!";
+	} else {
+		a.innerHTML = "";
+		var studAnchor = document.createElement("a");
+		studAnchor.id = name;
+		studAnchor.addEventListener('click', function(){
+				removeStudent(studAnchor.id);
+			});
+		studAnchor.appendChild(document.createTextNode(name+" | x"));
+		students.push(name);
+		addStudent(studAnchor);
+	}
+	
+}
+/**
+* Creates a student anchor from a selected existing student
+*/
 function createStudent(selector, eStudents) {
 	var studentExists = checkExistence(eStudents[selector.selectedIndex]);
 	var prompt = document.getElementById("prompt-selection");
@@ -61,17 +154,21 @@ function createStudent(selector, eStudents) {
 		if(selector.selectedIndex != -1 && !studentExists) {
 			prompt.innerHTML = "";
 			var studAnchor = document.createElement("a");
-			studAnchor.id = eStudents[selector.selectedIndex]
-			studAnchor.addEventListener('click', function(){ 
+			studAnchor.id = eStudents[selector.selectedIndex];
+			studAnchor.addEventListener('click', function(){
 				removeStudent(studAnchor.id);
 			});
-			studAnchor.appendChild(document.createTextNode(eStudents[selector.selectedIndex]+" |x")); 
+			studAnchor.appendChild(document.createTextNode(eStudents[selector.selectedIndex]+" | x")); 
 			students.push(eStudents[selector.selectedIndex]);
 			addStudent(studAnchor);
 		}	
 	}
 		
 }
+/**
+* Adds the student anchor element to a list element. The list element is in turn
+* added to the unordered list element
+*/
 function addStudent(studAnchor) {
 	var status = document.getElementById("status");
 	status.innerHTML = "";
@@ -82,6 +179,9 @@ function addStudent(studAnchor) {
 	li.id = studAnchor.id+"li";
 	list.appendChild(li);
 }
+/**
+* Removes the student list element from the unoredered list.
+*/
 function removeStudent(stud) {
 	var list = document.getElementById("classlist");
 	var li = document.getElementById(stud+"li");
@@ -129,18 +229,6 @@ function addTestData() {
 	var testStudents = [
 		'Burayag, Jolas G.',
 		'New, Student A.', 
-		// 'New, Student B', 
-		// 'New, Student C.', 
-		// 'New, Student D.', 
-		// 'New, Student E.', 
-		// 'New, Student F.',
-		// 'New, Student G.',
-		// 'New, Student H.',
-		// 'New, Student I.',
-		// 'New, Student J.',
-		// 'New, Student K.',
-		// 'New, Student L.',
-		// 'New, Student M.'
 	];
 	var trigger = false;
 	if (eStudents != null) {
@@ -177,6 +265,7 @@ function main() {
 	emptyStudents();
 	addTestData();
 	//printLocal();
+	initializeClass();
 	initializeStudentSelector();
 	initializeManAdding();
 }

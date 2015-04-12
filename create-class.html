@@ -20,11 +20,11 @@
 			
 
 			<div class="content-wrap">
-				<div class="page">
+				<div class="page" id="add-class-wrap">
 					<h2 class="page-heading">Create Class</h2>
-					<p class="page-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus sit in natus, beatae modi vero aperiam provident labore asperiores, culpa alias corporis, accusantium quasi tempora non ut eveniet aut consequuntur.</p>
+					<p class="page-desc">Fill in all the required information of your class. The Number of Meetings depicts the limit of absences of your student, which will be used later on. The default and minimum value is 3 meetings, while the maximun value is 10 meetings.</p>
 					
-					<form class="class-form" action="">
+					<div class="class-form" action="">
 						<div class="column-4">
 							<label for="input-classcode">Class Code: </label>
 							<input required id="input-classcode" class="tbox" autofocus type="text" name="ClassCode">
@@ -35,17 +35,40 @@
 							<input required id="input-desctitle" class="tbox" autofocus type="text" name="DescTitle">
 						</div>
 						
-						<div class="column-12">
-							<label for="day-selection">Days:</label>
-							<select required id="day-selection" class="selector">
-							  <option value="">MWF</option>
-							  <option value="">TThS</option>
-							  <option value="">MTh</option>
-							  <option value="">TF</option>
-							  <option value="">WS</option>
+						<div class="column-8">
+						<label for="input-room">Room: </label>
+						<input required id="input-room" class="tbox" autofocus maxlength="5" size="5" type="text" name="Room">
+						</div>
+						
+						<div class="column-8">
+						<label for="select-meetings">Number of Meetings: </label>
+						<select class="dd" required id="select-meeting">
+							  <option value="3">3</option>
+							  <option value="4">4</option>
+							  <option value="5">5</option>
+							  <option value="6">6</option>
+							  <option value="7">7</option>
+							  <option value="8">8</option>
+							  <option value="9">9</option>
+							  <option value="10">10</option>
 							</select>
-							<label for="timea-selection">Time:</label>
-								<select id="timea-selection" class="selector">
+						</div>
+						
+						<div class="column-12">
+							<label for="select-day">Days:</label>
+
+							<select class="dd" required id="select-day">
+							  <option disabled>Day</option>
+							  <option value="MWF">MWF</option>
+							  <option value="TThS">TThS</option>
+							  <option value="MTh">MTh</option>
+							  <option value="TF">TF</option>
+							  <option value="WS">WS</option>
+							</select>
+
+							<label for="select-timea">Time:</label>
+								<select class="dd" required id="select-timea">
+									<option disabled>StartTime</option>
 								  <option value="7:30 AM">7:30 AM</option>
 								  <option value="8:00 AM">8:00 AM</option>
 								  <option value="8:30 AM">8:30 AM</option>
@@ -72,8 +95,11 @@
 								  <option value="7:00 PM">7:00 PM</option>
 								  <option value="7:30 PM">7:30 PM</option>
 								</select>
+
 								-
-								<select id="timeb-selection selector">
+
+								<select class="dd" required id="select-timeb">
+									<option disabled>EndTime</option>
 								  <option value="8:30 AM">8:30 AM</option>
 								  <option value="9:00 AM">9:00 AM</option>
 								  <option value="9:30 AM">9:30 AM</option>
@@ -98,23 +124,26 @@
 								  <option value="7:00 PM">7:00 PM</option>
 								  <option value="7:30 PM">7:30 PM</option>
 								</select>
+								
 							</div>
-							<br><input id="classform-btn" class="btn" type="submit" value="Next">
-						</form>
+							<p id="class-prompt"></p>
+							<br><button id="classform-btn" class="btn">Next</button>
+						</div>
 					</div>
 
-					<div class="page">
+					<div class="page" id="add-student-wrap">
 						<h2 class="page-heading">Add Students</h2>
 
 						<div id="div-addstudent">
-							<form id="student-form">
+							<div id="student-form">
 								<input id="lastname-input" class="tbox" type="text" placeholder="Last Name" name="lastname" required> 
 								
 								<input id="firstname-input" class="tbox" type="text" placeholder="First Name" name="firstname" required>
 								
 								<input id="midinitial-input" class="tbox" maxlength="1" size="1" type="text" placeholder="MI" name="midinitial" required>
-								<input id="student-btn" class="btn" type="submit" value="Add">
-							</form>
+								<button id="student-btn" class="btn">Add</button>
+								<p id="man-add-prompt"></p>
+							</div>
 						</div>
 						
 						<h4 class="form-heading">Retrieve students from text file</h4>
