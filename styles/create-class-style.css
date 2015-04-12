@@ -79,3 +79,19 @@ h1, h2, h3, h4 {
   background: #3cb0fd;
   text-decoration: none;
 }
+#myCanvas {
+  margin:0 auto;
+  display:block;
+  position:relative;
+}
+
+#class-info-bar {
+  background-color: #1BCEA6;
+  border-radius: 5px;
+}
+
+#class-info-bar > li {
+  color: #FFF;
+  display: inline-block;
+  padding: 15px 10px;
+}

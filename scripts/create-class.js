@@ -26,8 +26,16 @@ var students = [];
 var selector = document.getElementById("student-selection");
 
 var page1 = document.getElementById("add-class-wrap");
+var myClassInfo = document.getElementById("class-info");
 var page2 = document.getElementById("add-student-wrap");
+var page3 = document.getElementById("manage-room-wrap");
+
+myClassInfo.style.visibility = "hidden";
+myClassInfo.style.position = "fixed";
 page2.style.visibility = "hidden";
+page2.style.position = "fixed";
+page3.style.visibility = "hidden";
+page3.style.position = "fixed";
 
 main();
 
@@ -52,7 +60,14 @@ function initializeClass() {
 
 			page1.style.visibility = "hidden";
 			page1.style.position = "fixed";
+
+			myClassInfo.style.visibility = "visible";
+			myClassInfo.style.position = "relative";
+			initiateClassInfo();
+			
 			page2.style.visibility = "visible";
+			page2.style.position = "relative";
+
 		}
 	});
 }
@@ -129,6 +144,53 @@ function initializeManAdding() {
 			a.innerHTML = "Please fill in all the fields.";
 		}
 	});
+}
+
+function initiateClassInfo() {
+	document.getElementById("class-data-1").innerHTML = "Class Code: "+myClass.classCode;
+	document.getElementById("class-data-2").innerHTML = "Descriptive Title: "+myClass.descTitle;
+	document.getElementById("class-data-3").innerHTML = "Room: "+myClass.room;
+	document.getElementById("class-data-4").innerHTML = "Schedule: "+myClass.sked;
+}
+
+function initializePage3() {
+	var next = document.getElementById("studentform-btn"); //this is the button from page 2
+	next.addEventListener('click', function() {
+		page2.style.visibility = "hidden";
+		page2.style.position = "fixed";
+		page3.style.visibility = "visible";
+		page3.style.position = "relative";
+		initiateCanvas();
+	});
+
+	var finish = document.getElementById("end-btn");
+	
+	finish.addEventListener('click', function(){
+		saveClass();	
+	});
+}
+
+function initiateCanvas(){
+//Bass Belthazod Tello
+
+	var totalStudents = students.length;
+	var seats = 0;
+	alert(totalStudents);
+	var c = document.getElementById("myCanvas");
+	var canvas = c.getContext("2d");
+	var y = 400;
+	canvas.fillStyle = "#FF0000";
+ 	while(seats != totalStudents){
+		for(var leftSide = 0, x = 375; leftSide<5 && seats != totalStudents; leftSide++, seats++, x-=90){
+			
+			canvas.fillRect(x, y, 80, 40);
+		}
+		for(var rightSide = 0, x = 550; rightSide<5 && seats != totalStudents; rightSide++, seats++, x+=90){
+			
+			canvas.fillRect(x, y, 80, 40);
+		}
+		y -= 80;
+	}
 }
 
 /**
@@ -278,8 +340,11 @@ function main() {
 	initializeClass();
 	initializeStudentSelector();
 	initializeManAdding();
+	initializePage3();
 }
 
 function saveClass() {
-
+	myClass.students = students //myClass variable on line 16! students array on line 25!
+	console.log(JSON.stringify(myClass));
+	//TO DO: save to local storage
 }
