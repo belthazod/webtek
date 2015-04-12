@@ -11,6 +11,22 @@
 		<link rel="stylesheet" type="text/css" href="styles/create-class-style.css">
 		<link id="pagestyle" rel="stylesheet" type="text/css" title="Preffered" href="styles/styles1.css">
 		<link id="pagestyle" rel="stylesheet" type="text/css" title="Alternate" href="styles/styles2.css">
+		<style>
+			#end-btn{
+				
+				margin:0 20px;
+				margin-top:620px;
+			}
+			#finalize-btn{
+				margin-top:620px;
+			}
+			.invisible{
+				visibility:hidden;
+			}
+			.selected{
+				background:blue;
+			}
+		</style>
 	</head>
 
 	<body>
@@ -33,15 +49,15 @@
 
 		<main id="content">
 			<div id="createclass-div" class="main-container">
-				<div id="info-div" class="row">
+				<!--<div id="info-div" class="row">
 					<label>You are logged in as </label><a id="user-id" href="">Admin Test</a>
-				</div>
+				</div>-->
 				
 				
 				<div class="content-wrap">
 					<div class="page" id="add-class-wrap">
 						<h2 class="page-heading">Create Class</h2>
-						<p class="page-desc">Fill in all the required information of your class. The Number of Meetings depicts the limit of absences of your student, which will be used later on. The default and minimum value is 3 meetings, while the maximun value is 10 meetings.</p>
+						<p class="page-desc">Fill in all the required information of your class. The "number of meetings" depicts how often your class meets per week which will be used later on. The default value is 3 meetings, while the maximun value is 6 meetings.</p>
 						
 						<div class="class-form" action="">
 							<div class="column-4">
@@ -62,14 +78,12 @@
 							<div class="column-8">
 							<label for="select-meetings">Number of Meetings: </label>
 							<select class="dd" required id="select-meeting">
-								  <option value="3">3</option>
+								  <option value="1">1</option>
+								  <option value="2">2</option>
+								  <option value="3" selected>3</option>
 								  <option value="4">4</option>
 								  <option value="5">5</option>
 								  <option value="6">6</option>
-								  <option value="7">7</option>
-								  <option value="8">8</option>
-								  <option value="9">9</option>
-								  <option value="10">10</option>
 								</select>
 							</div>
 							
@@ -83,11 +97,17 @@
 								  <option value="MTh">MTh</option>
 								  <option value="TF">TF</option>
 								  <option value="WS">WS</option>
+								   <option value="M">MWF</option>
+								  <option value="T">TThS</option>
+								  <option value="W">MTh</option>
+								  <option value="Th">TF</option>
+								  <option value="F">WS</option>
+								  <option value="F">S</option>
 								</select>
 
 								<label for="select-timea">Time:</label>
 									<select class="dd" required id="select-timea">
-										<option disabled>StartTime</option>
+									<option disabled>StartTime</option>
 									  <option value="7:30 AM">7:30 AM</option>
 									  <option value="8:00 AM">8:00 AM</option>
 									  <option value="8:30 AM">8:30 AM</option>
@@ -199,13 +219,20 @@
 						</div>
 
 						<div class="page" id="manage-room-wrap">
-							<h2 class="page-heading">Arrange Sits</h2>
-							<p class="page-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo laudantium accusantium impedit magnam nobis repellat debitis quod vel corrupti esse, consequatur pariatur architecto, aliquam nesciunt odio exercitationem itaque voluptatum odit.</p>
+							<h2 class="page-heading">Finalize Seatplan Layout</h2>
+							<p class="page-desc " id="info1">Drag each rectangle seen below to form the seatplan of your liking. Once satisfied, click on the
+							"Finalize layout" button. 
+							</p>
+							<p class="page-desc inactive" id="info2">The students' names have been placed randomly, should you wish to change the location of  any of the students, click on the 2 students whom you wish to change places and click on the "Swap" button. Upon Satisfactory, click on the "Finish" button to save your class.
 
-							<canvas id="myCanvas" width="1000" height="600" style="border:1px solid #000000;">
-							</canvas>
-
-							<button class="btn" id="end-btn">Finish</button>
+							<div id="main">
+								<canvas id="myCanvas" width="1000" height="600" style="border:1px solid #000000;">
+								</canvas>
+							</div>
+							<button class="btn " id="finalize-btn" onclick="finalizeLayout()" >Finalize Layout</button>
+							<button class="btn invisible" id="swap" onclick="swapStudents()">Swap</button>
+							<button class="btn invisible" id="end-btn">Finish</button>
+							
 						</div>	
 
 				</div>
@@ -225,6 +252,8 @@
 		</footer>
 		<!--End of Ramel Laigo's contribution -->
 
+		<script type="text/javascript" src="scripts/checkAttendance.js">
+		</script>
 		<script type="text/javascript" src="scripts/create-class.js">
 			// Contributor: Ramel Laigo
 			/*for swapping stylesheet*/

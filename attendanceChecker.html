@@ -1,4 +1,5 @@
 <html>
+
 	<head>
 		<meta charset="UTF-8">
 		<title>bwiSEATER AttendanceChecker</title>
@@ -22,6 +23,8 @@
 			</ul>
 		</nav>
 		<!--End of Ramel Laigo's contribution -->
+
+		<!--Contributor: Bassanio C. Tello Jr. -->
 		<main id="content">
 			<div id="main">
 				<section>
@@ -48,6 +51,7 @@
 					<button onclick = endClass()>End Class</button>
 			</section>
 		</main>
+		<!-- End of Bassanio's Contribution -->
 		<!-- Contributor: Ramel Laigo -->
 		<footer>
 			&copy; 2015 Group #7. 
@@ -71,6 +75,7 @@
 		}
 		// End of Ramel Laigo's contribution
 
+		//Contributor: Bassanio C. Tello Jr.
 		Date.prototype.toDateInputValue = (function() {
 		    var local = new Date(this);
 		    local.setMinutes(this.getMinutes() - this.getTimezoneOffset());
@@ -87,7 +92,7 @@
 		}
 		changeLinks();
 		//for sample getting of data from localStorage
-		var id = 0;
+		/*var id = 0;
 		var array = [];
 		var students = [new Student( ++id,"last_name", 
 			"first_name", "middle_initial", "15", "15" ,"enrolled", "belthazod",  array, 0, 0), 
@@ -208,7 +213,7 @@
 			}
 		}
 		localStorage.setItem("bwiseater", JSON.stringify(bwiseater));
-		
+		*/
 		//Gets object from localStorage
 		var classValues = window.location.hash.substring(1);
 		var values = classValues.split("&");
@@ -243,7 +248,7 @@
 				div.setAttribute("style", "margin-top:" + (parseInt(p.students[i].y_coordinate)+1) + ";margin-left:" + (parseInt(p.students[i].x_coordinate)+1));
 				div.className="student unselectable";
 				div.setAttribute("onclick", "changeState("+seatCount+")");
-				div.innerHTML = "student";
+				div.innerHTML = p.students[i].last_name + " " + p.students[i].first_name + " " +  p.students[i].middle_initial + ".";
 				div.title =  p.students[i].stud_id;
 				main.appendChild(div);
 			
@@ -314,7 +319,7 @@
 		}
 
 
-		
+		//End of Bassanio's Contribution
 	</script>
 	
 </html>
