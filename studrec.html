@@ -4,79 +4,266 @@
 		<meta charset="UTF-8">
 		<meta name="author" content="Ramel Laigo">
 		<title>bwiSEATER Student Record</title>
-		<link rel="stylesheet" type="text/css" href="styles/styles1.css">
+		<link id="pagestyle" rel="stylesheet" type="text/css" title="Preffered" href="styles/styles1.css">
+		<link id="pagestyle" rel="stylesheet" type="text/css" title="Alternate" href="styles/styles2.css">
 	</head>
 	<body>
 		<header id="banner">
-			<input id="search" type="text" placeholder="SEARCH">
-			<input type="submit" value="Search">
 			<div id="template">
 				<img src="images/1.png" alt="profile">
-				<label>Instructors Name</label>
-				<img src="images/2.png" alt="settings">
-				<img src="images/3.png" alt="signout">
+				<label id="instructorName">Instructors Name</label>
+				<a href="index.html"><img src="images/3.png" alt="signout"></a>
 			</div>
 		</header>
 
 		<nav id="navigate">
 			<ul>
-				<li><a href="MyClasses.html">My Classes</a></li>
-				<li><a href="create-class.html">Create Class</a></li>
-				<li><a href="studrec.html">Student Record</a></li>
+				<li><a href="MyClasses.html" id="myClassesLink">My Classes</a></li>
+				<li><a href="create-class.html" id = "createClassLink">Create Class</a></li>
 			</ul>
 		</nav>
 
 		<main id="content">
+			<h1 id = "classCode"></h1>
+			<p id="descriptiveTitle"></p>
+			<p id="sched"></p>
+
+			<div id="filter">
+				<label>Filter:</label> 
+				<select id="filterSelect" onclick="filter()">
+					<option value="3">Students with absences and tardiness</option>
+					<option value="1">Students with absences</option>
+					<option value="2">Students with tardiness</option>
+					<option value="4">All students</option>
+				</select>
+			</div>
+
 			<div id="sort">
 				<label>Sort by:</label> 
 				<select>
-					<option>name</option>
-					<option>class</option>
+					<option >last name</option>
+					<option>first name</option>
+					<option>class schedule</option>
 					<option>no. of absents</option>
 				</select>
 			</div>
-			<table id="studrec" border="1">
-				<tr>
-					<th>student number</th>
-					<th>last name</th>
-					<th>first name</th>
-					<th>class schedule</th>
-					<th>day</th>
-					<th>total no. of absents</th>
-				</tr>
-				<tr>
-					<td>1</td>
-					<td>lastname1</td>
-					<td>firstname1</td>
-					<td>8:30-9:30</td>
-					<td>MWF</td>
-					<td>10</td>
-				</tr>
-				<tr>
-					<td>2</td>
-					<td>lastname2</td>
-					<td>firstname2</td>
-					<td>1:00-2:00</td>
-					<td>TThS</td>
-					<td>9</td>
-				</tr>
-				<tr>
-					<td>3</td>
-					<td>lastname3</td>
-					<td>firstname3</td>
-					<td>10:30-11:30</td>
-					<td>MWF</td>
-					<td>8</td>
-				</tr>
+			<table id="studrec" border="1" style="width:100%">
+				<thead>
+					<th>Student Name</th>
+					<th>Tardiness</th>
+					<th>Absences</th>
+					<th>Status</th>
+					<th></th>
+				</thead>
+				<tbody id="body">
+
+				</tbody>
 			</table>
-			<div id="update">
-				<input type="submit" value="Update">
-			</div>
 		</main>
-		
 		<footer>
 			&copy; 2015 Group #7. 
 			<br>All rights reserved.
+			<hr>
+			<div>
+				<label>Feeling bored in the theme? Choose here:</label>
+				<button onclick="swapStyleSheet('styles/styles1.css')">Preferred</button>
+				<button onclick="swapStyleSheet('styles/styles2.css')">Alternate</button>
+			</div>
 		</footer>
 	</body>
+	<script>
+		/*for swapping stylesheet*/
+		function swapStyleSheet(sheet){
+			document.getElementById('pagestyle').setAttribute('href', sheet);
+		}
+
+		var user = window.location.hash.substring(1);
+		var username =  user.split("&")[0];
+		document.getElementById('instructorName').innerHTML = username;
+
+		var user = window.location.hash.substring(1);
+		var username =  user.split("&")[0];
+		document.getElementById('instructorName').innerHTML = username;
+		var classCode = user.split("&")[1];
+		document.getElementById('classCode').innerHTML=classCode;
+
+		var bwiseater = JSON.parse(localStorage.getItem("bwiseater"));
+		function changeLinks(){
+			document.getElementById('myClassesLink').href="MyClasses.html#" + username;
+			document.getElementById('createClassLink').href="create-class.html#" + username;
+		}
+		var students;
+
+		function getAllStudents(){
+			for( var x =0; x < bwiseater.accounts.length; x++){
+				if(bwiseater.accounts[x].username == username){
+					for(var y = 0; y<bwiseater.accounts[x].uniclasses.length; y++){
+						if(bwiseater.accounts[x].uniclasses[y].classcode == classCode){
+								document.getElementById('descriptiveTitle').innerHTML=bwiseater.accounts[x].uniclasses[y].descriptiveTitle;
+								document.getElementById('sched').innerHTML = bwiseater.accounts[x].uniclasses[y].sched + " " + bwiseater.accounts[x].uniclasses[y].days;
+								students = bwiseater.accounts[x].uniclasses[y].students;
+							
+							break;
+						}
+					}
+				}
+			}
+		}
+		getAllStudents();
+		viewStudentsWithAbsencesAndTardiness();
+
+		function clearTable(){
+			var body = document.getElementById("body");
+			var studrec = document.getElementById("studrec");
+			studrec.removeChild(body);
+			var newBody = document.createElement("tbody");
+			newBody.id="body";
+			studrec.appendChild(newBody);
+		}
+
+		function viewStudentsWithAbsences(){
+			clearTable();
+			var main = document.getElementById("body");
+			for(var x = 0; x< students.length; x++){
+				if(students[x].absenceCount>0){
+					var tr = document.createElement("tr");
+					var td1= document.createElement("td");
+					td1.innerHTML = students[x].last_name + ", " + students[x].first_name + " " +students[x].middle_initial+".";
+					var td2 = document.createElement("td");
+					td2.innerHTML =  students[x].tardinessCount;
+					var td3 = document.createElement("td");
+					td3.innerHTML = students[x].absenceCount;
+					var td4 = document.createElement("td");
+					td4.innerHTML = students[x].studstatus;
+					var td5 = document.createElement("td");
+					var link = document.createElement("a");
+					td5.appendChild(link);
+					if(students[x].absenceCount >0 || students[x].tardinessCount>0){
+						link.innerHTML = "View / Change status";
+						link.href="viewAttendance.html#"+username+"&"+classCode+"&"+students[x].stud_id;
+					}
+					tr.appendChild(td1);
+					tr.appendChild(td2);
+					tr.appendChild(td3);
+					tr.appendChild(td4);
+					tr.appendChild(td5);
+					main.appendChild(tr);
+				}
+			}
+		}
+
+		function viewStudentsWithTardiness(){
+			clearTable();
+			var main = document.getElementById("body");
+			for(var x = 0; x< students.length; x++){
+				if(students[x].tardinessCount>0){
+					var tr = document.createElement("tr");
+					var td1= document.createElement("td");
+					td1.innerHTML = students[x].last_name + ", " + students[x].first_name + " " +students[x].middle_initial+".";
+					var td2 = document.createElement("td");
+					td2.innerHTML =  students[x].tardinessCount;
+					var td3 = document.createElement("td");
+					td3.innerHTML = students[x].absenceCount;
+					var td4 = document.createElement("td");
+					td4.innerHTML = students[x].studstatus;
+					var td5 = document.createElement("td");
+					var link = document.createElement("a");
+					td5.appendChild(link);
+					if(students[x].absenceCount >0 || students[x].tardinessCount>0){
+						link.innerHTML = "View / Change status";
+						link.href="viewAttendance.html#"+username+"&"+classCode+"&"+students[x].stud_id;
+					}
+
+					tr.appendChild(td1);
+					tr.appendChild(td2);
+					tr.appendChild(td3);
+					tr.appendChild(td4);
+					tr.appendChild(td5);
+					main.appendChild(tr);
+				}
+			}
+		}
+
+		function viewStudentsWithAbsencesAndTardiness(){
+			clearTable();
+			var main = document.getElementById("body");
+			for(var x = 0; x< students.length; x++){
+				if(students[x].absenceCount>0 || students[x].tardinessCount>0){
+					var tr = document.createElement("tr");
+					var td1= document.createElement("td");
+					td1.innerHTML = students[x].last_name + ", " + students[x].first_name + " " +students[x].middle_initial+".";
+					var td2 = document.createElement("td");
+					td2.innerHTML =  students[x].tardinessCount;
+					var td3 = document.createElement("td");
+					td3.innerHTML = students[x].absenceCount;
+					var td4 = document.createElement("td");
+					td4.innerHTML = students[x].studstatus;
+					var td5 = document.createElement("td");
+					var link = document.createElement("a");
+					td5.appendChild(link);
+					if(students[x].absenceCount >0 || students[x].tardinessCount>0){
+						link.innerHTML = "View / Change status";
+						link.href="viewAttendance.html#"+username+"&"+classCode+"&"+students[x].stud_id;
+					}
+
+					tr.appendChild(td1);
+					tr.appendChild(td2);
+					tr.appendChild(td3);
+					tr.appendChild(td4);
+					tr.appendChild(td5);
+					main.appendChild(tr);
+				}
+			}
+		}
+
+		function viewAllStudents(){
+			clearTable();
+			var main = document.getElementById("body");
+			for(var x = 0; x< students.length; x++){
+					var tr = document.createElement("tr");
+					var td1= document.createElement("td");
+					td1.innerHTML = students[x].last_name + ", " + students[x].first_name + " " +students[x].middle_initial+".";
+					var td2 = document.createElement("td");
+					td2.innerHTML =  students[x].tardinessCount;
+					var td3 = document.createElement("td");
+					td3.innerHTML = students[x].absenceCount;
+					var td4 = document.createElement("td");
+					td4.innerHTML = students[x].studstatus;
+					var td5 = document.createElement("td");
+					var link = document.createElement("a");
+					td5.appendChild(link);
+					if(students[x].absenceCount >0 || students[x].tardinessCount>0){
+						link.innerHTML = "View / Change status";
+						link.href="viewAttendance.html#"+username+"&"+classCode+"&"+students[x].stud_id;
+					}
+
+					tr.appendChild(td1);
+					tr.appendChild(td2);
+					tr.appendChild(td3);
+					tr.appendChild(td4);
+					tr.appendChild(td5);
+					main.appendChild(tr);
+				
+			}
+		}
+		function filter(){
+			var select = document.getElementById("filterSelect");
+			var value = select.options[select.selectedIndex].value;
+			switch(value){
+				case "1":
+					viewStudentsWithAbsences();
+					break;
+				case "2":
+					viewStudentsWithTardiness();
+					break;
+				case "3":
+					viewStudentsWithAbsencesAndTardiness();
+					break;
+				case "4":
+					viewAllStudents();
+				break;
+			}
+		}
+		changeLinks();
+	</script>
 </html>

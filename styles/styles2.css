@@ -1,14 +1,11 @@
 @charset "UTF-8";
 
 body, header, nav, main, footer {
-	
 	display: block;
 	border-radius: 15px;
 	margin-top: 10px;
 	margin-bottom: 10px;
-}
-body, header, nav {
-	color: #D1E0E0;
+	font-color: white;
 }
 
 body {
@@ -16,16 +13,19 @@ body {
 	margin: auto;
 	font-family: Helvetica;
 	font-size: 15px;
-	font-style: bold;
-	font-weight: 800;
-	background-image: url("../images/bgimg.jpg");
+	font-color: white;
+	background-image: url("../images/alternatebg.jpg");
 	background-repeat: no-repeat;
 	background-position: fixed;
 	background-size: cover;
 }
 
 header {
-
+	background-image: url("../images/header.jpg");
+	background-repeat: no-repeat;
+	background-position: fixed;
+	background-size: cover;
+	background-color: #00FF99;
 	color: #000000;
 }
 a:link {
@@ -41,16 +41,15 @@ a:hover {
 }
 
 #banner {
-	padding: 20px 20px 280px;
-	background-image: url("../images/scislogo.png");
-	background-size: 35%;
-	background-repeat: no-repeat;
-	background-position: fixed;
-	color: white;
+	padding: 20px 20px 50px;
 }
 
 #banner img {
 	width: 30px;
+}
+
+#banner label {
+	color: white;
 }
 
 #search {
@@ -61,7 +60,8 @@ a:hover {
 }
 
 #navigate {
-	background-color: #94B8B8;
+	background-color: gray;
+	opacity: 0.8;
 }
 
 #navigate ul li {
@@ -73,18 +73,15 @@ a:hover {
 }
 
 #navigate ul li a:hover{
-	color: #00FF99;
+	color: white;
 }
 
 #table {
 	width: 100%;
-	position: relative;
-	left: 180px;
 }
 th {
-	width: 150px;
+	width: 100px;
 	height: 50px;
-	font-weight: 900;
 }
 td {
 	vertical-align: center;
@@ -167,13 +164,13 @@ table, th, td {
 	margin-top:625px;
 }
 footer {
-	color: black;
-	background-color: #94B8B8;
+	background-color: gray;
+	opacity: 0.8;
 	clear: both;
 	text-align: center;
 	line-height: 20px;
-	position: relative;
-	
+	position: relative;		 
+}
 /*media querry for huge pc's*/
 @media only screen and (max-width: 1280px) {
 	body {

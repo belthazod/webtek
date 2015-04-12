@@ -3,26 +3,22 @@
 <head>
 		<meta charset="UTF-8">
 		<title>bwiSEATER EditClass</title>
-		<link rel="stylesheet" type="text/css" href="styles/styles1.css">
+		<link rel="stylesheet" type="text/css" title="Preffered" href="styles/styles1.css">
+		<link rel="stylesheet" type="text/css" title="Alternate" href="styles/styles2.css">
 	</head>
 	<body>
 		<header id="banner">
-			<input id="search" type="text" placeholder="SEARCH">
-			<input type="submit" value="Search">
 			<div id="template">
 				<img src="images/1.png" alt="profile">
-				<label>Instructors Name</label>
-				<img src="images/2.png" alt="settings">
-				<img src="images/3.png" alt="signout">
+				<label id="instructor">Instructors Name</label>
+				<a href="index.html"><img src="images/3.png" alt="signout"></a>
 			</div>
 		</header>
 		<nav id="navigate">
 			<ul>
-				<li><a href="">My Classes</a></li>
-				<li><a href="">Create Class</a></li>
-				<li><a href="">Attendance Checker</a></li>
-				<li><a href="">Attendance Summary</a></li>
-				<li><a href="">Student Record</a></li>
+				<li><a href="MyClasses.html">My Classes</a></li>
+				<li><a href="create-class.html">Create Class</a></li>
+				<li><a href="studrec.html">Student Record</a></li>
 			</ul>
 		</nav>
 
@@ -30,14 +26,88 @@
 			<h1>Edit Class</h1>
 
 			<article id="classAttr">
+
 				<form class="class-form" action="">
-					<p id="classCodde">Class Code: 012F</p>
-					<p id="classDescription">Descriptive Title: Recess</p>
-					<p id="classDays">Days: MWF</p>
-					<p id="classTime">Time: 8:30 - 10:30</p>	
-					<button id="editbtn1" value="">Edit</button>
-				</form>
-					
+					<div class="column-4">
+							<label for="input-classcode">Class Code: </label>
+							<input required id="input-classcode" class="tbox" autofocus type="text" name="ClassCode">
+						</div>
+
+						<div class="column-8">
+							<label for="input-desctitle">Descriptive Title: </label>
+							<input required id="input-desctitle" class="tbox" autofocus type="text" name="DescTitle">
+						</div>
+
+						<div class="column-8">
+							<label for="input-room">Room: </label>
+							<input required id="input-room" class="tbox" autofocus type="text" name="DescTitle">
+						</div>
+						
+						<div class="column-12">
+							<label for="day-selection">Days:</label>
+							<select required id="day-selection" class="selector">
+							  <option value="">MWF</option>
+							  <option value="">TThS</option>
+							  <option value="">MTh</option>
+							  <option value="">TF</option>
+							  <option value="">WS</option>
+							</select>
+							<label for="timea-selection">Time:</label>
+								<select id="timea-selection" class="selector">
+								  <option value="7:30 AM">7:30 AM</option>
+								  <option value="8:00 AM">8:00 AM</option>
+								  <option value="8:30 AM">8:30 AM</option>
+								  <option value="9:00 AM">9:00 AM</option>
+								  <option value="9:30 AM">9:30 AM</option>
+								  <option value="10:00 A">10:00 AM</option>
+								  <option value="10:30 A">10:30 AM</option>
+								  <option value="11:00 A">11:00 AM</option>
+								  <option value="11:30 A">11:30 AM</option>
+								  <option value="12:00 P">12:00 PM</option>
+								  <option value="12:30 P">12:30 PM</option>
+								  <option value="1:00 PM">1:00 PM</option>
+								  <option value="1:30 PM">1:30 PM</option>
+								  <option value="2:00 PM">2:00 PM</option>
+								  <option value="2:30 PM">2:30 PM</option>
+								  <option value="3:00 PM">3:00 PM</option>
+								  <option value="3:30 PM">3:30 PM</option>
+								  <option value="4:00 PM">4:00 PM</option>
+								  <option value="4:30 PM">4:30 PM</option>
+								  <option value="5:00 PM">5:00 PM</option>
+								  <option value="5:30 PM">5:30 PM</option>
+								  <option value="6:00 PM">6:00 PM</option>
+								  <option value="6:30 PM">6:30 PM</option>
+								  <option value="7:00 PM">7:00 PM</option>
+								  <option value="7:30 PM">7:30 PM</option>
+								</select>
+								-
+								<select id="timeb-selection" class="selector">
+								  <option value="8:30 AM">8:30 AM</option>
+								  <option value="9:00 AM">9:00 AM</option>
+								  <option value="9:30 AM">9:30 AM</option>
+								  <option value="10:00 A">10:00 AM</option>
+								  <option value="10:30 A">10:30 AM</option>
+								  <option value="11:00 A">11:00 AM</option>
+								  <option value="11:30 A">11:30 AM</option>
+								  <option value="12:00 P">12:00 PM</option>
+								  <option value="12:30 P">12:30 PM</option>
+								  <option value="1:00 PM">1:00 PM</option>
+								  <option value="1:30 PM">1:30 PM</option>
+								  <option value="2:00 PM">2:00 PM</option>
+								  <option value="2:30 PM">2:30 PM</option>
+								  <option value="3:00 PM">3:00 PM</option>
+								  <option value="3:30 PM">3:30 PM</option>
+								  <option value="4:00 PM">4:00 PM</option>
+								  <option value="4:30 PM">4:30 PM</option>
+								  <option value="5:00 PM">5:00 PM</option>
+								  <option value="5:30 PM">5:30 PM</option>
+								  <option value="6:00 PM">6:00 PM</option>
+								  <option value="6:30 PM">6:30 PM</option>
+								  <option value="7:00 PM">7:00 PM</option>
+								  <option value="7:30 PM">7:30 PM</option>
+								</select>
+						</div>		
+				</form>			
 			</article>
 
 			<article id="students">
@@ -48,33 +118,25 @@
 					<tr>
 						<th>Last Name</th>
 						<th>First Name</th>
-						<th>Number of Absences</th>
-						<th>Class Card Status</th>
-					</tr>
-					<tr>
-						<td>Tai</td>
-						<td>Fina</td>
-						<td>8</td>
-						<td>Dropped</td>
-					</tr>
-					<tr>
-						<td>Ngungot</td>
-						<td>Vina</td>
-						<td>5</td>
-						<td>Dropped</td>
+						<th>Middle Initial</th>
 					</tr>
 
 				</table>
-					<button id="editbtn2" value="">Edit</button>
-					<button id="deletebtn" value="">Delete</button><br>
+					<button id="editbtn2" value="">EDIT</button>
+					<button><a onclick="deleteRow('dataTable')">Delete</a></button><br>
 					<br>
 						<label for="lastname-input">Last Name:</label>
 						<input id="lastname-input" class="tbox" type="text" name="lastname"> 
 						<label for="firstname-input">First Name:</label>
 						<input id="firstname-input" class="tbox" type="text" name="firstname">
-						<button id="addbtn" class="btn" value="">Add</button><br>
+						<label for="middleinitial-input">Middle Initial:</label>
+						<input id="middleinitial-input" class="tbox" type="text" size="1" name="middleinitial">
+						<button id="addbtn" class="btn" value="">ADD STUDENT</button><br>
 					<br>
-					<button id="savebtn" value="">Save</button>
+					<button id="seatplan" value="">EDIT SEAT PLAN</button>
+					<br>
+					<button id="savebtn" value="">SAVE CHANGES</button>
+					
 					
 			</article>
 			
@@ -82,38 +144,109 @@
 		<footer>
 			&copy; 2015 Group #7. 
 			<br>All rights reserved.
+			<hr>
+			<div>
+				<label>Feeling bored in the theme? Choose here:</label>
+				<button onclick="swapStyleSheet('styles/styles1.css')">Preferred</button>
+				<button onclick="swapStyleSheet('styles/styles2.css')">Alternate</button>
+			</div>
 		</footer>
 	</body>
 	
 	<script type="text/javascript">
+		/*for swapping stylesheet*/
+		function swapStyleSheet(sheet){
+			document.getElementById('pagestyle').setAttribute('href', sheet);
+		}
 
-			var editbtn1 = document.getElementById("editbtn1").addEventListener("click", editClass);
-			var editbtn2 = document.getElementById("editbtn2").addEventListener("click", editStudents);
-			var deletebtn = document.getElementById("deletebtn").addEventListener("click", deleteStudents);
-			var addbtn = document.getElementById("addbtn").addEventListener("click", addStudents);
-			var savebtn = document.getElementById("savebtn").addEventListener("click", saveEdit);
+			var savebtn = document.getElementById("savebtn");
+			savebtn.addEventlistener('click', function(){saveEdits()});
+
+			function saveEdits() {
+				var editElem = document.getElementById("edit");
+				var userVersion = editElem.innerHTML;
+				localStorage.userEdits = userVersion;
+				document.getElementById("classAttr").innerHTML="Edits saved!";
+			}
+
+
+			function selectRow(row) {
+			    if (row.className.indexOf("selected") != -1) {
+			        row.className = row.className.replace("selected", "");
+			    } else {
+			        row.className += " selected";
+			    }
+			}
+
+			function deleteRow(studentTable) {
+			    try {
+			        var table = document.getElementById(studentTable);
+			        var rowCount = table.rows.length;
+			        for (var i = 0; i < rowCount; i++) {
+			            var row = table.rows[i];
+			            
+			            if (row.getElementsByTagName("input")[0].className.indexOf("selected")!=-1) {
+			                if (rowCount <= 1) {
+			                    alert("Cannot delete all the rows.");
+			                    break;
+			                }
+			                table.deleteRow(i);
+			                rowCount--;
+			                i--;
+			            }
+			        }
+			    } catch (e) {
+			        alert(e);
+			    }
+			    
+			}
+
+			var addbtn = document.getElementById("addbtn").addEventListener("click", function() {
+
+					var lastname = document.getElementById("lastname-input").value;
+					var firstname = document.getElementById("firstname-input").value;
+					var middlename = document.getElementById("middleinitial-input").value;
+
+					
+					var table = document.getElementById("studentTable");
+					var length = table.rows.length;
+    				var row = table.insertRow(length);
+    				var cell1 = row.insertCell(0);
+    				var cell2 = row.insertCell(1);
+    				var cell3 = row.insertCell(2);
+    				cell1.innerHTML = lastname;
+    				cell2.innerHTML = firstname;
+    				cell3.innerHTML = middlename ;
+	
+			});
+
+			var seatplan = document.getElementById("seatplan").addEventListener("click", editseatplan);
 
 			var studentTable = document.getElementById("studentTable");
+			var savebtn = document.getElementById("savebtn").addEventListener("click", saveChanges);
 
-
-			function editClass() {
-
-			}
-
+			
 			function editStudents() {
 
-
+					//get selected row from table
+					//edit contents
+					//
 			}
 
-			function addStudent() {
+			
 
+			/*var deletebtn = document.getElementById("deletebtn").addEventListener("click", function() {
+				var i = r.parentNode.parentNode.rowIndex;
+				document.getElementById("myTable").deleteRow(i);
+			});*/
 
+			function editseatplan(){
+
+				//create canvas here, then append to html//get values from storage
+				//master bass canvas
 			}
 
-			function deleteStudents() {
 
-
-			}
 
 	</script>
 </html>
