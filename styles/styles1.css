@@ -25,7 +25,6 @@ body {
 }
 
 header {
-
 	color: #000000;
 }
 a:link {
@@ -51,13 +50,6 @@ a:hover {
 
 #banner img {
 	width: 30px;
-}
-
-#search {
-	width: 450px;
-	font-size: 15px;
-	padding: 10px 10px 10px 10px;
-	border-radius: 20px;
 }
 
 #navigate {

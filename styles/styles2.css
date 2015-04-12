@@ -21,11 +21,10 @@ body {
 }
 
 header {
-	background-image: url("../images/header.jpg");
+	background-image: url("../images/scislogonew.png");
 	background-repeat: no-repeat;
 	background-position: fixed;
-	background-size: cover;
-	background-color: #00FF99;
+	background-size: 1000px 250px;
 	color: #000000;
 }
 a:link {
@@ -41,7 +40,7 @@ a:hover {
 }
 
 #banner {
-	padding: 20px 20px 50px;
+	padding: 190px 50px 50px 50px;
 }
 
 #banner img {
@@ -50,13 +49,6 @@ a:hover {
 
 #banner label {
 	color: white;
-}
-
-#search {
-	width: 450px;
-	font-size: 15px;
-	padding: 10px 10px 10px 10px;
-	border-radius: 20px;
 }
 
 #navigate {
@@ -113,6 +105,7 @@ table, th, td {
 
 #template {
 	float: right;
+	margin-top: -150px;
 }
 
 #delEdit {

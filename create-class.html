@@ -9,190 +9,224 @@
 			bwiSeater Create Class
 		</title>
 		<link rel="stylesheet" type="text/css" href="styles/create-class-style.css">
+		<link id="pagestyle" rel="stylesheet" type="text/css" title="Preffered" href="styles/styles1.css">
+		<link id="pagestyle" rel="stylesheet" type="text/css" title="Alternate" href="styles/styles2.css">
 	</head>
 
 	<body>
-		<div id="createclass-div" class="main-container">
-			<div id="info-div" class="row">
-				<label>You are logged in as </label><a id="user-id" href="">Admin Test</a>
+		<header id="banner">
+			<div id="template">
+				<img src="images/1.png" alt="profile">
+				<label id="instructorName">Instructors Name</label>
+				<a href="index.html"><img src="images/3.png" alt="signout"></a>
 			</div>
-			
-			
+		</header>
 
-			<div class="content-wrap">
-				<div class="page" id="add-class-wrap">
-					<h2 class="page-heading">Create Class</h2>
-					<p class="page-desc">Fill in all the required information of your class. The Number of Meetings depicts the limit of absences of your student, which will be used later on. The default and minimum value is 3 meetings, while the maximun value is 10 meetings.</p>
-					
-					<div class="class-form" action="">
-						<div class="column-4">
-							<label for="input-classcode">Class Code: </label>
-							<input required id="input-classcode" class="tbox" autofocus type="text" name="ClassCode">
-						</div>
+		<nav id="navigate">
+			<ul>
+				<li><a href="MyClasses.html" id="myClassesLink">My Classes</a></li>
+				<li><a href="create-class.html" id = "createClassLink">Create Class</a></li>
+			</ul>
+		</nav>
 
-						<div class="column-8">
-							<label for="input-desctitle">Descriptive Title: </label>
-							<input required id="input-desctitle" class="tbox" autofocus type="text" name="DescTitle">
-						</div>
+		<main id="content">
+			<div id="createclass-div" class="main-container">
+				<div id="info-div" class="row">
+					<label>You are logged in as </label><a id="user-id" href="">Admin Test</a>
+				</div>
+				
+				
+				<div class="content-wrap">
+					<div class="page" id="add-class-wrap">
+						<h2 class="page-heading">Create Class</h2>
+						<p class="page-desc">Fill in all the required information of your class. The Number of Meetings depicts the limit of absences of your student, which will be used later on. The default and minimum value is 3 meetings, while the maximun value is 10 meetings.</p>
 						
-						<div class="column-8">
-						<label for="input-room">Room: </label>
-						<input required id="input-room" class="tbox" autofocus maxlength="5" size="5" type="text" name="Room">
-						</div>
-						
-						<div class="column-8">
-						<label for="select-meetings">Number of Meetings: </label>
-						<select class="dd" required id="select-meeting">
-							  <option value="3">3</option>
-							  <option value="4">4</option>
-							  <option value="5">5</option>
-							  <option value="6">6</option>
-							  <option value="7">7</option>
-							  <option value="8">8</option>
-							  <option value="9">9</option>
-							  <option value="10">10</option>
-							</select>
-						</div>
-						
-						<div class="column-12">
-							<label for="select-day">Days:</label>
-
-							<select class="dd" required id="select-day">
-							  <option disabled>Day</option>
-							  <option value="MWF">MWF</option>
-							  <option value="TThS">TThS</option>
-							  <option value="MTh">MTh</option>
-							  <option value="TF">TF</option>
-							  <option value="WS">WS</option>
-							</select>
-
-							<label for="select-timea">Time:</label>
-								<select class="dd" required id="select-timea">
-									<option disabled>StartTime</option>
-								  <option value="7:30 AM">7:30 AM</option>
-								  <option value="8:00 AM">8:00 AM</option>
-								  <option value="8:30 AM">8:30 AM</option>
-								  <option value="9:00 AM">9:00 AM</option>
-								  <option value="9:30 AM">9:30 AM</option>
-								  <option value="10:00 A">10:00 AM</option>
-								  <option value="10:30 A">10:30 AM</option>
-								  <option value="11:00 A">11:00 AM</option>
-								  <option value="11:30 A">11:30 AM</option>
-								  <option value="12:00 P">12:00 PM</option>
-								  <option value="12:30 P">12:30 PM</option>
-								  <option value="1:00 PM">1:00 PM</option>
-								  <option value="1:30 PM">1:30 PM</option>
-								  <option value="2:00 PM">2:00 PM</option>
-								  <option value="2:30 PM">2:30 PM</option>
-								  <option value="3:00 PM">3:00 PM</option>
-								  <option value="3:30 PM">3:30 PM</option>
-								  <option value="4:00 PM">4:00 PM</option>
-								  <option value="4:30 PM">4:30 PM</option>
-								  <option value="5:00 PM">5:00 PM</option>
-								  <option value="5:30 PM">5:30 PM</option>
-								  <option value="6:00 PM">6:00 PM</option>
-								  <option value="6:30 PM">6:30 PM</option>
-								  <option value="7:00 PM">7:00 PM</option>
-								  <option value="7:30 PM">7:30 PM</option>
-								</select>
-
-								-
-
-								<select class="dd" required id="select-timeb">
-									<option disabled>EndTime</option>
-								  <option value="8:30 AM">8:30 AM</option>
-								  <option value="9:00 AM">9:00 AM</option>
-								  <option value="9:30 AM">9:30 AM</option>
-								  <option value="10:00 A">10:00 AM</option>
-								  <option value="10:30 A">10:30 AM</option>
-								  <option value="11:00 A">11:00 AM</option>
-								  <option value="11:30 A">11:30 AM</option>
-								  <option value="12:00 P">12:00 PM</option>
-								  <option value="12:30 P">12:30 PM</option>
-								  <option value="1:00 PM">1:00 PM</option>
-								  <option value="1:30 PM">1:30 PM</option>
-								  <option value="2:00 PM">2:00 PM</option>
-								  <option value="2:30 PM">2:30 PM</option>
-								  <option value="3:00 PM">3:00 PM</option>
-								  <option value="3:30 PM">3:30 PM</option>
-								  <option value="4:00 PM">4:00 PM</option>
-								  <option value="4:30 PM">4:30 PM</option>
-								  <option value="5:00 PM">5:00 PM</option>
-								  <option value="5:30 PM">5:30 PM</option>
-								  <option value="6:00 PM">6:00 PM</option>
-								  <option value="6:30 PM">6:30 PM</option>
-								  <option value="7:00 PM">7:00 PM</option>
-								  <option value="7:30 PM">7:30 PM</option>
-								</select>
-								
+						<div class="class-form" action="">
+							<div class="column-4">
+								<label for="input-classcode">Class Code: </label>
+								<input required id="input-classcode" class="tbox" autofocus type="text" name="ClassCode">
 							</div>
-							<p id="class-prompt"></p>
-							<br><button id="classform-btn" class="btn">Next</button>
-						</div>
-					</div>
 
-					<div id="class-info">
-						<ul id="class-info-bar">
-							<li id="class-data-1"></li>
-							<li id="class-data-2"></li>
-							<li id="class-data-3"></li>
-							<li id="class-data-4"></li>
-						</ul>
-					</div>
+							<div class="column-8">
+								<label for="input-desctitle">Descriptive Title: </label>
+								<input required id="input-desctitle" class="tbox" autofocus type="text" name="DescTitle">
+							</div>
+							
+							<div class="column-8">
+							<label for="input-room">Room: </label>
+							<input required id="input-room" class="tbox" autofocus maxlength="5" size="5" type="text" name="Room">
+							</div>
+							
+							<div class="column-8">
+							<label for="select-meetings">Number of Meetings: </label>
+							<select class="dd" required id="select-meeting">
+								  <option value="3">3</option>
+								  <option value="4">4</option>
+								  <option value="5">5</option>
+								  <option value="6">6</option>
+								  <option value="7">7</option>
+								  <option value="8">8</option>
+								  <option value="9">9</option>
+								  <option value="10">10</option>
+								</select>
+							</div>
+							
+							<div class="column-12">
+								<label for="select-day">Days:</label>
 
-					<div class="page" id="add-student-wrap">
-						<h2 class="page-heading">Add Students</h2>
-						<p class="page-desc">Add students to your class by manually entering their names or by selecting or double clicking from the list of existing students from your other classes if you already created one! You can remove the students from your class by clicking their names.</p>
+								<select class="dd" required id="select-day">
+								  <option disabled>Day</option>
+								  <option value="MWF">MWF</option>
+								  <option value="TThS">TThS</option>
+								  <option value="MTh">MTh</option>
+								  <option value="TF">TF</option>
+								  <option value="WS">WS</option>
+								</select>
 
-						<div id="div-addstudent">
-							<div id="student-form">
-								<input id="lastname-input" class="tbox" type="text" placeholder="Last Name" name="lastname" required> 
-								
-								<input id="firstname-input" class="tbox" type="text" placeholder="First Name" name="firstname" required>
-								
-								<input id="midinitial-input" class="tbox" maxlength="1" size="1" type="text" placeholder="MI" name="midinitial" required>
-								<button id="student-btn" class="btn">Add</button>
-								<p id="man-add-prompt"></p>
+								<label for="select-timea">Time:</label>
+									<select class="dd" required id="select-timea">
+										<option disabled>StartTime</option>
+									  <option value="7:30 AM">7:30 AM</option>
+									  <option value="8:00 AM">8:00 AM</option>
+									  <option value="8:30 AM">8:30 AM</option>
+									  <option value="9:00 AM">9:00 AM</option>
+									  <option value="9:30 AM">9:30 AM</option>
+									  <option value="10:00 A">10:00 AM</option>
+									  <option value="10:30 A">10:30 AM</option>
+									  <option value="11:00 A">11:00 AM</option>
+									  <option value="11:30 A">11:30 AM</option>
+									  <option value="12:00 P">12:00 PM</option>
+									  <option value="12:30 P">12:30 PM</option>
+									  <option value="1:00 PM">1:00 PM</option>
+									  <option value="1:30 PM">1:30 PM</option>
+									  <option value="2:00 PM">2:00 PM</option>
+									  <option value="2:30 PM">2:30 PM</option>
+									  <option value="3:00 PM">3:00 PM</option>
+									  <option value="3:30 PM">3:30 PM</option>
+									  <option value="4:00 PM">4:00 PM</option>
+									  <option value="4:30 PM">4:30 PM</option>
+									  <option value="5:00 PM">5:00 PM</option>
+									  <option value="5:30 PM">5:30 PM</option>
+									  <option value="6:00 PM">6:00 PM</option>
+									  <option value="6:30 PM">6:30 PM</option>
+									  <option value="7:00 PM">7:00 PM</option>
+									  <option value="7:30 PM">7:30 PM</option>
+									</select>
+
+									-
+
+									<select class="dd" required id="select-timeb">
+										<option disabled>EndTime</option>
+									  <option value="8:30 AM">8:30 AM</option>
+									  <option value="9:00 AM">9:00 AM</option>
+									  <option value="9:30 AM">9:30 AM</option>
+									  <option value="10:00 A">10:00 AM</option>
+									  <option value="10:30 A">10:30 AM</option>
+									  <option value="11:00 A">11:00 AM</option>
+									  <option value="11:30 A">11:30 AM</option>
+									  <option value="12:00 P">12:00 PM</option>
+									  <option value="12:30 P">12:30 PM</option>
+									  <option value="1:00 PM">1:00 PM</option>
+									  <option value="1:30 PM">1:30 PM</option>
+									  <option value="2:00 PM">2:00 PM</option>
+									  <option value="2:30 PM">2:30 PM</option>
+									  <option value="3:00 PM">3:00 PM</option>
+									  <option value="3:30 PM">3:30 PM</option>
+									  <option value="4:00 PM">4:00 PM</option>
+									  <option value="4:30 PM">4:30 PM</option>
+									  <option value="5:00 PM">5:00 PM</option>
+									  <option value="5:30 PM">5:30 PM</option>
+									  <option value="6:00 PM">6:00 PM</option>
+									  <option value="6:30 PM">6:30 PM</option>
+									  <option value="7:00 PM">7:00 PM</option>
+									  <option value="7:30 PM">7:30 PM</option>
+									</select>
+									
+								</div>
+								<p id="class-prompt"></p>
+								<br><button id="classform-btn" class="btn">Next</button>
 							</div>
 						</div>
 
-						<div id="div-studentselection">
-							<div class="panel column-4">
-								<h4 class="form-heading">List of existing students</h4>
-								<select id="student-selection" class="selector" name="sometext" size="8">
-								</select>
-								<br><button id="addselected-btn" class="btn" value="">Add selected</button>
-								<p id="prompt-selection"></p>	
+						<div id="class-info">
+							<ul id="class-info-bar">
+								<li id="class-data-1"></li>
+								<li id="class-data-2"></li>
+								<li id="class-data-3"></li>
+								<li id="class-data-4"></li>
+							</ul>
+						</div>
+
+						<div class="page" id="add-student-wrap">
+							<h2 class="page-heading">Add Students</h2>
+							<p class="page-desc">Add students to your class by manually entering their names or by selecting or double clicking from the list of existing students from your other classes if you already created one! You can remove the students from your class by clicking their names.</p>
+
+							<div id="div-addstudent">
+								<div id="student-form">
+									<input id="lastname-input" class="tbox" type="text" placeholder="Last Name" name="lastname" required> 
+									
+									<input id="firstname-input" class="tbox" type="text" placeholder="First Name" name="firstname" required>
+									
+									<input id="midinitial-input" class="tbox" maxlength="1" size="1" type="text" placeholder="MI" name="midinitial" required>
+									<button id="student-btn" class="btn">Add</button>
+									<p id="man-add-prompt"></p>
+								</div>
 							</div>
 
-							<div class="panel column-12">
-								<h4 class="form-heading">Students in your class</h4>
-								
-								<div class="studentlist-container">
-									<p id="status">Your class is lonely. Add students to be happy!</p>
-									<ul id="classlist">
-									</ul>
+							<div id="div-studentselection">
+								<div class="panel column-4">
+									<h4 class="form-heading">List of existing students</h4>
+									<select id="student-selection" class="selector" name="sometext" size="8">
+									</select>
+									<br><button id="addselected-btn" class="btn" value="">Add selected</button>
+									<p id="prompt-selection"></p>	
 								</div>
 
+								<div class="panel column-12">
+									<h4 class="form-heading">Students in your class</h4>
+									
+									<div class="studentlist-container">
+										<p id="status">Your class is lonely. Add students to be happy!</p>
+										<ul id="classlist">
+										</ul>
+									</div>
+
+								</div>
 							</div>
+							<button id="studentform-btn" class="btn">Next</button>
 						</div>
-						<button id="studentform-btn" class="btn">Next</button>
-					</div>
 
-					<div class="page" id="manage-room-wrap">
-						<h2 class="page-heading">Arrange Sits</h2>
-						<p class="page-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo laudantium accusantium impedit magnam nobis repellat debitis quod vel corrupti esse, consequatur pariatur architecto, aliquam nesciunt odio exercitationem itaque voluptatum odit.</p>
+						<div class="page" id="manage-room-wrap">
+							<h2 class="page-heading">Arrange Sits</h2>
+							<p class="page-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo laudantium accusantium impedit magnam nobis repellat debitis quod vel corrupti esse, consequatur pariatur architecto, aliquam nesciunt odio exercitationem itaque voluptatum odit.</p>
 
-						<canvas id="myCanvas" width="1000" height="600" style="border:1px solid #000000;">
-						</canvas>
+							<canvas id="myCanvas" width="1000" height="600" style="border:1px solid #000000;">
+							</canvas>
 
-						<button class="btn" id="end-btn">Finish</button>
-					</div>	
+							<button class="btn" id="end-btn">Finish</button>
+						</div>	
 
+				</div>
 			</div>
-		</div>
+		</main>
 
-		<script type="text/javascript" src="scripts/create-class.js"></script>
+		<footer>
+			&copy; 2015 Group #7. 
+			<br>All rights reserved.
+			<hr>
+			<div>
+				<label>Feeling bored in the theme? Choose here:</label>
+				<button onclick="swapStyleSheet('styles/styles1.css')">Preferred</button>
+				<button onclick="swapStyleSheet('styles/styles2.css')">Alternate</button>
+			</div>
+		</footer>
+
+		<script type="text/javascript" src="scripts/create-class.js">
+			/*for swapping stylesheet*/
+			function swapStyleSheet(sheet){
+				document.getElementById('pagestyle').setAttribute('href', sheet);
+			}
+		</script>
 	</body>
 
 </html>
