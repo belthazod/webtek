@@ -40,9 +40,9 @@ a:hover {
 }
 
 #banner {
-	padding: 20px 20px 280px;
+	padding: 20px 20px 200px;
 	background-image: url("../images/scislogo.png");
-	background-size: 35%;
+	background-size: 25%;
 	background-repeat: no-repeat;
 	background-position: fixed;
 	color: white;
