@@ -1,0 +1,27 @@
+CACHE MANIFEST
+create-class.html
+EditClass.html
+index.html
+MyClasses.html
+registration.html
+studrec.html
+viewAttendance.html
+attendanceChecker.html
+
+images/1.png
+images/2.png
+images/3.png
+images/alternatebg.jpg
+images/bgimg.jpg
+images/header.jpg
+images/logreg.jpg
+images/scislogonew.png
+images/scislogonew.png
+
+styles/styles.css
+styles/styles1.css
+styles/styles2.css
+styles/create-class-style.css
+
+scripts/checkAttendance.js
+scripts/create-class.js

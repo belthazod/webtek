@@ -324,6 +324,8 @@ function main() {
 function saveClass() {
 	myClass.students = students //myClass variable on line 16! students array on line 25!
 	console.log(JSON.stringify(myClass));
+	
+	//Contributor: Bassanio C. Tello Jr
 	var studentsToBeStored =[];
 	var id = 0;
 	for(var x = 0; x<students.length; x++){
@@ -657,8 +659,6 @@ function swapStudents(){
 		students[parseInt(student1.title)-1] = students[parseInt(student2.title)-1];
 		students[parseInt(student2.title)-1] = temp;
 
-alert(temp);
-alert(students[parseInt(student1.title)-1]);
 students[parseInt(student2.title)-1]
 
 	totalSelected = 0;
@@ -686,3 +686,5 @@ students[parseInt(student2.title)-1]
 		}
 	}*/
 }
+
+//end of Bassanio's Contribution
