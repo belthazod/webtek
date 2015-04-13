@@ -67,6 +67,9 @@ a {
 #password {
 	width: 290px;
 }
+#password2 {
+	width: 290px;
+}
 #login {
 	width: 180px;
 }
@@ -104,6 +107,9 @@ a {
 		width: 95%;
 	}
 	#password {
+		width: 95%;
+	}
+	#password2 {
 		width: 95%;
 	}
 	#login {
@@ -145,6 +151,9 @@ a {
 	#password {
 		width: 95%;
 	}
+	#password2 {
+		width: 95%;
+	}
 	#login {
 		width: 30%;
 	}
@@ -184,6 +193,9 @@ a {
 	#password {
 		width: 95%;
 	}
+	#password2 {
+		width: 95%;
+	}
 	#login {
 		width: 50%;
 	}
@@ -221,6 +233,10 @@ a {
 		width: 90%;
 	}
 	#password {
+		width: 90%;
+	}
+
+	#password2 {
 		width: 90%;
 	}
 	#login {
